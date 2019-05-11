@@ -1,0 +1,450 @@
+/*==============================================================*/
+/* DBMS name:      Microsoft SQL Server 2017                    */
+/* Created on:     11.05.2019 14:09:52                          */
+/*==============================================================*/
+
+
+/*==============================================================*/
+/* Table: DimAirline                                            */
+/*==============================================================*/
+create table DimAirline (
+   AirlineID            int                  not null,
+   Name                 varchar(1024)        null,
+   Alias                varchar(1024)        null,
+   IATA                 varchar(1024)        null,
+   ICAO                 varchar(1024)        null,
+   Country              varchar(1024)        null,
+   Active               varchar(100)         null,
+   constraint PK_DIMAIRLINE primary key (AirlineID)
+)
+go
+
+/*==============================================================*/
+/* Table: DimAirport                                            */
+/*==============================================================*/
+create table DimAirport (
+   AirportID            int                  not null,
+   Name                 varchar(1024)        null,
+   City                 varchar(1024)        null,
+   Country              varchar(1024)        null,
+   IATA                 varchar(1024)        null,
+   ICAO                 varchar(1024)        null,
+   Latitude             decimal              null,
+   Longtitude           decimal              null,
+   Altitude             int                  null,
+   Timezone             decimal              null,
+   DST                  varchar(100)         null,
+   Type                 varchar(1024)        null,
+   constraint PK_DIMAIRPORT primary key (AirportID)
+)
+go
+
+/*==============================================================*/
+/* Table: DimDate                                               */
+/*==============================================================*/
+create table DimDate (
+   DateID               int                  not null,
+   Year                 int                  null,
+   Month                int                  null,
+   DayOfMonth           int                  null,
+   DayOfWeek            int                  null,
+   Quarter              int                  null,
+   constraint PK_DIMDATE primary key (DateID)
+)
+go
+
+/*==============================================================*/
+/* Table: DimDelayGroups                                        */
+/*==============================================================*/
+create table DimDelayGroups (
+   DelayGroupsID        int                  not null,
+   Delay15              bit                  null,
+   DelayGroups          int                  null,
+   constraint PK_DIMDELAYGROUPS primary key (DelayGroupsID)
+)
+go
+
+/*==============================================================*/
+/* Table: DimDistance                                           */
+/*==============================================================*/
+create table DimDistance (
+   DistanceID           int                  not null,
+   DistanceGroup        int                  null,
+   constraint PK_DIMDISTANCE primary key (DistanceID)
+)
+go
+
+/*==============================================================*/
+/* Table: DimPlane                                              */
+/*==============================================================*/
+create table DimPlane (
+   PlaneID              int                  not null,
+   Name                 varchar(1024)        null,
+   IATA                 varchar(1024)        null,
+   ICAO                 varchar(1024)        null,
+   constraint PK_DIMPLANE primary key (PlaneID)
+)
+go
+
+/*==============================================================*/
+/* Table: DimReasonForCancellation                              */
+/*==============================================================*/
+create table DimReasonForCancellation (
+   CancellationID       int                  not null,
+   CancellationCode     varchar(100)         null,
+   constraint PK_DIMREASONFORCANCELLATION primary key (CancellationID)
+)
+go
+
+/*==============================================================*/
+/* Table: DimRoute                                              */
+/*==============================================================*/
+create table DimRoute (
+   RouteID              int                  not null,
+   OriginAirportID      int                  not null,
+   DestinationAirportID int                  not null,
+   AirlineID            int                  null,
+   Codeshare            varchar(100)         null,
+   Stops                int                  null,
+   Equipment            varchar(1024)        null,
+   constraint PK_DIMROUTE primary key (RouteID)
+)
+go
+
+/*==============================================================*/
+/* Index: RouteArline_FK                                        */
+/*==============================================================*/
+
+
+
+
+create nonclustered index RouteArline_FK on DimRoute (AirlineID ASC)
+go
+
+/*==============================================================*/
+/* Index: DestinationAirport_FK                                 */
+/*==============================================================*/
+
+
+
+
+create nonclustered index DestinationAirport_FK on DimRoute (OriginAirportID ASC)
+go
+
+/*==============================================================*/
+/* Index: OriginAirport_FK                                      */
+/*==============================================================*/
+
+
+
+
+create nonclustered index OriginAirport_FK on DimRoute (DestinationAirportID ASC)
+go
+
+/*==============================================================*/
+/* Table: DimTime                                               */
+/*==============================================================*/
+create table DimTime (
+   TimeID               int                  not null,
+   Hour                 int                  null,
+   Minute               int                  null,
+   constraint PK_DIMTIME primary key (TimeID)
+)
+go
+
+/*==============================================================*/
+/* Table: FactFlight                                            */
+/*==============================================================*/
+create table FactFlight (
+   FlightID             bigint               not null,
+   DateID               int                  not null,
+   WheelsOnID           int                  not null,
+   WheelsOffID          int                  not null,
+   CRSArrivalTimeID     int                  not null,
+   CRSDepartureTimeID   int                  not null,
+   ActualDepartureTimeID int                  not null,
+   ActualArrivalTimeID  int                  not null,
+   OriginAirportID      int                  not null,
+   DestinationAirportID int                  not null,
+   RouteID              int                  null,
+   CancellationID       int                  null,
+   AirlineID            int                  null,
+   PlaneID              int                  null,
+   DistanceID           int                  not null,
+   ArrivalDelayGroupsID int                  not null,
+   DepartureDelayGroupsID int                  not null,
+   DepartureDelay       int                  null,
+   ArrivalDelay         int                  null,
+   TaxiOut              int                  null,
+   TaxiIn               int                  null,
+   Cancelled            bit                  null,
+   Diverted             bit                  null,
+   CRSElapsedTime       int                  null,
+   ActualElapsedTime    int                  null,
+   AirTime              int                  null,
+   Flights              int                  null,
+   Distance             int                  null,
+   CarrierDelay         int                  null,
+   WeatherDelay         int                  null,
+   NasDelay             int                  null,
+   SecurityDelay        int                  null,
+   LateAircraftDelay    int                  null,
+   constraint PK_FACTFLIGHT primary key (FlightID)
+)
+go
+
+/*==============================================================*/
+/* Index: CRSDepartureTime_FK                                   */
+/*==============================================================*/
+
+
+
+
+create nonclustered index CRSDepartureTime_FK on FactFlight (WheelsOnID ASC)
+go
+
+/*==============================================================*/
+/* Index: ActualDepartureTime_FK                                */
+/*==============================================================*/
+
+
+
+
+create nonclustered index ActualDepartureTime_FK on FactFlight (ActualDepartureTimeID ASC)
+go
+
+/*==============================================================*/
+/* Index: CRSArrivalTime_FK                                     */
+/*==============================================================*/
+
+
+
+
+create nonclustered index CRSArrivalTime_FK on FactFlight (CRSArrivalTimeID ASC)
+go
+
+/*==============================================================*/
+/* Index: ActualArrivalTime_FK                                  */
+/*==============================================================*/
+
+
+
+
+create nonclustered index ActualArrivalTime_FK on FactFlight (ActualArrivalTimeID ASC)
+go
+
+/*==============================================================*/
+/* Index: WheelsOff_FK                                          */
+/*==============================================================*/
+
+
+
+
+create nonclustered index WheelsOff_FK on FactFlight (CRSDepartureTimeID ASC)
+go
+
+/*==============================================================*/
+/* Index: WheelsOn_FK                                           */
+/*==============================================================*/
+
+
+
+
+create nonclustered index WheelsOn_FK on FactFlight (WheelsOffID ASC)
+go
+
+/*==============================================================*/
+/* Index: FlightDate_FK                                         */
+/*==============================================================*/
+
+
+
+
+create nonclustered index FlightDate_FK on FactFlight (DateID ASC)
+go
+
+/*==============================================================*/
+/* Index: Airline_FK                                            */
+/*==============================================================*/
+
+
+
+
+create nonclustered index Airline_FK on FactFlight (AirlineID ASC)
+go
+
+/*==============================================================*/
+/* Index: Route_FK                                              */
+/*==============================================================*/
+
+
+
+
+create nonclustered index Route_FK on FactFlight (RouteID ASC)
+go
+
+/*==============================================================*/
+/* Index: Plane_FK                                              */
+/*==============================================================*/
+
+
+
+
+create nonclustered index Plane_FK on FactFlight (PlaneID ASC)
+go
+
+/*==============================================================*/
+/* Index: DistanceGroup_FK                                      */
+/*==============================================================*/
+
+
+
+
+create nonclustered index DistanceGroup_FK on FactFlight (DistanceID ASC)
+go
+
+/*==============================================================*/
+/* Index: ArrivalDelayGroups_FK                                 */
+/*==============================================================*/
+
+
+
+
+create nonclustered index ArrivalDelayGroups_FK on FactFlight (ArrivalDelayGroupsID ASC)
+go
+
+/*==============================================================*/
+/* Index: DepartureDelayGroups_FK                               */
+/*==============================================================*/
+
+
+
+
+create nonclustered index DepartureDelayGroups_FK on FactFlight (DepartureDelayGroupsID ASC)
+go
+
+/*==============================================================*/
+/* Index: CancellationCode_FK                                   */
+/*==============================================================*/
+
+
+
+
+create nonclustered index CancellationCode_FK on FactFlight (CancellationID ASC)
+go
+
+/*==============================================================*/
+/* Index: OriginAirportID_FK                                    */
+/*==============================================================*/
+
+
+
+
+create nonclustered index OriginAirportID_FK on FactFlight (DestinationAirportID ASC)
+go
+
+/*==============================================================*/
+/* Index: DestinationAirportID_FK                               */
+/*==============================================================*/
+
+
+
+
+create nonclustered index DestinationAirportID_FK on FactFlight (OriginAirportID ASC)
+go
+
+alter table DimRoute
+   add constraint FK_DIMROUTE_DESTINATI_DIMAIRPO foreign key (OriginAirportID)
+      references DimAirport (AirportID)
+go
+
+alter table DimRoute
+   add constraint FK_DIMROUTE_ORIGINAIR_DIMAIRPO foreign key (DestinationAirportID)
+      references DimAirport (AirportID)
+go
+
+alter table DimRoute
+   add constraint FK_DIMROUTE_ROUTEARLI_DIMAIRLI foreign key (AirlineID)
+      references DimAirline (AirlineID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_ACTUALARR_DIMTIME foreign key (ActualArrivalTimeID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_ACTUALDEP_DIMTIME foreign key (ActualDepartureTimeID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_AIRLINE_DIMAIRLI foreign key (AirlineID)
+      references DimAirline (AirlineID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_ARRIVALDE_DIMDELAY foreign key (ArrivalDelayGroupsID)
+      references DimDelayGroups (DelayGroupsID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_CRSARRIVA_DIMTIME foreign key (CRSArrivalTimeID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_CRSDEPART_DIMTIME foreign key (WheelsOnID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_CANCELLAT_DIMREASO foreign key (CancellationID)
+      references DimReasonForCancellation (CancellationID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_DEPARTURE_DIMDELAY foreign key (DepartureDelayGroupsID)
+      references DimDelayGroups (DelayGroupsID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_DESTINATI_DIMAIRPO foreign key (OriginAirportID)
+      references DimAirport (AirportID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_DISTANCEG_DIMDISTA foreign key (DistanceID)
+      references DimDistance (DistanceID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_FLIGHTDAT_DIMDATE foreign key (DateID)
+      references DimDate (DateID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_ORIGINAIR_DIMAIRPO foreign key (DestinationAirportID)
+      references DimAirport (AirportID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_PLANE_DIMPLANE foreign key (PlaneID)
+      references DimPlane (PlaneID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_ROUTE_DIMROUTE foreign key (RouteID)
+      references DimRoute (RouteID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_WHEELSOFF_DIMTIME foreign key (CRSDepartureTimeID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_WHEELSON_DIMTIME foreign key (WheelsOffID)
+      references DimTime (TimeID)
+go
+
