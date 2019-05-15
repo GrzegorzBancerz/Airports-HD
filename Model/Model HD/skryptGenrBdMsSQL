@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2017                    */
-/* Created on:     11.05.2019 14:09:52                          */
+/* Created on:     15.05.2019 21:44:50                          */
 /*==============================================================*/
 
 
@@ -169,7 +169,6 @@ create table FactFlight (
    RouteID              int                  null,
    CancellationID       int                  null,
    AirlineID            int                  null,
-   PlaneID              int                  null,
    DistanceID           int                  not null,
    ArrivalDelayGroupsID int                  not null,
    DepartureDelayGroupsID int                  not null,
@@ -284,16 +283,6 @@ create nonclustered index Route_FK on FactFlight (RouteID ASC)
 go
 
 /*==============================================================*/
-/* Index: Plane_FK                                              */
-/*==============================================================*/
-
-
-
-
-create nonclustered index Plane_FK on FactFlight (PlaneID ASC)
-go
-
-/*==============================================================*/
 /* Index: DistanceGroup_FK                                      */
 /*==============================================================*/
 
@@ -351,6 +340,36 @@ go
 
 
 create nonclustered index DestinationAirportID_FK on FactFlight (OriginAirportID ASC)
+go
+
+/*==============================================================*/
+/* Table: Plane                                                 */
+/*==============================================================*/
+create table Plane (
+   PlaneID              int                  not null,
+   RouteID              int                  not null,
+   constraint PK_PLANE primary key (PlaneID, RouteID)
+)
+go
+
+/*==============================================================*/
+/* Index: Plane_FK                                              */
+/*==============================================================*/
+
+
+
+
+create nonclustered index Plane_FK on Plane (PlaneID ASC)
+go
+
+/*==============================================================*/
+/* Index: Plane2_FK                                             */
+/*==============================================================*/
+
+
+
+
+create nonclustered index Plane2_FK on Plane (RouteID ASC)
 go
 
 alter table DimRoute
@@ -429,11 +448,6 @@ alter table FactFlight
 go
 
 alter table FactFlight
-   add constraint FK_FACTFLIG_PLANE_DIMPLANE foreign key (PlaneID)
-      references DimPlane (PlaneID)
-go
-
-alter table FactFlight
    add constraint FK_FACTFLIG_ROUTE_DIMROUTE foreign key (RouteID)
       references DimRoute (RouteID)
 go
@@ -446,5 +460,15 @@ go
 alter table FactFlight
    add constraint FK_FACTFLIG_WHEELSON_DIMTIME foreign key (WheelsOffID)
       references DimTime (TimeID)
+go
+
+alter table Plane
+   add constraint FK_PLANE_PLANE_DIMPLANE foreign key (PlaneID)
+      references DimPlane (PlaneID)
+go
+
+alter table Plane
+   add constraint FK_PLANE_PLANE2_DIMROUTE foreign key (RouteID)
+      references DimRoute (RouteID)
 go
 
