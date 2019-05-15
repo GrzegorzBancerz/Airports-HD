@@ -1,8 +1,15 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2012                    */
-/* Created on:     12.05.2019 23:20:59                          */
+/* Created on:     15.05.2019 17:33:22                          */
 /*==============================================================*/
 
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('AIRLINEID')
+            and   type = 'U')
+   drop table AIRLINEID
+go
 
 if exists (select 1
             from  sysobjects
@@ -48,6 +55,13 @@ go
 
 if exists (select 1
             from  sysobjects
+           where  id = object_id('CARRIERHISTORY')
+            and   type = 'U')
+   drop table CARRIERHISTORY
+go
+
+if exists (select 1
+            from  sysobjects
            where  id = object_id('CITYMARKETIDSTAGE')
             and   type = 'U')
    drop table CITYMARKETIDSTAGE
@@ -83,13 +97,6 @@ go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('IATAREPORTINGAIRLINEIDSTAGE')
-            and   type = 'U')
-   drop table IATAREPORTINGAIRLINEIDSTAGE
-go
-
-if exists (select 1
-            from  sysobjects
            where  id = object_id('MONTHSTAGE')
             and   type = 'U')
    drop table MONTHSTAGE
@@ -118,20 +125,6 @@ go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('REPORTINGAIRLINEIDSTAGE')
-            and   type = 'U')
-   drop table REPORTINGAIRLINEIDSTAGE
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('REPORTINGAIRLINESTAGE')
-            and   type = 'U')
-   drop table REPORTINGAIRLINESTAGE
-go
-
-if exists (select 1
-            from  sysobjects
            where  id = object_id('ROUTEOFSTAGE')
             and   type = 'U')
    drop table ROUTEOFSTAGE
@@ -146,6 +139,13 @@ go
 
 if exists (select 1
             from  sysobjects
+           where  id = object_id('UNIQUECARRIERS')
+            and   type = 'U')
+   drop table UNIQUECARRIERS
+go
+
+if exists (select 1
+            from  sysobjects
            where  id = object_id('WORLDAREACODESSTAGE')
             and   type = 'U')
    drop table WORLDAREACODESSTAGE
@@ -156,6 +156,15 @@ if exists (select 1
            where  id = object_id('YESNORESPSTAGE')
             and   type = 'U')
    drop table YESNORESPSTAGE
+go
+
+/*==============================================================*/
+/* Table: AIRLINEID                                             */
+/*==============================================================*/
+create table AIRLINEID (
+   CODE                 varchar(1024)        null,
+   DESCRIPTION          varchar(1024)        null
+)
 go
 
 /*==============================================================*/
@@ -186,7 +195,7 @@ go
 /* Table: AIRPORTOFSTAGE                                        */
 /*==============================================================*/
 create table AIRPORTOFSTAGE (
-   ATTRIBUTE_62         varchar(1024)        null,
+   AIRPORTID            varchar(1024)        null,
    NAME                 varchar(1024)        null,
    CITY                 varchar(1024)        null,
    COUNTRY              varchar(1024)        null,
@@ -224,6 +233,15 @@ go
 /* Table: CANCELLATIONSTAGE                                     */
 /*==============================================================*/
 create table CANCELLATIONSTAGE (
+   CODE                 varchar(1024)        null,
+   DESCRIPTION          varchar(1024)        null
+)
+go
+
+/*==============================================================*/
+/* Table: CARRIERHISTORY                                        */
+/*==============================================================*/
+create table CARRIERHISTORY (
    CODE                 varchar(1024)        null,
    DESCRIPTION          varchar(1024)        null
 )
@@ -332,15 +350,6 @@ create table FACTFLIGHTSTAGE (
 go
 
 /*==============================================================*/
-/* Table: IATAREPORTINGAIRLINEIDSTAGE                           */
-/*==============================================================*/
-create table IATAREPORTINGAIRLINEIDSTAGE (
-   CODE                 varchar(1024)        null,
-   DESCRIPTION          varchar(1024)        null
-)
-go
-
-/*==============================================================*/
 /* Table: MONTHSTAGE                                            */
 /*==============================================================*/
 create table MONTHSTAGE (
@@ -378,24 +387,6 @@ create table QUARTERSTAGE (
 go
 
 /*==============================================================*/
-/* Table: REPORTINGAIRLINEIDSTAGE                               */
-/*==============================================================*/
-create table REPORTINGAIRLINEIDSTAGE (
-   CODE                 varchar(1024)        null,
-   DESCRIPTION          varchar(1024)        null
-)
-go
-
-/*==============================================================*/
-/* Table: REPORTINGAIRLINESTAGE                                 */
-/*==============================================================*/
-create table REPORTINGAIRLINESTAGE (
-   CODE                 varchar(1024)        null,
-   DESCRIPTION          varchar(1024)        null
-)
-go
-
-/*==============================================================*/
 /* Table: ROUTEOFSTAGE                                          */
 /*==============================================================*/
 create table ROUTEOFSTAGE (
@@ -415,6 +406,15 @@ go
 /* Table: STATEFIPSSTAGE                                        */
 /*==============================================================*/
 create table STATEFIPSSTAGE (
+   CODE                 varchar(1024)        null,
+   DESCRIPTION          varchar(1024)        null
+)
+go
+
+/*==============================================================*/
+/* Table: UNIQUECARRIERS                                        */
+/*==============================================================*/
+create table UNIQUECARRIERS (
    CODE                 varchar(1024)        null,
    DESCRIPTION          varchar(1024)        null
 )
