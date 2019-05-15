@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2017                    */
-/* Created on:     15.05.2019 21:44:50                          */
+/* Created on:     15.05.2019 22:20:35                          */
 /*==============================================================*/
 
 
@@ -29,10 +29,10 @@ create table DimAirport (
    Country              varchar(1024)        null,
    IATA                 varchar(1024)        null,
    ICAO                 varchar(1024)        null,
-   Latitude             decimal              null,
-   Longtitude           decimal              null,
+   Latitude             float                null,
+   Longtitude           float                null,
    Altitude             int                  null,
-   Timezone             decimal              null,
+   Timezone             float                null,
    DST                  varchar(100)         null,
    Type                 varchar(1024)        null,
    constraint PK_DIMAIRPORT primary key (AirportID)
