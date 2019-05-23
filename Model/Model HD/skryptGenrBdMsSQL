@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2017                    */
-/* Created on:     23.05.2019 19:41:43                          */
+/* Created on:     23.05.2019 19:50:04                          */
 /*==============================================================*/
 
 
@@ -29,10 +29,10 @@ create table DimAirport (
    Country              varchar(255)         null,
    IATA                 varchar(255)         null,
    ICAO                 varchar(255)         null,
-   Latitude             float                null,
-   Longtitude           float                null,
+   Latitude             decimal(23,20)       null,
+   Longtitude           decimal(23,20)       null,
    Altitude             int                  null,
-   Timezone             float                null,
+   Timezone             decimal(23,20)       null,
    DST                  varchar(255)         null,
    Type                 varchar(255)         null,
    StateName            varchar(255)         null,
