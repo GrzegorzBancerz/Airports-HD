@@ -1,0 +1,2272 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/23/2019 7:58:18 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="TOMASZ-PC"
+  DTS:CreatorName="TOMASZ-PC\Tomasz"
+  DTS:DTSID="{34EC5A85-4209-40CD-8271-456731232A2B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="DimAirport"
+  DTS:PackageType="5"
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{73EBDE16-B05D-49E0-918E-D450C0DD519D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{BE63A588-A735-4BBF-8A24-1A58080B0239}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\warehouse\error.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AIRPORTID"
+              DTS:DTSID="{3B0F5E11-CD02-4EA6-AD5A-5AD14C553149}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NAME"
+              DTS:DTSID="{93DBB11B-A0EE-4379-8B41-1B17792FBD15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CITY"
+              DTS:DTSID="{559D17B7-68C4-4D2A-B2BD-03C0C63793AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COUNTRY"
+              DTS:DTSID="{994CA7F5-2BE4-4EF5-8F44-2CBC6BA851BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IATA"
+              DTS:DTSID="{3C875DDC-9B4A-46E4-ADC8-653B311C2F4C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ICAO"
+              DTS:DTSID="{46F2CEE7-AF22-4FDD-8EE8-7E20B7331E62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LATITUDE"
+              DTS:DTSID="{FE68C077-761A-48C5-B50D-6C48BE4A9BE8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LONGITUDE"
+              DTS:DTSID="{22D72D47-B64A-4B57-897C-E2BB543F81A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ALTITUDE"
+              DTS:DTSID="{7408B973-8D54-4DF5-8A4F-7516CF5DA0CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TIMEZONE"
+              DTS:DTSID="{DF08BA48-7329-4EFB-8781-7177951E67CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DST"
+              DTS:DTSID="{1A43168F-A4D7-454A-AEA1-5AAFF4833FFA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TZDATABASETIMEZONE"
+              DTS:DTSID="{711B1FCF-64D0-4A5A-88E1-49577F72CF43}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TYPE"
+              DTS:DTSID="{910F5185-7BBC-4DA3-9627-590C2AFB726F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{FDA22784-9F5A-41EB-B771-BF767CA06360}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{5A051976-C29F-43D0-BA45-D69F4229572B}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[output]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F72A82BC-749F-416F-9E6E-73CB1B0C59BA}"
+      DTS:ObjectName="output">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\warehouse\output.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="14"
+              DTS:DataScale="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Derived Column 1"
+              DTS:DTSID="{4DF35CCE-F127-4828-B21F-90E0DC2F6CB4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C3EFD046-3CAD-4471-AB41-F6AA3D841D7D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[LATITUDE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="LATITUDE"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LATITUDE]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      name="Derived Column 1"
+                      precision="23"
+                      scale="20"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_NUMERIC,23,20)#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LATITUDE]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_NUMERIC,23,20)LATITUDE</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1045"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[output]"
+                  connectionManagerRefId="Package.ConnectionManagers[output]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].Columns[Derived Column 1]"
+                      cachedDataType="numeric"
+                      cachedName="Derived Column 1"
+                      cachedPrecision="23"
+                      cachedScale="20"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Derived Column 1]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Derived Column 1]"
+                      dataType="decimal"
+                      name="Derived Column 1"
+                      scale="20" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AIRPORTOFSTAGE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{B8CF4176-6905-4D12-809A-BA3142B067BF}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LATITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LATITUDE]"
+                      length="1024"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LATITUDE]"
+                      name="LATITUDE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AIRPORTID]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="AIRPORTID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NAME]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COUNTRY]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IATA]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="IATA" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="ICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LATITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="LATITUDE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LONGITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="LONGITUDE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ALTITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="ALTITUDE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TIMEZONE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="TIMEZONE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DST]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="DST" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TZDATABASETIMEZONE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="TZDATABASETIMEZONE" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TYPE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="TYPE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LATITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LATITUDE]"
+                      name="LATITUDE" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT DimAirport"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{395A90FD-60A7-4010-BDD6-F068C90437A3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT DimAirport"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT DimAirport\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input].Columns[NAME]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="NAME"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[NAME]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input].Columns[CITY]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="CITY"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input].Columns[COUNTRY]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="COUNTRY"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[COUNTRY]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input].Columns[IATA]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="IATA"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[IATA]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input].Columns[ICAO]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="ICAO"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[ICAO]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input].Columns[ALTITUDE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="ALTITUDE"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[ALTITUDE]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input].Columns[DST]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="DST"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[DST]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input].Columns[TYPE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="TYPE"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[TYPE]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input].Columns[AIRPORTID]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="AIRPORTID"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIRPORTID]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input].Columns[LATITUDE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="LATITUDE"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[LATITUDE]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input].Columns[LONGITUDE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="LONGITUDE"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[LONGITUDE]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input].Columns[TIMEZONE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="TIMEZONE"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[TIMEZONE]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NAME]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NAME]"
+                      name="Copy of NAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[NAME]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CITY]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CITY]"
+                      name="Copy of CITY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of COUNTRY]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of COUNTRY]"
+                      name="Copy of COUNTRY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[COUNTRY]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IATA]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IATA]"
+                      name="Copy of IATA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[IATA]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ICAO]"
+                      name="Copy of ICAO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[ICAO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DST]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DST]"
+                      name="Copy of DST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[DST]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TYPE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TYPE]"
+                      name="Copy of TYPE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[TYPE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of AIRPORTID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of AIRPORTID]"
+                      name="Copy of AIRPORTID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIRPORTID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LATITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LATITUDE]"
+                      name="Copy of LATITUDE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[LATITUDE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LONGITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LONGITUDE]"
+                      name="Copy of LONGITUDE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[LONGITUDE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ALTITUDE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ALTITUDE]"
+                      name="Copy of ALTITUDE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[ALTITUDE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TIMEZONE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="255"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TIMEZONE]"
+                      name="Copy of TIMEZONE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[TIMEZONE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimAirport\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT DimAirport\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Derived Column.Inputs[Derived Column Input].Columns[Copy of TIMEZONE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of TIMEZONE"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TIMEZONE]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT DimAirport\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT DimAirport\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Derived Column.Outputs[Derived Column Output].Columns[DerivedTimezone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DFT DimAirport\Derived Column.Outputs[Derived Column Output].Columns[DerivedTimezone]"
+                      name="DerivedTimezone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TIMEZONE]} == "\\N" ? NULL(DT_WSTR,50) : #{Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TIMEZONE]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">[Copy of TIMEZONE] == "\\N" ? NULL(DT_WSTR,50) : [Copy of TIMEZONE]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT DimAirport\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT DimAirport\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimAirport\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimAirport\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimAirport\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1045"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT DimAirport\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[AIRPORTID]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="AIRPORTID"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AIRPORTID]"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIRPORTID]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[NAME]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="NAME"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[NAME]"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[NAME]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[CITY]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="CITY"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CITY]"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[COUNTRY]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="COUNTRY"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COUNTRY]"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[COUNTRY]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[IATA]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="IATA"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[IATA]"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[IATA]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[ICAO]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="ICAO"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ICAO]"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[ICAO]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[LATITUDE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="LATITUDE"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LATITUDE]"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[LATITUDE]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[LONGITUDE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="LONGITUDE"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LONGITUDE]"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[LONGITUDE]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[ALTITUDE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="ALTITUDE"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ALTITUDE]"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[ALTITUDE]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[TIMEZONE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="TIMEZONE"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TIMEZONE]"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[TIMEZONE]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[DST]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="DST"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[DST]"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[DST]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[TZDATABASETIMEZONE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="TZDATABASETIMEZONE"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TZDATABASETIMEZONE]"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[TZDATABASETIMEZONE]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[TYPE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="TYPE"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TYPE]"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[TYPE]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AIRPORTID]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="AIRPORTID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[NAME]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="NAME" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CITY]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COUNTRY]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[IATA]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="IATA" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="ICAO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LATITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="LATITUDE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LONGITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="LONGITUDE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ALTITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="ALTITUDE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TIMEZONE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="TIMEZONE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[DST]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="DST" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TZDATABASETIMEZONE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="TZDATABASETIMEZONE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TYPE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\DFT DimAirport\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimAirport]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT DimAirport\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{70F14BAE-DCDE-4C28-A732-FD00719FB49A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).warehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of NAME]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of NAME"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NAME]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CITY]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of CITY"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CITY]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of COUNTRY]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of COUNTRY"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of COUNTRY]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of IATA]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of IATA"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IATA]"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IATA]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ICAO]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of ICAO"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ICAO]"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ICAO]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ALTITUDE]"
+                      cachedDataType="i4"
+                      cachedName="Copy of ALTITUDE"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Altitude]"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ALTITUDE]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of DST]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of DST"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DST]"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DST]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of TYPE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of TYPE"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TYPE]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of AIRPORTID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of AIRPORTID"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AirportID]"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of AIRPORTID]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of LATITUDE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="Copy of LATITUDE"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LATITUDE]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of LONGITUDE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="Copy of LONGITUDE"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longtitude]"
+                      lineageId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of LONGITUDE]" />
+                    <inputColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DerivedTimezone]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DerivedTimezone"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Timezone]"
+                      lineageId="Package\DFT DimAirport\Derived Column.Outputs[Derived Column Output].Columns[DerivedTimezone]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AirportID]"
+                      dataType="i4"
+                      name="AirportID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IATA]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="IATA" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="ICAO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                      dataType="numeric"
+                      name="Latitude"
+                      precision="23"
+                      scale="20" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longtitude]"
+                      dataType="numeric"
+                      name="Longtitude"
+                      precision="23"
+                      scale="20" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Altitude]"
+                      dataType="i4"
+                      name="Altitude" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Timezone]"
+                      dataType="numeric"
+                      name="Timezone"
+                      precision="23"
+                      scale="20" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DST]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="DST" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="Type" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="StateName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT DimAirport\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimAirport\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimAirport\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT DimAirport\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AIRPORTOFSTAGE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT DimAirport\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{B8CF4176-6905-4D12-809A-BA3142B067BF}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIRPORTID]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AIRPORTID]"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[AIRPORTID]"
+                      name="AIRPORTID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[NAME]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NAME]"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[NAME]"
+                      name="NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[COUNTRY]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COUNTRY]"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[COUNTRY]"
+                      name="COUNTRY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[IATA]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IATA]"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[IATA]"
+                      name="IATA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[ICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ICAO]"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[ICAO]"
+                      name="ICAO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[LATITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LATITUDE]"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[LATITUDE]"
+                      name="LATITUDE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[LONGITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LONGITUDE]"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[LONGITUDE]"
+                      name="LONGITUDE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[ALTITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ALTITUDE]"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[ALTITUDE]"
+                      name="ALTITUDE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[TIMEZONE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TIMEZONE]"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[TIMEZONE]"
+                      name="TIMEZONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[DST]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DST]"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[DST]"
+                      name="DST"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[TZDATABASETIMEZONE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TZDATABASETIMEZONE]"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[TZDATABASETIMEZONE]"
+                      name="TZDATABASETIMEZONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[TYPE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TYPE]"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].Columns[TYPE]"
+                      name="TYPE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AIRPORTID]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="AIRPORTID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NAME]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="NAME" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CITY]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COUNTRY]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[IATA]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="IATA" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="ICAO" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LATITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="LATITUDE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LONGITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="LONGITUDE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ALTITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="ALTITUDE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TIMEZONE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="TIMEZONE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DST]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="DST" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TZDATABASETIMEZONE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="TZDATABASETIMEZONE" />
+                    <externalMetadataColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TYPE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="TYPE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AIRPORTID]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AIRPORTID]"
+                      name="AIRPORTID" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NAME]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NAME]"
+                      name="NAME" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CITY]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COUNTRY]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COUNTRY]"
+                      name="COUNTRY" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IATA]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[IATA]"
+                      name="IATA" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ICAO]"
+                      name="ICAO" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LATITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LATITUDE]"
+                      name="LATITUDE" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LONGITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LONGITUDE]"
+                      name="LONGITUDE" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ALTITUDE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ALTITUDE]"
+                      name="ALTITUDE" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TIMEZONE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TIMEZONE]"
+                      name="TIMEZONE" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DST]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DST]"
+                      name="DST" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TZDATABASETIMEZONE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TZDATABASETIMEZONE]"
+                      name="TZDATABASETIMEZONE" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TYPE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TYPE]"
+                      name="TYPE" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT DimAirport.Paths[Data Conversion Error Output]"
+              endId="Package\DFT DimAirport\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Data Conversion Error Output"
+              startId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\DFT DimAirport.Paths[Data Conversion Output]"
+              endId="Package\DFT DimAirport\Derived Column.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\DFT DimAirport\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DFT DimAirport.Paths[Derived Column Output]"
+              endId="Package\DFT DimAirport\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT DimAirport\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT DimAirport.Paths[OLE DB Source Output]"
+              endId="Package\DFT DimAirport\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DFT DimAirport\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C6FC614B-7AAC-4FEC-867B-3068D8BFF231}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\DFT DimAirport"
+          TopLeft="109,89" />
+        <NodeLayout
+          Size="163,43"
+          Id="Package\Execute SQL Task"
+          TopLeft="102,344" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="109,228" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT DimAirport">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DFT DimAirport\OLE DB Source"
+          TopLeft="162,60" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DFT DimAirport\OLE DB Destination"
+          TopLeft="111,510" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DFT DimAirport\Data Conversion"
+          TopLeft="142,235" />
+        <EdgeLayout
+          Id="Package\DFT DimAirport.Paths[OLE DB Source Output]"
+          TopLeft="237,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17,133"
+              Start="0,0"
+              End="-17,125.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,62.5"
+                    Point2="0,66.5"
+                    Point3="-4,66.5" />
+                  <mssgle:LineSegment
+                    End="-13,66.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13,66.5"
+                    Point2="-17,66.5"
+                    Point3="-17,70.5" />
+                  <mssgle:LineSegment
+                    End="-17,125.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42"
+          Id="Package\DFT DimAirport\Flat File Destination"
+          TopLeft="420,419" />
+        <EdgeLayout
+          Id="Package\DFT DimAirport.Paths[Data Conversion Error Output]"
+          TopLeft="244.666666666667,277">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="261.333333333333,142"
+              Start="0,0"
+              End="261.333333333333,134.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.6649746192893" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,53.6649746192893"
+                    Point2="0,57.6649746192893"
+                    Point3="4,57.6649746192893" />
+                  <mssgle:LineSegment
+                    End="257.333333333333,57.6649746192893" />
+                  <mssgle:CubicBezierSegment
+                    Point1="257.333333333333,57.6649746192893"
+                    Point2="261.333333333333,57.6649746192893"
+                    Point3="261.333333333333,61.6649746192893" />
+                  <mssgle:LineSegment
+                    End="261.333333333333,134.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="64.5802799479167,62.6649746192893,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DFT DimAirport\Derived Column"
+          TopLeft="125,371" />
+        <EdgeLayout
+          Id="Package\DFT DimAirport.Paths[Data Conversion Output]"
+          TopLeft="198.666666666667,277">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,94"
+              Start="0,0"
+              End="0,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT DimAirport.Paths[Derived Column Output]"
+          TopLeft="199.25,413">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,97"
+              Start="0,0"
+              End="0,89.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,89.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT DimAirport\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT DimAirport\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="160,68" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Data Flow Task\Flat File Destination"
+          TopLeft="149,422" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="163,236" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="237.5,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,126"
+              Start="0,0"
+              End="0,118.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,118.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="237.5,278">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,144"
+              Start="0,0"
+              End="0,136.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,136.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
