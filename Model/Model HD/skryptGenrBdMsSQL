@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2017                    */
-/* Created on:     15.05.2019 22:20:35                          */
+/* Created on:     23.05.2019 19:41:43                          */
 /*==============================================================*/
 
 
@@ -9,12 +9,12 @@
 /*==============================================================*/
 create table DimAirline (
    AirlineID            int                  not null,
-   Name                 varchar(1024)        null,
-   Alias                varchar(1024)        null,
-   IATA                 varchar(1024)        null,
-   ICAO                 varchar(1024)        null,
-   Country              varchar(1024)        null,
-   Active               varchar(100)         null,
+   Name                 varchar(255)         null,
+   Alias                varchar(255)         null,
+   IATA                 varchar(255)         null,
+   ICAO                 varchar(255)         null,
+   Country              varchar(255)         null,
+   Active               varchar(255)         null,
    constraint PK_DIMAIRLINE primary key (AirlineID)
 )
 go
@@ -24,17 +24,18 @@ go
 /*==============================================================*/
 create table DimAirport (
    AirportID            int                  not null,
-   Name                 varchar(1024)        null,
-   City                 varchar(1024)        null,
-   Country              varchar(1024)        null,
-   IATA                 varchar(1024)        null,
-   ICAO                 varchar(1024)        null,
+   Name                 varchar(255)         null,
+   City                 varchar(255)         null,
+   Country              varchar(255)         null,
+   IATA                 varchar(255)         null,
+   ICAO                 varchar(255)         null,
    Latitude             float                null,
    Longtitude           float                null,
    Altitude             int                  null,
    Timezone             float                null,
-   DST                  varchar(100)         null,
-   Type                 varchar(1024)        null,
+   DST                  varchar(255)         null,
+   Type                 varchar(255)         null,
+   StateName            varchar(255)         null,
    constraint PK_DIMAIRPORT primary key (AirportID)
 )
 go
@@ -46,9 +47,12 @@ create table DimDate (
    DateID               int                  not null,
    Year                 int                  null,
    Month                int                  null,
+   MonthName            varchar(255)         null,
    DayOfMonth           int                  null,
    DayOfWeek            int                  null,
+   DayOfWeekName        varchar(255)         null,
    Quarter              int                  null,
+   QuarterName          varchar(255)         null,
    constraint PK_DIMDATE primary key (DateID)
 )
 go
@@ -60,7 +64,18 @@ create table DimDelayGroups (
    DelayGroupsID        int                  not null,
    Delay15              bit                  null,
    DelayGroups          int                  null,
+   DelayDescription     varchar(255)         null,
    constraint PK_DIMDELAYGROUPS primary key (DelayGroupsID)
+)
+go
+
+/*==============================================================*/
+/* Table: DimDepArrBlk                                          */
+/*==============================================================*/
+create table DimDepArrBlk (
+   DepArrBlkID          int                  not null,
+   DistanceDescription  varchar(255)         null,
+   constraint PK_DIMDEPARRBLK primary key (DepArrBlkID)
 )
 go
 
@@ -70,29 +85,19 @@ go
 create table DimDistance (
    DistanceID           int                  not null,
    DistanceGroup        int                  null,
+   DistanceDescription  varchar(255)         null,
    constraint PK_DIMDISTANCE primary key (DistanceID)
 )
 go
 
 /*==============================================================*/
-/* Table: DimPlane                                              */
+/* Table: DimFlightStatus                                       */
 /*==============================================================*/
-create table DimPlane (
-   PlaneID              int                  not null,
-   Name                 varchar(1024)        null,
-   IATA                 varchar(1024)        null,
-   ICAO                 varchar(1024)        null,
-   constraint PK_DIMPLANE primary key (PlaneID)
-)
-go
-
-/*==============================================================*/
-/* Table: DimReasonForCancellation                              */
-/*==============================================================*/
-create table DimReasonForCancellation (
-   CancellationID       int                  not null,
-   CancellationCode     varchar(100)         null,
-   constraint PK_DIMREASONFORCANCELLATION primary key (CancellationID)
+create table DimFlightStatus (
+   FlightStatusID       int                  not null,
+   StatusCode           varchar(255)         null,
+   StatusDescription    varchar(255)         null,
+   constraint PK_DIMFLIGHTSTATUS primary key (FlightStatusID)
 )
 go
 
@@ -104,9 +109,9 @@ create table DimRoute (
    OriginAirportID      int                  not null,
    DestinationAirportID int                  not null,
    AirlineID            int                  null,
-   Codeshare            varchar(100)         null,
+   Codeshare            varchar(255)         null,
    Stops                int                  null,
-   Equipment            varchar(1024)        null,
+   Equipment            varchar(255)         null,
    constraint PK_DIMROUTE primary key (RouteID)
 )
 go
@@ -156,7 +161,7 @@ go
 /* Table: FactFlight                                            */
 /*==============================================================*/
 create table FactFlight (
-   FlightID             bigint               not null,
+   FlightID             int                  not null,
    DateID               int                  not null,
    WheelsOnID           int                  not null,
    WheelsOffID          int                  not null,
@@ -167,11 +172,13 @@ create table FactFlight (
    OriginAirportID      int                  not null,
    DestinationAirportID int                  not null,
    RouteID              int                  null,
-   CancellationID       int                  null,
+   FlightStatusID       int                  not null,
    AirlineID            int                  null,
+   DepBlkID             int                  null,
+   ArrBlkID             int                  null,
    DistanceID           int                  not null,
-   ArrivalDelayGroupsID int                  not null,
-   DepartureDelayGroupsID int                  not null,
+   ArrivalDelayGroupsID int                  null,
+   DepartureDelayGroupsID int                  null,
    DepartureDelay       int                  null,
    ArrivalDelay         int                  null,
    TaxiOut              int                  null,
@@ -319,7 +326,7 @@ go
 
 
 
-create nonclustered index CancellationCode_FK on FactFlight (CancellationID ASC)
+create nonclustered index CancellationCode_FK on FactFlight (FlightStatusID ASC)
 go
 
 /*==============================================================*/
@@ -343,33 +350,23 @@ create nonclustered index DestinationAirportID_FK on FactFlight (OriginAirportID
 go
 
 /*==============================================================*/
-/* Table: Plane                                                 */
+/* Index: DepBlk_FK                                             */
 /*==============================================================*/
-create table Plane (
-   PlaneID              int                  not null,
-   RouteID              int                  not null,
-   constraint PK_PLANE primary key (PlaneID, RouteID)
-)
+
+
+
+
+create nonclustered index DepBlk_FK on FactFlight (ArrBlkID ASC)
 go
 
 /*==============================================================*/
-/* Index: Plane_FK                                              */
+/* Index: ArrBlk_FK                                             */
 /*==============================================================*/
 
 
 
 
-create nonclustered index Plane_FK on Plane (PlaneID ASC)
-go
-
-/*==============================================================*/
-/* Index: Plane2_FK                                             */
-/*==============================================================*/
-
-
-
-
-create nonclustered index Plane2_FK on Plane (RouteID ASC)
+create nonclustered index ArrBlk_FK on FactFlight (DepBlkID ASC)
 go
 
 alter table DimRoute
@@ -403,6 +400,11 @@ alter table FactFlight
 go
 
 alter table FactFlight
+   add constraint FK_FACTFLIG_ARRBLK_DIMDEPAR foreign key (DepBlkID)
+      references DimDepArrBlk (DepArrBlkID)
+go
+
+alter table FactFlight
    add constraint FK_FACTFLIG_ARRIVALDE_DIMDELAY foreign key (ArrivalDelayGroupsID)
       references DimDelayGroups (DelayGroupsID)
 go
@@ -418,8 +420,8 @@ alter table FactFlight
 go
 
 alter table FactFlight
-   add constraint FK_FACTFLIG_CANCELLAT_DIMREASO foreign key (CancellationID)
-      references DimReasonForCancellation (CancellationID)
+   add constraint FK_FACTFLIG_DEPBLK_DIMDEPAR foreign key (ArrBlkID)
+      references DimDepArrBlk (DepArrBlkID)
 go
 
 alter table FactFlight
@@ -453,6 +455,11 @@ alter table FactFlight
 go
 
 alter table FactFlight
+   add constraint FK_FACTFLIG_STATUSCOD_DIMFLIGH foreign key (FlightStatusID)
+      references DimFlightStatus (FlightStatusID)
+go
+
+alter table FactFlight
    add constraint FK_FACTFLIG_WHEELSOFF_DIMTIME foreign key (CRSDepartureTimeID)
       references DimTime (TimeID)
 go
@@ -460,15 +467,5 @@ go
 alter table FactFlight
    add constraint FK_FACTFLIG_WHEELSON_DIMTIME foreign key (WheelsOffID)
       references DimTime (TimeID)
-go
-
-alter table Plane
-   add constraint FK_PLANE_PLANE_DIMPLANE foreign key (PlaneID)
-      references DimPlane (PlaneID)
-go
-
-alter table Plane
-   add constraint FK_PLANE_PLANE2_DIMROUTE foreign key (RouteID)
-      references DimRoute (RouteID)
 go
 
