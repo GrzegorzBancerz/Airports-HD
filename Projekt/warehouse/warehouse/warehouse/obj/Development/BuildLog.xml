@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>warehouse</Name>
-    <LastWriteTime>2019-05-23T19:15:30.9472651Z</LastWriteTime>
+    <LastWriteTime>2019-05-24T14:37:02.8481826Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>DimAirport.dtsx</Name>
-      <LastWriteTime>2019-05-23T20:35:55.0742266Z</LastWriteTime>
+      <LastWriteTime>2019-05-24T15:46:48.7631487Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

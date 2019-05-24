@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">TOMASZ-PC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA9ARcnAmgSEySB42Uj6JIuwAAAAACAAAAAAAQZgAAAAEAACAAAAAotUcMklUD7WCiF3yTr31cx/PkR/cKcRoxr8IJbOVcKQAAAAAOgAAAAAIAACAAAACh8IIERE1iyycHSX2wcG5dFUIXoyNcjDCKFflEVo2qn5AAAABj5IK41gmTkMSNir9+ozCn44Y7HqQtToHXLH5QcQfyvWgunTVU+9WC9wh7Eb/YjX7K+c4NhW4Aq2XMHvzKlPS/ojWJJiB2zwhrUiaTKj9Xpw4OyQDeXrfR+O5aX1zcx7S4WxwHIYSlVe1794HGzesdFU97hqnKtCS5U2oFqhq5WrNvrtQisdrUjcBj86mn4EBAAAAAIHgI/avoZcA3pOdWS4vziaA3sVTRuQveu5ZYOvEa5qa1VV1oOQNpAfA9/yupZe3pTu5nRFHG+pcX03Ymcs7OyQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAM5spfAnzekCqjimZ/sAtjwAAAAACAAAAAAAQZgAAAAEAACAAAAB5ZwKuoge4yzcMr3+QlfQlsmc5eV52US9LldNSVia46gAAAAAOgAAAAAIAACAAAACFEXVdUw7heCS73kyfLiroO0TAXQBJl3Nn391hveP9gpAAAAB8kl/7Zz9KRfHlRF7JjkfgwqyFj3IgAbvrMy+Qk39fqlJ2GW7sR7HYJVY9u6yE+90DwbNxjoA0v78W3dxFAJUCjB6CBAC7FmkUuShXulxpgzAWrZRvPm0ZevF0v8gEFsgAJw5cj2tqGhWA0ijU+DK160DuMq46jyWaGvg4vNWtvjKRiOyx61hYEAt6LiIOazNAAAAAj6cGg5VuvdiXfFP+MJM7udva19caw/8939f//z9MEe+mDeW71roqh7oxX4G/A/WR9FzIcllnk1EfLCSnozO6Dw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -222,10 +222,10 @@
                 <SSIS:Property SSIS:Name="Name">DimAirport</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">18</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">45</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{6E28B46F-BE33-4CA4-895B-E83FECADC234}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{544C2896-70DB-4476-BC62-B42571140BB5}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -288,7 +288,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\warehouse\error.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">D:\GitHub\Airports-HD\Projekt\Błędne krotki\AirportErrors.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -561,6 +561,8 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">
+                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
