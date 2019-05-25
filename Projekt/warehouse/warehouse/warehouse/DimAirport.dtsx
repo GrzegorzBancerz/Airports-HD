@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimAirport"
   DTS:PackageType="5"
-  DTS:VersionBuild="56"
-  DTS:VersionGUID="{3581F80C-FA90-4AB4-BA93-216D73CB75A8}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{5F04CAEC-2C70-4BD3-958E-AD5CD3B83851}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="D:\GitHub\Airports-HD\Projekt\Błędne krotki\AirportErrors.txt">
+          DTS:ConnectionString="C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\Błędne krotki\AirportOFErrors.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="AIRPORTID"
-              DTS:DTSID="{4E8DA8F1-3A76-4C8F-B413-9DF654816D54}"
+              DTS:DTSID="{BFCB4D8A-4AD8-4BF7-9CC3-D0FC850B3FAA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NAME"
-              DTS:DTSID="{17BF76E9-4872-4DF6-9037-0AEC9315C87A}"
+              DTS:DTSID="{CB751B77-75BB-4DEC-9608-E116FBEA40FB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CITY"
-              DTS:DTSID="{9312034F-7199-46A2-B2C9-D7B1F6A7B2C8}"
+              DTS:DTSID="{F4759120-B387-482A-A449-7146FC35F132}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="COUNTRY"
-              DTS:DTSID="{F66E358A-86CF-455D-9D47-D67B3C24454D}"
+              DTS:DTSID="{F2C6D61B-FCE4-4260-9F35-358C379AF73B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -74,7 +74,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="IATA"
-              DTS:DTSID="{BF468A11-2257-4F71-B006-4F6376D0BAE9}"
+              DTS:DTSID="{8488F130-BCF6-41FD-8F21-A432075B4314}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -83,7 +83,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ICAO"
-              DTS:DTSID="{37CD2BCF-6438-46D5-B1E2-FEE764C2F294}"
+              DTS:DTSID="{C4905EBB-88ED-43CF-9CDC-10388B9F116F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -92,7 +92,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LATITUDE"
-              DTS:DTSID="{BE17591D-6015-40EE-81CF-9A596BAFF2EF}"
+              DTS:DTSID="{EE45D370-3FBE-4A16-8D64-B577CC0E8F68}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -101,7 +101,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LONGITUDE"
-              DTS:DTSID="{A3C1FA75-4684-4E00-AFFF-5925CA173E46}"
+              DTS:DTSID="{46113E6C-FE0C-4EF1-8949-C89A129FAC89}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -110,7 +110,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ALTITUDE"
-              DTS:DTSID="{D5CEFDCC-2D48-445A-994F-98AFA8055478}"
+              DTS:DTSID="{546B1780-4A36-4EEB-AF86-2C4D2D24B9ED}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -119,7 +119,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="TIMEZONE"
-              DTS:DTSID="{97B097E2-46D3-4FDF-92AD-D50B3ED6C3A3}"
+              DTS:DTSID="{7B99BBAD-28C0-48E7-A16F-DE8ADBAAA901}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -128,7 +128,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DST"
-              DTS:DTSID="{0241C87C-F012-4E23-B36A-6EFB7E069C8C}"
+              DTS:DTSID="{1654B454-928C-4C86-A55D-1AFF71E91092}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -137,7 +137,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="TZDATABASETIMEZONE"
-              DTS:DTSID="{8A85A972-1D25-4C41-B308-67F9543EEB89}"
+              DTS:DTSID="{B0E22EA3-5B26-4B23-BD76-19D1EB92286E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -146,7 +146,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="TYPE"
-              DTS:DTSID="{63564A94-A6DB-46C9-814D-6D7E872E8DBA}"
+              DTS:DTSID="{2A79D000-AE52-4ACB-8114-E2A437F10BC7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -154,7 +154,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{BEACC44C-4422-4CEE-8890-43953399AA1A}"
+              DTS:DTSID="{20710646-DF1A-462E-84F0-E82D12D38E98}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -162,7 +162,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{6BC5B3F7-A955-430E-BAA6-4F804CDD6D3C}"
+              DTS:DTSID="{C38F1A5C-038F-4DFA-9BFB-D0E8B084A3BC}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1621,8 +1621,8 @@ FROM            [AIRPORTOFSTAGE]</property>
                       refId="Package\Load Data to DimAirport\DimAirport.Inputs[OLE DB Destination Input].ExternalColumns[Timezone]"
                       dataType="numeric"
                       name="Timezone"
-                      precision="4"
-                      scale="2" />
+                      precision="23"
+                      scale="20" />
                     <externalMetadataColumn
                       refId="Package\Load Data to DimAirport\DimAirport.Inputs[OLE DB Destination Input].ExternalColumns[DST]"
                       codePage="1250"
@@ -2619,13 +2619,13 @@ Where IATA =?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="242,42"
-          Id="Package\Update StateNames for DimAirport"
-          TopLeft="97,206" />
-        <NodeLayout
           Size="193,42"
           Id="Package\Load Data to DimAirport"
           TopLeft="91,84" />
+        <NodeLayout
+          Size="242,42"
+          Id="Package\Update StateNames for DimAirport"
+          TopLeft="97,206" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="187.5,126">
@@ -2664,236 +2664,18 @@ Where IATA =?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Update StateNames for DimAirport">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Update StateNames for DimAirport\Merge Join"
-          TopLeft="313,433" />
-        <NodeLayout
-          Size="124,42"
-          Id="Package\Update StateNames for DimAirport\Sort IATA"
-          TopLeft="416,306" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Update StateNames for DimAirport\FACTFlight Stage"
-          TopLeft="221,130" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Update StateNames for DimAirport\Sort Origin"
-          TopLeft="239,306" />
-        <NodeLayout
-          Size="129,42"
-          Id="Package\Update StateNames for DimAirport\DimAirport"
-          TopLeft="420,199" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Update StateNames for DimAirport\Data Conversion"
-          TopLeft="224,203" />
-        <EdgeLayout
-          Id="Package\Update StateNames for DimAirport.Paths[Sort Output1]"
-          TopLeft="478,348">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-79.6666666666667,85"
-              Start="0,0"
-              End="-79.6666666666667,77.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.3799392097264" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,46.3799392097264"
-                    Point2="0,50.3799392097264"
-                    Point3="-4,50.3799392097264" />
-                  <mssgle:LineSegment
-                    End="-75.6666666666667,50.3799392097264" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-75.6666666666667,50.3799392097264"
-                    Point2="-79.6666666666667,50.3799392097264"
-                    Point3="-79.6666666666667,54.3799392097264" />
-                  <mssgle:LineSegment
-                    End="-79.6666666666667,77.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Update StateNames for DimAirport.Paths[Sort Output]"
-          TopLeft="304,348">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="53.6666666666667,85"
-              Start="0,0"
-              End="53.6666666666667,77.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.3799392097264" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,46.3799392097264"
-                    Point2="0,50.3799392097264"
-                    Point3="4,50.3799392097264" />
-                  <mssgle:LineSegment
-                    End="49.6666666666667,50.3799392097264" />
-                  <mssgle:CubicBezierSegment
-                    Point1="49.6666666666667,50.3799392097264"
-                    Point2="53.6666666666667,50.3799392097264"
-                    Point3="53.6666666666667,54.3799392097264" />
-                  <mssgle:LineSegment
-                    End="53.6666666666667,77.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Update StateNames for DimAirport.Paths[OLE DB Source Output1]"
-          TopLeft="481.25,241">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,65"
-              Start="0,0"
-              End="0,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Update StateNames for DimAirport.Paths[OLE DB Source Output]"
-          TopLeft="301.25,172">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31"
-              Start="0,0"
-              End="0,23.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Update StateNames for DimAirport.Paths[Data Conversion Output]"
-          TopLeft="303,245">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61"
-              Start="0,0"
-              End="0,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="226,42"
-          Id="Package\Update StateNames for DimAirport\Update DimAirport StateNames"
-          TopLeft="265,537" />
-        <EdgeLayout
-          Id="Package\Update StateNames for DimAirport.Paths[Merge Join Output]"
-          TopLeft="378,475">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,62"
-              Start="0,0"
-              End="0,54.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Update StateNames for DimAirport\FACTFlight Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Update StateNames for DimAirport\DimAirport">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Load Data to DimAirport">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="129,42"
-          Id="Package\Load Data to DimAirport\DimAirport"
-          TopLeft="210,619" />
-        <NodeLayout
           Size="152,42"
           Id="Package\Load Data to DimAirport\AirportOFerrors"
           TopLeft="434,494" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Load Data to DimAirport\DimAirport"
+          TopLeft="210,619" />
         <NodeLayout
           Size="154,42"
           Id="Package\Load Data to DimAirport\Derived Column"
@@ -3012,6 +2794,19 @@ Where IATA =?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Load Data to DimAirport\DimAirport">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load Data to DimAirport\AirportOF">
     <Properties>
       <Property>
@@ -3019,8 +2814,225 @@ Where IATA =?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Update StateNames for DimAirport">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Update StateNames for DimAirport\DimAirport"
+          TopLeft="420,199" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Update StateNames for DimAirport\Sort Origin"
+          TopLeft="239,306" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Update StateNames for DimAirport\Merge Join"
+          TopLeft="313,433" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Update StateNames for DimAirport\Update DimAirport StateNames"
+          TopLeft="265,537" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Update StateNames for DimAirport\Sort IATA"
+          TopLeft="416,306" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Update StateNames for DimAirport\Data Conversion"
+          TopLeft="224,203" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Update StateNames for DimAirport\FACTFlight Stage"
+          TopLeft="221,130" />
+        <EdgeLayout
+          Id="Package\Update StateNames for DimAirport.Paths[Sort Output1]"
+          TopLeft="478,348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-79.6666666666667,85"
+              Start="0,0"
+              End="-79.6666666666667,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.3799392097264" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.3799392097264"
+                    Point2="0,50.3799392097264"
+                    Point3="-4,50.3799392097264" />
+                  <mssgle:LineSegment
+                    End="-75.6666666666667,50.3799392097264" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-75.6666666666667,50.3799392097264"
+                    Point2="-79.6666666666667,50.3799392097264"
+                    Point3="-79.6666666666667,54.3799392097264" />
+                  <mssgle:LineSegment
+                    End="-79.6666666666667,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update StateNames for DimAirport.Paths[Sort Output]"
+          TopLeft="304,348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.6666666666667,85"
+              Start="0,0"
+              End="53.6666666666667,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.3799392097264" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.3799392097264"
+                    Point2="0,50.3799392097264"
+                    Point3="4,50.3799392097264" />
+                  <mssgle:LineSegment
+                    End="49.6666666666667,50.3799392097264" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.6666666666667,50.3799392097264"
+                    Point2="53.6666666666667,50.3799392097264"
+                    Point3="53.6666666666667,54.3799392097264" />
+                  <mssgle:LineSegment
+                    End="53.6666666666667,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update StateNames for DimAirport.Paths[OLE DB Source Output1]"
+          TopLeft="481.25,241">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update StateNames for DimAirport.Paths[OLE DB Source Output]"
+          TopLeft="301.25,172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update StateNames for DimAirport.Paths[Merge Join Output]"
+          TopLeft="378,475">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Update StateNames for DimAirport.Paths[Data Conversion Output]"
+          TopLeft="303,245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Data to DimAirport\DimAirport">
+    design-time-name="Package\Update StateNames for DimAirport\DimAirport">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Update StateNames for DimAirport\FACTFlight Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
