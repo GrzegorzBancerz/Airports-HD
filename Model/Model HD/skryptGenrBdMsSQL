@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2017                    */
-/* Created on:     23.05.2019 22:45:09                          */
+/* Created on:     30.05.2019 22:06:44                          */
 /*==============================================================*/
 
 
@@ -45,6 +45,7 @@ go
 /*==============================================================*/
 create table DimDate (
    DateID               int                  not null,
+   Date                 datetime             null,
    Year                 int                  null,
    Month                int                  null,
    MonthName            varchar(255)         null,
@@ -53,6 +54,10 @@ create table DimDate (
    DayOfWeekName        varchar(255)         null,
    Quarter              int                  null,
    QuarterName          varchar(255)         null,
+   FirstDayOfMonth      datetime             null,
+   LastDayOfMonth       datetime             null,
+   FirstDayOfQuarter    datetime             null,
+   LastDayOfQuarter     datetime             null,
    constraint PK_DIMDATE primary key (DateID)
 )
 go
@@ -162,13 +167,20 @@ go
 /*==============================================================*/
 create table FactFlight (
    FlightID             int                  not null,
-   DateID               int                  not null,
+   FlightDateID         int                  not null,
+   GMTFlightDateID      int                  not null,
    WheelsOnID           int                  not null,
+   GMTWheelsOnID        int                  not null,
    WheelsOffID          int                  not null,
+   GMTWheelsOffID       int                  not null,
    CRSArrivalTimeID     int                  not null,
+   GMTCRSArrivalTimeID  int                  not null,
    CRSDepartureTimeID   int                  not null,
+   GMTCRSDepartureTimeID int                  not null,
    ActualDepartureTimeID int                  not null,
+   GMTActualDepartureTimeID int                  not null,
    ActualArrivalTimeID  int                  not null,
+   GMTActualArrivalTimeID int                  not null,
    OriginAirportID      int                  not null,
    DestinationAirportID int                  not null,
    RouteID              int                  null,
@@ -266,7 +278,7 @@ go
 
 
 
-create nonclustered index FlightDate_FK on FactFlight (DateID ASC)
+create nonclustered index FlightDate_FK on FactFlight (FlightDateID ASC)
 go
 
 /*==============================================================*/
@@ -369,6 +381,76 @@ go
 create nonclustered index ArrBlk_FK on FactFlight (DepBlkID ASC)
 go
 
+/*==============================================================*/
+/* Index: GMTFlightDate_FK                                      */
+/*==============================================================*/
+
+
+
+
+create nonclustered index GMTFlightDate_FK on FactFlight (GMTFlightDateID ASC)
+go
+
+/*==============================================================*/
+/* Index: GMTWheelsOn_FK                                        */
+/*==============================================================*/
+
+
+
+
+create nonclustered index GMTWheelsOn_FK on FactFlight (GMTActualArrivalTimeID ASC)
+go
+
+/*==============================================================*/
+/* Index: GMTWheelsOff_FK                                       */
+/*==============================================================*/
+
+
+
+
+create nonclustered index GMTWheelsOff_FK on FactFlight (GMTCRSDepartureTimeID ASC)
+go
+
+/*==============================================================*/
+/* Index: GMTCRSDepartureTime_FK                                */
+/*==============================================================*/
+
+
+
+
+create nonclustered index GMTCRSDepartureTime_FK on FactFlight (GMTCRSArrivalTimeID ASC)
+go
+
+/*==============================================================*/
+/* Index: GMTActualDepartureTime_FK                             */
+/*==============================================================*/
+
+
+
+
+create nonclustered index GMTActualDepartureTime_FK on FactFlight (GMTActualDepartureTimeID ASC)
+go
+
+/*==============================================================*/
+/* Index: GMTCRSArrivalTime_FK                                  */
+/*==============================================================*/
+
+
+
+
+create nonclustered index GMTCRSArrivalTime_FK on FactFlight (GMTWheelsOnID ASC)
+go
+
+/*==============================================================*/
+/* Index: GMTActualArrivalTime_FK                               */
+/*==============================================================*/
+
+
+
+
+create nonclustered index GMTActualArrivalTime_FK on FactFlight (GMTWheelsOffID ASC)
+go
+
 alter table DimRoute
    add constraint FK_DIMROUTE_DESTINATI_DIMAIRPO foreign key (OriginAirportID)
       references DimAirport (AirportID)
@@ -440,8 +522,43 @@ alter table FactFlight
 go
 
 alter table FactFlight
-   add constraint FK_FACTFLIG_FLIGHTDAT_DIMDATE foreign key (DateID)
+   add constraint FK_FACTFLIG_FLIGHTDAT_DIMDATE foreign key (FlightDateID)
       references DimDate (DateID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_GMTACTARR_DIMTIME foreign key (GMTWheelsOffID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_GMTACTDEP_DIMTIME foreign key (GMTActualDepartureTimeID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_GMTCRSARR_DIMTIME foreign key (GMTWheelsOnID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_GMTCRSDEP_DIMTIME foreign key (GMTCRSArrivalTimeID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_GMTFLIGHT_DIMDATE foreign key (GMTFlightDateID)
+      references DimDate (DateID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_GMTWHEELSOFF_DIMTIME foreign key (GMTCRSDepartureTimeID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_GMTWHEELSON_DIMTIME foreign key (GMTActualArrivalTimeID)
+      references DimTime (TimeID)
 go
 
 alter table FactFlight
