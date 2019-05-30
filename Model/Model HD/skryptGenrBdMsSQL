@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2017                    */
-/* Created on:     30.05.2019 22:06:44                          */
+/* Created on:     30.05.2019 22:28:42                          */
 /*==============================================================*/
 
 
@@ -45,7 +45,7 @@ go
 /*==============================================================*/
 create table DimDate (
    DateID               int                  not null,
-   Date                 datetime             null,
+   Date                 date                 null,
    Year                 int                  null,
    Month                int                  null,
    MonthName            varchar(255)         null,
@@ -54,10 +54,10 @@ create table DimDate (
    DayOfWeekName        varchar(255)         null,
    Quarter              int                  null,
    QuarterName          varchar(255)         null,
-   FirstDayOfMonth      datetime             null,
-   LastDayOfMonth       datetime             null,
-   FirstDayOfQuarter    datetime             null,
-   LastDayOfQuarter     datetime             null,
+   FirstDayOfMonth      date                 null,
+   LastDayOfMonth       date                 null,
+   FirstDayOfQuarter    date                 null,
+   LastDayOfQuarter     date                 null,
    constraint PK_DIMDATE primary key (DateID)
 )
 go
