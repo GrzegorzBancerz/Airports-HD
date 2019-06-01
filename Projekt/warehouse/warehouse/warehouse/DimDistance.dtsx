@@ -1,0 +1,738 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/1/2019 10:13:07 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-1ORC2MS"
+  DTS:CreatorName="DESKTOP-1ORC2MS\Grzegorz Bancerz"
+  DTS:DTSID="{AE6850A6-7B26-44D1-8849-2CEE76D340F6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="DimDistance"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{0B7E0ECC-E348-4C00-9CA6-FF7AD246004E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F23CBC19-7231-42AC-86C0-0DC217375E78}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="D:\GitHub\Airports-HD\Projekt\Błędne krotki\DistanceGroups250Errors.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{B2763F78-9B2C-4B47-927B-0D2EF8AAFEF6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{68822B72-9F17-40C7-9C1A-D8B974196AAC}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1261FE72-6ACB-4F78-BD25-78FB41E67DA5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DimDistance"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3DE69990-531D-436D-A4BE-87A637C780C6}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DimDistance"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DimDistance\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DimDistance\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimDistance\Data Conversion.Inputs[Data Conversion Input].Columns[CODE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="CODE"
+                      lineageId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].Columns[CODE]" />
+                    <inputColumn
+                      refId="Package\DimDistance\Data Conversion.Inputs[Data Conversion Input].Columns[DESCRIPTION]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="DESCRIPTION"
+                      lineageId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].Columns[DESCRIPTION]" />
+                    <inputColumn
+                      refId="Package\DimDistance\Data Conversion.Inputs[Data Conversion Input].Columns[IDDISTANCE]"
+                      cachedDataType="i8"
+                      cachedName="IDDISTANCE"
+                      lineageId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].Columns[IDDISTANCE]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DimDistance\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="255"
+                      lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]"
+                      name="Copy of CODE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].Columns[CODE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DESCRIPTION]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="255"
+                      lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DESCRIPTION]"
+                      name="Copy of DESCRIPTION"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].Columns[DESCRIPTION]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IDDISTANCE]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IDDISTANCE]"
+                      name="Copy of IDDISTANCE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].Columns[IDDISTANCE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DimDistance\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimDistance\DimDistance"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimDistance"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimDistance]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimDistance\DimDistance.Connections[OleDbConnection]"
+                  connectionManagerID="{70F14BAE-DCDE-4C28-A732-FD00719FB49A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).warehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].Columns[Copy of CODE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of CODE"
+                      externalMetadataColumnId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceGroup]"
+                      lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]" />
+                    <inputColumn
+                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].Columns[Copy of DESCRIPTION]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of DESCRIPTION"
+                      externalMetadataColumnId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDescription]"
+                      lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DESCRIPTION]" />
+                    <inputColumn
+                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].Columns[Copy of IDDISTANCE]"
+                      cachedDataType="i8"
+                      cachedName="Copy of IDDISTANCE"
+                      externalMetadataColumnId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceID]"
+                      lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IDDISTANCE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceID]"
+                      dataType="i4"
+                      name="DistanceID" />
+                    <externalMetadataColumn
+                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceGroup]"
+                      dataType="i4"
+                      name="DistanceGroup" />
+                    <externalMetadataColumn
+                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDescription]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="DistanceDescription" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimDistance\DimDistance.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimDistance\DimDistance.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimDistance\DimDistance.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimDistance\DimDistance.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimDistance\DimDistance.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DimDistance\DistanceGroup250"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1045"
+              name="DistanceGroup250">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimDistance\DistanceGroup250.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DimDistance\DistanceGroup250.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimDistance\DistanceGroup250.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\DimDistance\DistanceGroup250.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\DimDistance\DistanceGroup250.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\DimDistance\DistanceGroup250.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimDistance\DistanceGroup250.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\DimDistance\DistanceGroup250.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\DimDistance\DISTANCEGROUP250STAGE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DISTANCEGROUP250STAGE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        ROW_NUMBER() OVER (ORDER BY CAST([CODE] as int)) + ? IDDISTANCE,CODE, DESCRIPTION
+FROM            DISTANCEGROUP250STAGE</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{1261FE72-6ACB-4F78-BD25-78FB41E67DA5};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DimDistance\DISTANCEGROUP250STAGE.Connections[OleDbConnection]"
+                  connectionManagerID="{B8CF4176-6905-4D12-809A-BA3142B067BF}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].Columns[CODE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].ExternalColumns[CODE]"
+                      length="1024"
+                      lineageId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].Columns[CODE]"
+                      name="CODE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].Columns[DESCRIPTION]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION]"
+                      length="1024"
+                      lineageId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].Columns[DESCRIPTION]"
+                      name="DESCRIPTION"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].Columns[IDDISTANCE]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].ExternalColumns[IDDISTANCE]"
+                      lineageId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].Columns[IDDISTANCE]"
+                      name="IDDISTANCE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].ExternalColumns[CODE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="CODE" />
+                    <externalMetadataColumn
+                      refId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].ExternalColumns[DESCRIPTION]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="DESCRIPTION" />
+                    <externalMetadataColumn
+                      refId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output].ExternalColumns[IDDISTANCE]"
+                      dataType="i8"
+                      name="IDDISTANCE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Error Output].Columns[IDDISTANCE]"
+                      dataType="i8"
+                      lineageId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Error Output].Columns[IDDISTANCE]"
+                      name="IDDISTANCE" />
+                    <outputColumn
+                      refId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Error Output].Columns[CODE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Error Output].Columns[CODE]"
+                      name="CODE" />
+                    <outputColumn
+                      refId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION]"
+                      name="DESCRIPTION" />
+                    <outputColumn
+                      refId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DimDistance.Paths[Data Conversion Error Output]"
+              endId="Package\DimDistance\DistanceGroup250.Inputs[Flat File Destination Input]"
+              name="Data Conversion Error Output"
+              startId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\DimDistance.Paths[Data Conversion Output]"
+              endId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DimDistance.Paths[OLE DB Source Output]"
+              endId="Package\DimDistance\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\DimDistance\DISTANCEGROUP250STAGE.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="138,42"
+          Id="Package\DimDistance"
+          TopLeft="209,98" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DimDistance">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="138,42"
+          Id="Package\DimDistance\DimDistance"
+          TopLeft="158,302" />
+        <NodeLayout
+          Size="212,43"
+          Id="Package\DimDistance\DISTANCEGROUP250STAGE"
+          TopLeft="138,59" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DimDistance\Data Conversion"
+          TopLeft="172,164" />
+        <EdgeLayout
+          Id="Package\DimDistance.Paths[OLE DB Source Output]"
+          TopLeft="247,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62"
+              Start="0,0"
+              End="0,54.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimDistance.Paths[Data Conversion Output]"
+          TopLeft="226.166666666667,206">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,96"
+              Start="0,0"
+              End="0,88.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,88.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165,42"
+          Id="Package\DimDistance\DistanceGroup250"
+          TopLeft="469,265" />
+        <EdgeLayout
+          Id="Package\DimDistance.Paths[Data Conversion Error Output]"
+          TopLeft="274.666666666667,206">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="276.833333333333,59"
+              Start="0,0"
+              End="276.833333333333,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.9593908629442" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.9593908629442"
+                    Point2="0,23.9593908629442"
+                    Point3="4,23.9593908629442" />
+                  <mssgle:LineSegment
+                    End="272.833333333333,23.9593908629442" />
+                  <mssgle:CubicBezierSegment
+                    Point1="272.833333333333,23.9593908629442"
+                    Point2="276.833333333333,23.9593908629442"
+                    Point3="276.833333333333,27.9593908629442" />
+                  <mssgle:LineSegment
+                    End="276.833333333333,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="72.3302799479167,28.9593908629442,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimDistance\DimDistance">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DimDistance\DISTANCEGROUP250STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
