@@ -2,23 +2,43 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>warehouse</Name>
-    <LastWriteTime>2019-05-30T20:26:15.6975968Z</LastWriteTime>
+    <LastWriteTime>2019-06-01T21:41:59.6679703Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>DimAirport.dtsx</Name>
-      <LastWriteTime>2019-05-25T10:03:54.3540079Z</LastWriteTime>
+      <LastWriteTime>2019-06-01T19:48:22.7566013Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimAirline.dtsx</Name>
-      <LastWriteTime>2019-05-25T11:24:39.3428566Z</LastWriteTime>
+      <LastWriteTime>2019-06-01T20:11:09.4157315Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimDate.dtsx</Name>
-      <LastWriteTime>2019-05-30T20:26:15.6236202Z</LastWriteTime>
+      <LastWriteTime>2019-06-01T20:13:00.6862139Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DimTime.dtsx</Name>
+      <LastWriteTime>2019-06-01T20:12:57.5812858Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DimDistance.dtsx</Name>
+      <LastWriteTime>2019-06-01T21:28:36.2407384Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DimDelayGroups.dtsx</Name>
+      <LastWriteTime>2019-06-01T21:38:01.8585964Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Package1.dtsx</Name>
+      <LastWriteTime>2019-06-01T21:42:45.5693857Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

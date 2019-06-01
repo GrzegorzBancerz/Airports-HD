@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimAirline"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{F5842CD4-3D56-4F3B-9375-FB21D33841DC}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{AE4A8007-6434-489E-BBA1-D73795754F31}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\Błędne krotki\AirlineOFErrors.txt">
+          DTS:ConnectionString="D:\GitHub\Airports-HD\Projekt\Błędne krotki\AirlineOFErrors.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NAME"
-              DTS:DTSID="{2346E01F-07AD-4779-A185-E2F5BAA5F8E6}"
+              DTS:DTSID="{2A0FBEF0-1D13-4689-9C21-D9686EEB8798}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="COUNTRY"
-              DTS:DTSID="{3C6BAB6D-B041-4ABA-BDF5-C7AE5DDEB17F}"
+              DTS:DTSID="{77540CB9-FFB4-496A-A148-B986282983C3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="IATA"
-              DTS:DTSID="{49179E31-3A59-494B-A0F0-D62DF703BAD4}"
+              DTS:DTSID="{6C692CA2-774D-4130-90BF-A9FF258DE502}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ICAO"
-              DTS:DTSID="{78C30C89-A173-46B0-8ABD-FE437BA36EFC}"
+              DTS:DTSID="{9A3EBC35-3E2F-49E3-A3FF-BB4B65F3708C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -73,7 +73,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="AIRLINEID"
-              DTS:DTSID="{79916F73-4B1D-4395-94C6-2017E69543E7}"
+              DTS:DTSID="{81666BD4-72AB-4C73-8450-EBFD18C70226}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -82,7 +82,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ALIAS"
-              DTS:DTSID="{3BA651B5-CEE2-45D1-BCE2-EA2E4360B1D7}"
+              DTS:DTSID="{B269E5B4-79A3-438D-B6D9-1C2EC26130FF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -91,7 +91,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ACTIVE"
-              DTS:DTSID="{065DC6D9-A182-4340-945B-A5CCE41C3A0A}"
+              DTS:DTSID="{62F2CFAE-FAB6-41B4-81AD-79D1C5A4D5FB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -99,7 +99,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{ADF9E412-8EF4-433D-A4FD-17BDCABB8AE6}"
+              DTS:DTSID="{9C0F4AE6-CC2D-493A-BD55-CEC6139D7EA0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -107,7 +107,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{49E48DBA-499F-495D-8400-2FBB04D828CB}"
+              DTS:DTSID="{CD62F73C-2EB9-477E-85D4-CF83559C8DB3}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1400,63 +1400,17 @@ UPDATE [DimAirline]
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="156,42"
-          Id="Package\Load Data to DimAirline\Data Conversion"
-          TopLeft="104,204" />
+          Size="172,42"
+          Id="Package\Load Data to DimAirline\Flat File Destination"
+          TopLeft="501,206" />
         <NodeLayout
           Size="127,42"
           Id="Package\Load Data to DimAirline\DimAirline"
           TopLeft="111,325" />
         <NodeLayout
-          Size="172,42"
-          Id="Package\Load Data to DimAirline\Flat File Destination"
-          TopLeft="501,206" />
-        <EdgeLayout
-          Id="Package\Load Data to DimAirline.Paths[Data Conversion Error Output]"
-          TopLeft="260,226">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="241,0"
-              Start="0,0"
-              End="233.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="233.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="50.66361328125,5,132.1727734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Data to DimAirline.Paths[Data Conversion Output]"
-          TopLeft="178.25,246">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,79"
-              Start="0,0"
-              End="0,71.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,71.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="156,42"
+          Id="Package\Load Data to DimAirline\Data Conversion"
+          TopLeft="104,204" />
         <NodeLayout
           Size="121,42"
           Id="Package\Load Data to DimAirline\AirlineOF"
@@ -1481,6 +1435,52 @@ UPDATE [DimAirline]
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Data to DimAirline.Paths[Data Conversion Output]"
+          TopLeft="178.25,246">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Data to DimAirline.Paths[Data Conversion Error Output]"
+          TopLeft="260,226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="241,0"
+              Start="0,0"
+              End="233.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="233.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="50.66361328125,5,132.1727734375,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1513,13 +1513,13 @@ UPDATE [DimAirline]
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="127,42"
-          Id="Package\Update IATA, ICAO, ALIAS, COUNTRY (insert NULL)\DimAirline"
-          TopLeft="159,82" />
-        <NodeLayout
           Size="122,42"
           Id="Package\Update IATA, ICAO, ALIAS, COUNTRY (insert NULL)\Set NULL"
           TopLeft="159,319" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Update IATA, ICAO, ALIAS, COUNTRY (insert NULL)\DimAirline"
+          TopLeft="159,82" />
         <EdgeLayout
           Id="Package\Update IATA, ICAO, ALIAS, COUNTRY (insert NULL).Paths[OLE DB Source Output]"
           TopLeft="221.25,124">
