@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2017                    */
-/* Created on:     30.05.2019 22:28:42                          */
+/* Created on:     05.06.2019 22:29:09                          */
 /*==============================================================*/
 
 
@@ -67,7 +67,6 @@ go
 /*==============================================================*/
 create table DimDelayGroups (
    DelayGroupsID        int                  not null,
-   Delay15              bit                  null,
    DelayGroups          int                  null,
    DelayDescription     varchar(255)         null,
    constraint PK_DIMDELAYGROUPS primary key (DelayGroupsID)
@@ -107,51 +106,6 @@ create table DimFlightStatus (
 go
 
 /*==============================================================*/
-/* Table: DimRoute                                              */
-/*==============================================================*/
-create table DimRoute (
-   RouteID              int                  not null,
-   OriginAirportID      int                  not null,
-   DestinationAirportID int                  not null,
-   AirlineID            int                  null,
-   Codeshare            varchar(255)         null,
-   Stops                int                  null,
-   Equipment            varchar(255)         null,
-   constraint PK_DIMROUTE primary key (RouteID)
-)
-go
-
-/*==============================================================*/
-/* Index: RouteArline_FK                                        */
-/*==============================================================*/
-
-
-
-
-create nonclustered index RouteArline_FK on DimRoute (AirlineID ASC)
-go
-
-/*==============================================================*/
-/* Index: DestinationAirport_FK                                 */
-/*==============================================================*/
-
-
-
-
-create nonclustered index DestinationAirport_FK on DimRoute (OriginAirportID ASC)
-go
-
-/*==============================================================*/
-/* Index: OriginAirport_FK                                      */
-/*==============================================================*/
-
-
-
-
-create nonclustered index OriginAirport_FK on DimRoute (DestinationAirportID ASC)
-go
-
-/*==============================================================*/
 /* Table: DimTime                                               */
 /*==============================================================*/
 create table DimTime (
@@ -183,7 +137,6 @@ create table FactFlight (
    GMTActualArrivalTimeID int                  not null,
    OriginAirportID      int                  not null,
    DestinationAirportID int                  not null,
-   RouteID              int                  null,
    FlightStatusID       int                  not null,
    AirlineID            int                  null,
    DepBlkID             int                  null,
@@ -207,6 +160,7 @@ create table FactFlight (
    NasDelay             int                  null,
    SecurityDelay        int                  null,
    LateAircraftDelay    int                  null,
+   Delay15              bit                  null,
    constraint PK_FACTFLIGHT primary key (FlightID)
 )
 go
@@ -289,16 +243,6 @@ go
 
 
 create nonclustered index Airline_FK on FactFlight (AirlineID ASC)
-go
-
-/*==============================================================*/
-/* Index: Route_FK                                              */
-/*==============================================================*/
-
-
-
-
-create nonclustered index Route_FK on FactFlight (RouteID ASC)
 go
 
 /*==============================================================*/
@@ -451,21 +395,6 @@ go
 create nonclustered index GMTActualArrivalTime_FK on FactFlight (GMTWheelsOffID ASC)
 go
 
-alter table DimRoute
-   add constraint FK_DIMROUTE_DESTINATI_DIMAIRPO foreign key (OriginAirportID)
-      references DimAirport (AirportID)
-go
-
-alter table DimRoute
-   add constraint FK_DIMROUTE_ORIGINAIR_DIMAIRPO foreign key (DestinationAirportID)
-      references DimAirport (AirportID)
-go
-
-alter table DimRoute
-   add constraint FK_DIMROUTE_ROUTEARLI_DIMAIRLI foreign key (AirlineID)
-      references DimAirline (AirlineID)
-go
-
 alter table FactFlight
    add constraint FK_FACTFLIG_ACTUALARR_DIMTIME foreign key (ActualArrivalTimeID)
       references DimTime (TimeID)
@@ -564,11 +493,6 @@ go
 alter table FactFlight
    add constraint FK_FACTFLIG_ORIGINAIR_DIMAIRPO foreign key (DestinationAirportID)
       references DimAirport (AirportID)
-go
-
-alter table FactFlight
-   add constraint FK_FACTFLIG_ROUTE_DIMROUTE foreign key (RouteID)
-      references DimRoute (RouteID)
 go
 
 alter table FactFlight
