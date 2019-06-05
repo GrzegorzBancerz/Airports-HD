@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimTime"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{DB9B5EBC-0FB3-4296-9504-9FF0B1AC6701}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{A98DC082-0C5E-47F6-8EAB-4B0585436B68}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,7 @@
       DTS:ObjectName="DimTime.sql">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="D:\GitHub\Airports-HD\Projekt\warehouse\scripts\DimTime.sql" />
+          DTS:ConnectionString="C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\warehouse\scripts\DimTime.sql" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>

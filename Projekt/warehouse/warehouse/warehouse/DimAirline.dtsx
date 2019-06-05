@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimAirline"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{AE4A8007-6434-489E-BBA1-D73795754F31}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{F3FAF542-2971-4FA6-B4B5-6EF116F90124}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="D:\GitHub\Airports-HD\Projekt\Błędne krotki\AirlineOFErrors.txt">
+          DTS:ConnectionString="C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\Błędne krotki\AirlineOFErrors.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NAME"
-              DTS:DTSID="{2A0FBEF0-1D13-4689-9C21-D9686EEB8798}"
+              DTS:DTSID="{B3069175-96C7-46AE-991E-BD3E93F2B1D1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="COUNTRY"
-              DTS:DTSID="{77540CB9-FFB4-496A-A148-B986282983C3}"
+              DTS:DTSID="{781B810F-A7CF-4CAD-A8EA-5F9727D56FBB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="IATA"
-              DTS:DTSID="{6C692CA2-774D-4130-90BF-A9FF258DE502}"
+              DTS:DTSID="{82727B1D-9AB0-4BA4-956B-7E9507FD3870}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ICAO"
-              DTS:DTSID="{9A3EBC35-3E2F-49E3-A3FF-BB4B65F3708C}"
+              DTS:DTSID="{2CA94F72-6663-4232-BEA0-2A38BDF968C9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -73,7 +73,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="AIRLINEID"
-              DTS:DTSID="{81666BD4-72AB-4C73-8450-EBFD18C70226}"
+              DTS:DTSID="{F58B7974-BF67-42F0-8053-A60030009A6C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -82,7 +82,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ALIAS"
-              DTS:DTSID="{B269E5B4-79A3-438D-B6D9-1C2EC26130FF}"
+              DTS:DTSID="{4A3988D6-5B87-42AE-BA4F-57D7639ABECD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -91,7 +91,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ACTIVE"
-              DTS:DTSID="{62F2CFAE-FAB6-41B4-81AD-79D1C5A4D5FB}"
+              DTS:DTSID="{FDEFB0D9-8D8A-41D9-8464-57D4FB518F8E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -99,7 +99,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{9C0F4AE6-CC2D-493A-BD55-CEC6139D7EA0}"
+              DTS:DTSID="{8DD609AD-9286-4977-B9E3-3F87B830EF60}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -107,7 +107,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{CD62F73C-2EB9-477E-85D4-CF83559C8DB3}"
+              DTS:DTSID="{08C4904D-4418-4BB9-91A7-65A6C9D0B58E}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1434,7 +1434,9 @@ UPDATE [DimAirline]
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1456,7 +1458,9 @@ UPDATE [DimAirline]
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1511,7 +1515,7 @@ UPDATE [DimAirline]
     design-time-name="Package\Update IATA, ICAO, ALIAS, COUNTRY (insert NULL)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="122,42"
           Id="Package\Update IATA, ICAO, ALIAS, COUNTRY (insert NULL)\Set NULL"
@@ -1539,7 +1543,9 @@ UPDATE [DimAirline]
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

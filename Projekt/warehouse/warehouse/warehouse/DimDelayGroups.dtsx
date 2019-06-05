@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimDelayGroups"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{85654DFA-D843-400C-A31F-E4191C0C778D}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{9894B899-AA64-4ECD-B4FD-AFE1EA8ABD1D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -176,88 +176,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Inputs[Derived Column Input].Columns[Copy of CODE]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="Copy of CODE"
-                      lineageId="Package\DimDelayGroups\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Outputs[Derived Column Output].Columns[Delay15]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Outputs[Derived Column Output].Columns[Delay15]"
-                      name="Delay15"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(DT_BOOL)(#{Package\DimDelayGroups\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]} == "0" ? 1 : 0)</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_BOOL)([Copy of CODE] == "0" ? 1 : 0)</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
               refId="Package\DimDelayGroups\DimDelayGroups"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -330,12 +248,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].Columns[Delay15]"
-                      cachedDataType="bool"
-                      cachedName="Delay15"
-                      externalMetadataColumnId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].ExternalColumns[Delay15]"
-                      lineageId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Outputs[Derived Column Output].Columns[Delay15]" />
-                    <inputColumn
                       refId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].Columns[Copy of IDDelay]"
                       cachedDataType="i8"
                       cachedName="Copy of IDDelay"
@@ -364,10 +276,6 @@
                       refId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].ExternalColumns[DelayGroupsID]"
                       dataType="i4"
                       name="DelayGroupsID" />
-                    <externalMetadataColumn
-                      refId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].ExternalColumns[Delay15]"
-                      dataType="bool"
-                      name="Delay15" />
                     <externalMetadataColumn
                       refId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].ExternalColumns[DelayGroups]"
                       dataType="i4"
@@ -565,14 +473,9 @@ FROM            ONTIMEDELAYGROUPSSTAGE</property>
           <paths>
             <path
               refId="Package\DimDelayGroups.Paths[Data Conversion Output]"
-              endId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Inputs[Derived Column Input]"
+              endId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\DimDelayGroups\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\DimDelayGroups.Paths[Derived Column Output]"
-              endId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow.Outputs[Derived Column Output]" />
             <path
               refId="Package\DimDelayGroups.Paths[OLE DB Source Output]"
               endId="Package\DimDelayGroups\Data Conversion.Inputs[Data Conversion Input]"
@@ -612,99 +515,49 @@ FROM            ONTIMEDELAYGROUPSSTAGE</property>
           Id="Package\DimDelayGroups\ONTIMEDELAYGROUPSSTAGE"
           TopLeft="231,51" />
         <NodeLayout
-          Size="156,42"
-          Id="Package\DimDelayGroups\Data Conversion"
-          TopLeft="266,154" />
-        <EdgeLayout
-          Id="Package\DimDelayGroups.Paths[OLE DB Source Output]"
-          TopLeft="342.75,93">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61"
-              Start="0,0"
-              End="0,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="363,42"
-          Id="Package\DimDelayGroups\Delay15 - do usuniecia z wymiaru i dodania do tabeli faktow"
-          TopLeft="279,264" />
-        <EdgeLayout
-          Id="Package\DimDelayGroups.Paths[Data Conversion Output]"
-          TopLeft="344,196">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="116.5,68"
-              Start="0,0"
-              End="116.5,60.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30"
-                    Point2="0,34"
-                    Point3="4,34" />
-                  <mssgle:LineSegment
-                    End="112.5,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="112.5,34"
-                    Point2="116.5,34"
-                    Point3="116.5,38" />
-                  <mssgle:LineSegment
-                    End="116.5,60.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="157,42"
           Id="Package\DimDelayGroups\DimDelayGroups"
           TopLeft="264,400" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DimDelayGroups\Data Conversion"
+          TopLeft="268,193" />
         <EdgeLayout
-          Id="Package\DimDelayGroups.Paths[Derived Column Output]"
-          TopLeft="460.5,306">
+          Id="Package\DimDelayGroups.Paths[OLE DB Source Output]"
+          TopLeft="343.75,93">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-118,94"
+              EndConnector="0,100"
               Start="0,0"
-              End="-118,86.5">
+              End="0,92.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43"
-                    Point2="0,47"
-                    Point3="-4,47" />
+                    End="0,92.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimDelayGroups.Paths[Data Conversion Output]"
+          TopLeft="344.25,235">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,165"
+              Start="0,0"
+              End="0,157.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-114,47" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-114,47"
-                    Point2="-118,47"
-                    Point3="-118,51" />
-                  <mssgle:LineSegment
-                    End="-118,86.5" />
+                    End="0,157.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

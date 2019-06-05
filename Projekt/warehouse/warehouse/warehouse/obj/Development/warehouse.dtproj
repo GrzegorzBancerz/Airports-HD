@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">TOMASZ-PC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAM5spfAnzekCqjimZ/sAtjwAAAAACAAAAAAAQZgAAAAEAACAAAAA+xUiis7SO7DTsmDSyRgL0IJOtnQakSB6JtE1Cxkxj+gAAAAAOgAAAAAIAACAAAAB4uXWvQzA1XXXVsNgATjcy9LMm8cJyDeebiEx8lCE8GJAAAAAvN9CiZx22Pt/fURpKiiTJ/j/PKIucbmnYGG0JMaQ2+vXPPqrlPGq4BQjh4p25Jj5KfdxcavH+u8toeJziEXXg0Clw/frXOQKhIsBXo8tDDpV6ry6fmRjju13nDrwOqPSNb8tiRdVd3o35Zxe1MAb3fSHI4nCZPLXH4EQEn64bnH1a69Liw9CV7/pNUCU6B4NAAAAAoHOdpJDRNJbonPC/P6P8bo16LRD+pZzVdsOovXGgzoG1mPCoQzAbJtgQzZeuxIlccSaOCT8khJSsUXIyjfmNSQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJhKFu9qbSEqDJXMCl+VdRgAAAAACAAAAAAAQZgAAAAEAACAAAACGbzevJ9rXYRVnL9k6H9wb2q5puUm+p3x8pOKu7RzX5wAAAAAOgAAAAAIAACAAAABa4up+HvrFMmRJUxRU0J1pcEdJBeKiXek5SdDix/DLxJAAAAAGFKZaBivFZSUkwNjaocEStUyK0bhMoJwI197W4kg3Jg1Jk7CdfeloI/U6to8nqPT3VtqWT7+vFtA7TWb+m3nT7OFbJfNmr7w9dqqINap0NfFVS7I9hGEuTDEXyEmrU8uJ2QBqqtSY+vaH3MNm+RUNhsGIvCMqSh0hir/3KDhewkq3ZAox4Qu/VieRFSq5abxAAAAARrQGToa3cMtip4h7bJ9WCD+C6bGTFkkNaxOVCm2zqpzm8GcIrYQ0B9Wj2PlrIs7QrQS/uqzpjthIEZexlNiDRQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -229,10 +229,10 @@
                 <SSIS:Property SSIS:Name="Name">DimAirport</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">59</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">60</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{D7221FCA-6046-49C3-96B6-AE9A3500CDA5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{AA0E8951-B35B-4272-BC3C-FC215EE1F61F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -295,7 +295,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\GitHub\Airports-HD\Projekt\Błędne krotki\AirportOFErrors.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\Błędne krotki\AirportOFErrors.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -607,10 +607,10 @@
                 <SSIS:Property SSIS:Name="Name">DimAirline</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">13</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">14</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{AE4A8007-6434-489E-BBA1-D73795754F31}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F3FAF542-2971-4FA6-B4B5-6EF116F90124}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -673,7 +673,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\GitHub\Airports-HD\Projekt\Błędne krotki\AirlineOFErrors.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\Błędne krotki\AirlineOFErrors.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -764,6 +764,8 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">
+                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -805,10 +807,10 @@
                 <SSIS:Property SSIS:Name="Name">DimDate</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{0457D1D7-6DF3-4518-9C7B-334DC0796B4A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A091F1B5-BA08-4E37-9444-C59B21F55FE3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -826,7 +828,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\GitHub\Airports-HD\Projekt\warehouse\scripts\DimDate.sql</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\warehouse\scripts\DimDate.sql</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -838,10 +840,10 @@
                 <SSIS:Property SSIS:Name="Name">DimTime</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DB9B5EBC-0FB3-4296-9504-9FF0B1AC6701}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A98DC082-0C5E-47F6-8EAB-4B0585436B68}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -859,7 +861,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\GitHub\Airports-HD\Projekt\warehouse\scripts\DimTime.sql</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\warehouse\scripts\DimTime.sql</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -871,10 +873,10 @@
                 <SSIS:Property SSIS:Name="Name">DimDistance</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">9</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">10</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{0B7E0ECC-E348-4C00-9CA6-FF7AD246004E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{175FBCDC-0234-4C7C-92A2-93FF59AD6371}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -937,7 +939,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\GitHub\Airports-HD\Projekt\Błędne krotki\DistanceGroups250Errors.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\Błędne krotki\DistanceGroups250Errors.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1028,8 +1030,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1071,10 +1071,10 @@
                 <SSIS:Property SSIS:Name="Name">DimDelayGroups</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">4</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{85654DFA-D843-400C-A31F-E4191C0C778D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9894B899-AA64-4ECD-B4FD-AFE1EA8ABD1D}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1105,10 +1105,10 @@
                 <SSIS:Property SSIS:Name="Name">DimFlightStatus</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F51E8401-880A-4699-B4F8-E71009312A74}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E785BC12-C5AC-43F5-94A0-EA4F000295EA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1171,7 +1171,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">D:\GitHub\Airports-HD\Dane\FlightStatusCodes.csv_</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Tomasz\Documents\GitHub\Airports-HD\Dane\FlightStatusCodes.csv_</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1262,8 +1262,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
