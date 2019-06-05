@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2017                    */
-/* Created on:     05.06.2019 22:29:09                          */
+/* Created on:     05.06.2019 23:20:32                          */
 /*==============================================================*/
 
 
@@ -78,7 +78,7 @@ go
 /*==============================================================*/
 create table DimDepArrBlk (
    DepArrBlkID          int                  not null,
-   DistanceDescription  varchar(255)         null,
+   Description          varchar(255)         null,
    constraint PK_DIMDEPARRBLK primary key (DepArrBlkID)
 )
 go
@@ -89,7 +89,7 @@ go
 create table DimDistance (
    DistanceID           int                  not null,
    DistanceGroup        int                  null,
-   DistanceDescription  varchar(255)         null,
+   Description          varchar(255)         null,
    constraint PK_DIMDISTANCE primary key (DistanceID)
 )
 go
@@ -160,7 +160,8 @@ create table FactFlight (
    NasDelay             int                  null,
    SecurityDelay        int                  null,
    LateAircraftDelay    int                  null,
-   Delay15              bit                  null,
+   DepDelay15           bit                  null,
+   ArrDelay15           bit                  null,
    constraint PK_FACTFLIGHT primary key (FlightID)
 )
 go
