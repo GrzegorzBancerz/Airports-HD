@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/5/2019 10:45:04 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="FactFlight"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{6571EC96-4D96-4338-B7CE-E1FF578EDAD1}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{9C652A2A-3EC4-414D-8B97-365D5B0FFB25}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -216,20 +216,6 @@
                       cachedLength="1024"
                       cachedName="DIVERTED"
                       lineageId="Package\Data Flow Task\Fact Flight Stage.Outputs[OLE DB Source Output].Columns[DIVERTED]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[DEPDEL15]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="1024"
-                      cachedName="DEPDEL15"
-                      lineageId="Package\Data Flow Task\Fact Flight Stage.Outputs[OLE DB Source Output].Columns[DEPDEL15]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[_ARRDEL15]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="1024"
-                      cachedName="_ARRDEL15"
-                      lineageId="Package\Data Flow Task\Fact Flight Stage.Outputs[OLE DB Source Output].Columns[_ARRDEL15]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -256,13 +242,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">#{Package\Data Flow Task\Fact Flight Stage.Outputs[OLE DB Source Output].Columns[CANCELLATIONCODE]} == "" ? (#{Package\Data Flow Task\Fact Flight Stage.Outputs[OLE DB Source Output].Columns[DIVERTED]} == "1.00" ? "V" : (#{Package\Data Flow Task\Fact Flight Stage.Outputs[OLE DB Source Output].Columns[DEPDEL15]} == "1.00" ? "DD" : (#{Package\Data Flow Task\Fact Flight Stage.Outputs[OLE DB Source Output].Columns[_ARRDEL15]} == "1.00" ? "AD" : (#{Package\Data Flow Task\Fact Flight Stage.Outputs[OLE DB Source Output].Columns[DEPDEL15]} == "0.00" ? "OD" : (#{Package\Data Flow Task\Fact Flight Stage.Outputs[OLE DB Source Output].Columns[_ARRDEL15]} == "0.00" ? "OA" : ""))))) : #{Package\Data Flow Task\Fact Flight Stage.Outputs[OLE DB Source Output].Columns[CANCELLATIONCODE]}</property>
+                          name="Expression">#{Package\Data Flow Task\Fact Flight Stage.Outputs[OLE DB Source Output].Columns[CANCELLATIONCODE]} == "" ? ((#{Package\Data Flow Task\Fact Flight Stage.Outputs[OLE DB Source Output].Columns[DIVERTED]} == "1.00" ? "V" : "")) : #{Package\Data Flow Task\Fact Flight Stage.Outputs[OLE DB Source Output].Columns[CANCELLATIONCODE]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">CANCELLATIONCODE == "" ? (DIVERTED == "1.00" ? "V" : (DEPDEL15 == "1.00" ? "DD" : (_ARRDEL15 == "1.00" ? "AD" : (DEPDEL15 == "0.00" ? "OD" : (_ARRDEL15 == "0.00" ? "OA" : ""))))) : CANCELLATIONCODE</property>
+                          name="FriendlyExpression">CANCELLATIONCODE == "" ? ((DIVERTED == "1.00" ? "V" : "")) : CANCELLATIONCODE</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -5735,7 +5721,7 @@ where [refTable].[DistanceGroup] = ?</property>
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="DistanceDescription"
-                      lineageId="Package\Fact Flight\26:invalid">
+                      lineageId="Package\Fact Flight\562:invalid">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5796,7 +5782,7 @@ where [refTable].[DistanceGroup] = ?</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Fact Flight\26:invalid}</property>
+                          name="SortColumnId">#{Package\Fact Flight\562:invalid}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>

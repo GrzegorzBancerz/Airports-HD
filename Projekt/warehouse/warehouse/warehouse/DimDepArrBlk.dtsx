@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimDepArrBlk"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{05212020-0AFE-4F2A-8B58-820A2A3C9EB3}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{B4952AA6-2FE3-4EE1-8469-AF6B8727ED03}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -66,6 +66,13 @@
                       cachedLength="1024"
                       cachedName="DESCRIPTION"
                       lineageId="Package\DimDepArrBlk\DEPARRBLKSTAGE.Outputs[OLE DB Source Output].Columns[DESCRIPTION]" />
+                    <inputColumn
+                      refId="Package\DimDepArrBlk\Data Conversion.Inputs[Data Conversion Input].Columns[CODE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="CODE"
+                      lineageId="Package\DimDepArrBlk\DEPARRBLKSTAGE.Outputs[OLE DB Source Output].Columns[CODE]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -113,6 +120,28 @@
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
                           name="SourceInputColumnLineageID">#{Package\DimDepArrBlk\DEPARRBLKSTAGE.Outputs[OLE DB Source Output].Columns[DESCRIPTION]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DimDepArrBlk\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DimDepArrBlk\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]"
+                      name="Copy of CODE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DimDepArrBlk\DEPARRBLKSTAGE.Outputs[OLE DB Source Output].Columns[CODE]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -171,7 +200,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT         ROW_NUMBER() OVER (ORDER BY [CODE]) + ? IDDEPARRBLK,DESCRIPTION
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT         ROW_NUMBER() OVER (ORDER BY [CODE]) + ? IDDEPARRBLK,DESCRIPTION,CODE
 FROM            DEPARRBLKSTAGE</property>
                 <property
                   dataType="System.String"
@@ -228,6 +257,17 @@ FROM            DEPARRBLKSTAGE</property>
                       lineageId="Package\DimDepArrBlk\DEPARRBLKSTAGE.Outputs[OLE DB Source Output].Columns[DESCRIPTION]"
                       name="DESCRIPTION"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DimDepArrBlk\DEPARRBLKSTAGE.Outputs[OLE DB Source Output].Columns[CODE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DimDepArrBlk\DEPARRBLKSTAGE.Outputs[OLE DB Source Output].ExternalColumns[CODE]"
+                      length="1024"
+                      lineageId="Package\DimDepArrBlk\DEPARRBLKSTAGE.Outputs[OLE DB Source Output].Columns[CODE]"
+                      name="CODE"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -241,6 +281,12 @@ FROM            DEPARRBLKSTAGE</property>
                       dataType="str"
                       length="1024"
                       name="DESCRIPTION" />
+                    <externalMetadataColumn
+                      refId="Package\DimDepArrBlk\DEPARRBLKSTAGE.Outputs[OLE DB Source Output].ExternalColumns[CODE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="CODE" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -260,6 +306,13 @@ FROM            DEPARRBLKSTAGE</property>
                       length="1024"
                       lineageId="Package\DimDepArrBlk\DEPARRBLKSTAGE.Outputs[OLE DB Source Error Output].Columns[DESCRIPTION]"
                       name="DESCRIPTION" />
+                    <outputColumn
+                      refId="Package\DimDepArrBlk\DEPARRBLKSTAGE.Outputs[OLE DB Source Error Output].Columns[CODE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\DimDepArrBlk\DEPARRBLKSTAGE.Outputs[OLE DB Source Error Output].Columns[CODE]"
+                      name="CODE" />
                     <outputColumn
                       refId="Package\DimDepArrBlk\DEPARRBLKSTAGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -350,19 +403,27 @@ FROM            DEPARRBLKSTAGE</property>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].Columns[IDDEPARRBLK]"
-                      cachedDataType="i8"
-                      cachedName="IDDEPARRBLK"
-                      externalMetadataColumnId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[DepArrBlkID]"
-                      lineageId="Package\DimDepArrBlk\DEPARRBLKSTAGE.Outputs[OLE DB Source Output].Columns[IDDEPARRBLK]" />
+                      refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].Columns[Copy of CODE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of CODE"
+                      externalMetadataColumnId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[Code]"
+                      lineageId="Package\DimDepArrBlk\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]" />
                     <inputColumn
                       refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].Columns[Copy of DESCRIPTION]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Copy of DESCRIPTION"
-                      externalMetadataColumnId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDescription]"
+                      externalMetadataColumnId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
                       lineageId="Package\DimDepArrBlk\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DESCRIPTION]" />
+                    <inputColumn
+                      refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].Columns[Copy of IDDEPARRBLK]"
+                      cachedDataType="i8"
+                      cachedName="Copy of IDDEPARRBLK"
+                      externalMetadataColumnId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[DepArrBlkID]"
+                      lineageId="Package\DimDepArrBlk\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IDDEPARRBLK]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -371,11 +432,17 @@ FROM            DEPARRBLKSTAGE</property>
                       dataType="i4"
                       name="DepArrBlkID" />
                     <externalMetadataColumn
-                      refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDescription]"
+                      refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[Code]"
                       codePage="1250"
                       dataType="str"
                       length="255"
-                      name="DistanceDescription" />
+                      name="Code" />
+                    <externalMetadataColumn
+                      refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="Description" />
                   </externalMetadataColumns>
                 </input>
               </inputs>

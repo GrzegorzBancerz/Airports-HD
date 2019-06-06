@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimDistance"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{175FBCDC-0234-4C7C-92A2-93FF59AD6371}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{4D9CBBBC-9859-43B1-B707-5EE1DD3EFBCE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -293,19 +293,19 @@
                       externalMetadataColumnId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceGroup]"
                       lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]" />
                     <inputColumn
-                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].Columns[Copy of DESCRIPTION]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="Copy of DESCRIPTION"
-                      externalMetadataColumnId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDescription]"
-                      lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DESCRIPTION]" />
-                    <inputColumn
                       refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].Columns[Copy of IDDISTANCE]"
                       cachedDataType="i8"
                       cachedName="Copy of IDDISTANCE"
                       externalMetadataColumnId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceID]"
                       lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IDDISTANCE]" />
+                    <inputColumn
+                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].Columns[Copy of DESCRIPTION]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of DESCRIPTION"
+                      externalMetadataColumnId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DESCRIPTION]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -318,11 +318,11 @@
                       dataType="i4"
                       name="DistanceGroup" />
                     <externalMetadataColumn
-                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceDescription]"
+                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
                       codePage="1250"
                       dataType="str"
                       length="255"
-                      name="DistanceDescription" />
+                      name="Description" />
                   </externalMetadataColumns>
                 </input>
               </inputs>

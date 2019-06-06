@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimFlightStatus"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{E785BC12-C5AC-43F5-94A0-EA4F000295EA}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{9959131A-4B45-4A1F-9EA2-687CA79DA9C8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ID"
-              DTS:DTSID="{64C4C2DE-0410-4FAD-B7FC-AD1A174545C1}"
+              DTS:DTSID="{730C2BCC-3C03-4B76-93BC-11E60E9506DA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName=" Code"
-              DTS:DTSID="{8BEAB7CF-E06A-4A94-B3E8-7E6CC825AAF0}"
+              DTS:DTSID="{E96B723D-2C50-4235-9564-AC39D0E8EB72}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Description"
-              DTS:DTSID="{25926830-503B-41CD-BF8C-A99BAF2A0AA4}"
+              DTS:DTSID="{0A3307CD-5452-4F0B-B2D6-7B56E6232B99}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
