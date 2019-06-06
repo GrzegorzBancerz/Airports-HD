@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2017                    */
-/* Created on:     05.06.2019 23:20:32                          */
+/* Created on:     06.06.2019 12:16:33                          */
 /*==============================================================*/
 
 
@@ -78,6 +78,7 @@ go
 /*==============================================================*/
 create table DimDepArrBlk (
    DepArrBlkID          int                  not null,
+   Code                 varchar(255)         null,
    Description          varchar(255)         null,
    constraint PK_DIMDEPARRBLK primary key (DepArrBlkID)
 )
@@ -122,19 +123,19 @@ go
 create table FactFlight (
    FlightID             int                  not null,
    FlightDateID         int                  not null,
-   GMTFlightDateID      int                  not null,
+   GMTFlightDateID      int                  null,
    WheelsOnID           int                  not null,
-   GMTWheelsOnID        int                  not null,
+   GMTWheelsOnID        int                  null,
    WheelsOffID          int                  not null,
-   GMTWheelsOffID       int                  not null,
+   GMTWheelsOffID       int                  null,
    CRSArrivalTimeID     int                  not null,
-   GMTCRSArrivalTimeID  int                  not null,
+   GMTCRSArrivalTimeID  int                  null,
    CRSDepartureTimeID   int                  not null,
-   GMTCRSDepartureTimeID int                  not null,
+   GMTCRSDepartureTimeID int                  null,
    ActualDepartureTimeID int                  not null,
-   GMTActualDepartureTimeID int                  not null,
+   GMTActualDepartureTimeID int                  null,
    ActualArrivalTimeID  int                  not null,
-   GMTActualArrivalTimeID int                  not null,
+   GMTActualArrivalTimeID int                  null,
    OriginAirportID      int                  not null,
    DestinationAirportID int                  not null,
    FlightStatusID       int                  not null,
