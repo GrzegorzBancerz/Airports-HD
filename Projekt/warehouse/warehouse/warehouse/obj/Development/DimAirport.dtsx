@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimAirport"
   DTS:PackageType="5"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{AA0E8951-B35B-4272-BC3C-FC215EE1F61F}">
+  DTS:VersionBuild="61"
+  DTS:VersionGUID="{54526D93-C8A2-449E-8D7A-F464EBA3A410}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\Błędne krotki\AirportOFErrors.txt">
+          DTS:ConnectionString="D:\GitHub\Airports-HD\Projekt\Błędne krotki\AirportOFErrors.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="AIRPORTID"
-              DTS:DTSID="{7D33ECC1-C3E1-4193-9C31-1F597DC3E38D}"
+              DTS:DTSID="{E2B5962F-E1F4-4383-8164-A85B73607546}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NAME"
-              DTS:DTSID="{8E344957-E08A-4B69-B774-B67383F4827A}"
+              DTS:DTSID="{926D550D-B442-4186-9FCA-DC425410EF71}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CITY"
-              DTS:DTSID="{085C256D-205A-42A9-8ADB-32D5C7565DA3}"
+              DTS:DTSID="{28E3DEA7-9EBD-439C-99D1-022E8ED58BCD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="COUNTRY"
-              DTS:DTSID="{2F076D73-E536-47A8-9ECF-9734182F5447}"
+              DTS:DTSID="{65E7B451-5101-4AE8-9C53-D7BF48AD4928}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -74,7 +74,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="IATA"
-              DTS:DTSID="{14C605FF-3421-4D73-A2C6-D27D70CC75DD}"
+              DTS:DTSID="{3998F7AE-D141-4F15-BAA1-7433DB1A915D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -83,7 +83,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ICAO"
-              DTS:DTSID="{081E6674-D9FD-4402-A7F5-CC63CB1B112B}"
+              DTS:DTSID="{35E00FFE-0F18-4F1C-925E-F8DC366B17AB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -92,7 +92,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LATITUDE"
-              DTS:DTSID="{54D186F6-9B00-4E21-A003-36F5F150E192}"
+              DTS:DTSID="{3CF2F400-C186-444A-B4B0-5BA0771435AA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -101,7 +101,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="LONGITUDE"
-              DTS:DTSID="{B31D0D66-0B4C-4096-AB29-04DE239B6BEC}"
+              DTS:DTSID="{C84FED0D-DB8F-4F1B-9AB6-697F365F20C8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -110,7 +110,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ALTITUDE"
-              DTS:DTSID="{1FDDF8FF-49F6-4EB1-813F-79FF20642031}"
+              DTS:DTSID="{2DADBA7D-D6FE-4E6C-8710-7DF0DC34B1F1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -119,7 +119,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="TIMEZONE"
-              DTS:DTSID="{C37248A0-E8AD-40B2-AF77-C70BD5D370A0}"
+              DTS:DTSID="{D61C5B32-0E88-43DF-9E02-10D3808007F3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -128,7 +128,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DST"
-              DTS:DTSID="{EC0B3E46-1533-495B-A139-BEAFC4551F9E}"
+              DTS:DTSID="{A09CBAE6-D899-4A9C-897E-C0346202B3EA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -137,7 +137,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="TZDATABASETIMEZONE"
-              DTS:DTSID="{47AA55AD-328B-4CBE-95A9-719D85F5DA73}"
+              DTS:DTSID="{05EC18BE-6BFD-4386-A1CE-167ECADA062F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -146,7 +146,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="TYPE"
-              DTS:DTSID="{E131B45D-97F7-4F17-8D05-972524AE585A}"
+              DTS:DTSID="{B1966C52-120D-497E-B333-8D5CF5894A9A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -154,7 +154,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{05B6EE3E-4C4A-4FF6-8A08-64EA1BD537EF}"
+              DTS:DTSID="{BF79DB80-015A-4FF7-A72D-840437B4342C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -162,7 +162,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{E552AF1D-D458-4464-B5BB-4F6CB8B7AF99}"
+              DTS:DTSID="{53C0D9E5-5B0E-4F09-BE50-0AAC41BDC03D}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>

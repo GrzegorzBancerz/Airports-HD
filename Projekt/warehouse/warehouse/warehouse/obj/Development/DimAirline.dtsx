@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimAirline"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{F3FAF542-2971-4FA6-B4B5-6EF116F90124}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{67A37FDF-967B-46BD-A157-3521D5BE5838}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\Błędne krotki\AirlineOFErrors.txt">
+          DTS:ConnectionString="D:\GitHub\Airports-HD\Projekt\Błędne krotki\AirlineOFErrors.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="NAME"
-              DTS:DTSID="{B3069175-96C7-46AE-991E-BD3E93F2B1D1}"
+              DTS:DTSID="{E7CBC4C2-DE80-4C94-834C-F8A2534C6910}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="COUNTRY"
-              DTS:DTSID="{781B810F-A7CF-4CAD-A8EA-5F9727D56FBB}"
+              DTS:DTSID="{B62DADD4-D316-4E65-91B8-594536F6F62B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="IATA"
-              DTS:DTSID="{82727B1D-9AB0-4BA4-956B-7E9507FD3870}"
+              DTS:DTSID="{AEC5FC6E-A7E2-4BB9-84E1-E715384376D0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ICAO"
-              DTS:DTSID="{2CA94F72-6663-4232-BEA0-2A38BDF968C9}"
+              DTS:DTSID="{AB5BB494-3384-432A-B665-5EC48CA125A7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -73,7 +73,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="AIRLINEID"
-              DTS:DTSID="{F58B7974-BF67-42F0-8053-A60030009A6C}"
+              DTS:DTSID="{A6148289-AFDD-43BA-8223-0C2F56799FB9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -82,7 +82,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ALIAS"
-              DTS:DTSID="{4A3988D6-5B87-42AE-BA4F-57D7639ABECD}"
+              DTS:DTSID="{1ACB1AC0-D3A1-40E5-956D-EC5F586C0357}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -91,7 +91,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ACTIVE"
-              DTS:DTSID="{FDEFB0D9-8D8A-41D9-8464-57D4FB518F8E}"
+              DTS:DTSID="{5AB912F0-A44E-4BF0-9A88-2F8781F0451E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -99,7 +99,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{8DD609AD-9286-4977-B9E3-3F87B830EF60}"
+              DTS:DTSID="{10645B9E-9079-4BCA-9EA5-8FB6F378920C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -107,7 +107,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{08C4904D-4418-4BB9-91A7-65A6C9D0B58E}"
+              DTS:DTSID="{B7CA1370-4532-4657-A261-A71C8F17B385}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimDistance"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{4D9CBBBC-9859-43B1-B707-5EE1DD3EFBCE}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{E5696363-D02B-4B31-9E94-5429B7DB0462}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\Błędne krotki\DistanceGroups250Errors.txt">
+          DTS:ConnectionString="D:\GitHub\Airports-HD\Projekt\Błędne krotki\DistanceGroups250Errors.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -37,7 +37,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{C10783C5-6B47-4176-8836-8B8CB13642D6}"
+              DTS:DTSID="{CE8ADEBD-B835-4940-B7F4-DF5812C9E85C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -45,7 +45,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{8EFF0017-090A-470A-A859-77FA867BB7DF}"
+              DTS:DTSID="{5FF3D0DD-73A8-4A28-9D26-484049C53326}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>

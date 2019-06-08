@@ -11,16 +11,16 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimFlightStatus"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{9959131A-4B45-4A1F-9EA2-687CA79DA9C8}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{C505129D-217E-46C1-94B6-C5F923BDEC60}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:refId="Package.ConnectionManagers[FlightStatusCodes.txt]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{6C90ADD5-14E9-4273-ADEA-7E1A425A5FA8}"
-      DTS:ObjectName="Flat File Connection Manager">
+      DTS:ObjectName="FlightStatusCodes.txt">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -30,7 +30,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="C:\Users\Tomasz\Documents\GitHub\Airports-HD\Dane\FlightStatusCodes.csv_">
+          DTS:ConnectionString="D:\GitHub\Airports-HD\Dane\Dodane wiersze\FlightStatusCodes.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ID"
-              DTS:DTSID="{730C2BCC-3C03-4B76-93BC-11E60E9506DA}"
+              DTS:DTSID="{0481FD2A-F26E-44BA-BBD7-2DCE60AC681B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName=" Code"
-              DTS:DTSID="{E96B723D-2C50-4235-9564-AC39D0E8EB72}"
+              DTS:DTSID="{0AE24C6E-C1AE-454C-A876-79BE8DD479ED}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Description"
-              DTS:DTSID="{0A3307CD-5452-4F0B-B2D6-7B56E6232B99}"
+              DTS:DTSID="{ADF6AF45-74E7-4C32-9E27-DFF840A25AA4}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -515,6 +515,121 @@ FROM            CANCELLATIONSTAGE</property>
               </outputs>
             </component>
             <component
+              refId="Package\DimFlightStatus\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DimFlightStatus\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimFlightStatus\Derived Column.Inputs[Derived Column Input].Columns[Copy of DESCRIPTION]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of DESCRIPTION"
+                      lineageId="Package\DimFlightStatus\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DESCRIPTION]" />
+                    <inputColumn
+                      refId="Package\DimFlightStatus\Derived Column.Inputs[Derived Column Input].Columns[Copy of CODE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of CODE"
+                      lineageId="Package\DimFlightStatus\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DimFlightStatus\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DimFlightStatus\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimFlightStatus\Derived Column.Outputs[Derived Column Output].Columns[DescriptionWithCancelled]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DimFlightStatus\Derived Column.Outputs[Derived Column Output].Columns[DescriptionWithCancelled]"
+                      name="DescriptionWithCancelled"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,255,1250)("Cancelled due " + #{Package\DimFlightStatus\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DESCRIPTION]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,255,1250)("Cancelled due " + [Copy of DESCRIPTION])</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DimFlightStatus\Derived Column.Outputs[Derived Column Output].Columns[CodeExtended]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\DimFlightStatus\Derived Column.Outputs[Derived Column Output].Columns[CodeExtended]"
+                      name="CodeExtended"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,255,1250)("C" + #{Package\DimFlightStatus\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,255,1250)("C" + [Copy of CODE])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DimFlightStatus\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DimFlightStatus\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DimFlightStatus\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DimFlightStatus\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DimFlightStatus\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DimFlightStatus\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\DimFlightStatus\DimFlightStatus"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -677,8 +792,8 @@ FROM            CANCELLATIONSTAGE</property>
               <connections>
                 <connection
                   refId="Package\DimFlightStatus\FlightStatusCodes.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[FlightStatusCodes.txt]"
+                  connectionManagerRefId="Package.ConnectionManagers[FlightStatusCodes.txt]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -813,99 +928,6 @@ FROM            CANCELLATIONSTAGE</property>
               version="1">
               <inputs>
                 <input
-                  refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 1]"
-                  name="Union All Input 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 1].Columns[CODE]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="1024"
-                      cachedName="CODE"
-                      lineageId="Package\DimFlightStatus\CANCELLATIONSTAGE.Outputs[OLE DB Source Output].Columns[CODE]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\DimFlightStatus\Union All.Outputs[Union All Output 1].Columns[CODE]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 1].Columns[DESCRIPTION]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="1024"
-                      cachedName="DESCRIPTION"
-                      lineageId="Package\DimFlightStatus\CANCELLATIONSTAGE.Outputs[OLE DB Source Output].Columns[DESCRIPTION]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\DimFlightStatus\Union All.Outputs[Union All Output 1].Columns[DESCRIPTION]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 1].Columns[FlightStatusID]"
-                      cachedDataType="i8"
-                      cachedName="FlightStatusID"
-                      lineageId="Package\DimFlightStatus\CANCELLATIONSTAGE.Outputs[OLE DB Source Output].Columns[FlightStatusID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\DimFlightStatus\Union All.Outputs[Union All Output 1].Columns[FlightStatusID]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 1].Columns[Copy of CODE]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="Copy of CODE"
-                      lineageId="Package\DimFlightStatus\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\DimFlightStatus\Union All.Outputs[Union All Output 1].Columns[Copy of CODE]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 1].Columns[Copy of DESCRIPTION]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="Copy of DESCRIPTION"
-                      lineageId="Package\DimFlightStatus\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DESCRIPTION]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\DimFlightStatus\Union All.Outputs[Union All Output 1].Columns[Copy of DESCRIPTION]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 1].Columns[Copy of FlightStatusID]"
-                      cachedDataType="i8"
-                      cachedName="Copy of FlightStatusID"
-                      lineageId="Package\DimFlightStatus\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FlightStatusID]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\DimFlightStatus\Union All.Outputs[Union All Output 1].Columns[Copy of FlightStatusID]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-                <input
                   refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 2]"
                   hasSideEffects="true"
                   name="Union All Input 2">
@@ -958,9 +980,103 @@ FROM            CANCELLATIONSTAGE</property>
                 </input>
                 <input
                   refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 3]"
-                  dangling="true"
                   hasSideEffects="true"
                   name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 3].Columns[Copy of FlightStatusID]"
+                      cachedDataType="i8"
+                      cachedName="Copy of FlightStatusID"
+                      lineageId="Package\DimFlightStatus\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FlightStatusID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimFlightStatus\Union All.Outputs[Union All Output 1].Columns[Copy of FlightStatusID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 3].Columns[DescriptionWithCancelled]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DescriptionWithCancelled"
+                      lineageId="Package\DimFlightStatus\Derived Column.Outputs[Derived Column Output].Columns[DescriptionWithCancelled]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimFlightStatus\Union All.Outputs[Union All Output 1].Columns[Copy of DESCRIPTION]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 3].Columns[CODE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="CODE"
+                      lineageId="Package\DimFlightStatus\CANCELLATIONSTAGE.Outputs[OLE DB Source Output].Columns[CODE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimFlightStatus\Union All.Outputs[Union All Output 1].Columns[CODE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 3].Columns[DESCRIPTION]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="DESCRIPTION"
+                      lineageId="Package\DimFlightStatus\CANCELLATIONSTAGE.Outputs[OLE DB Source Output].Columns[DESCRIPTION]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimFlightStatus\Union All.Outputs[Union All Output 1].Columns[DESCRIPTION]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 3].Columns[FlightStatusID]"
+                      cachedDataType="i8"
+                      cachedName="FlightStatusID"
+                      lineageId="Package\DimFlightStatus\CANCELLATIONSTAGE.Outputs[OLE DB Source Output].Columns[FlightStatusID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimFlightStatus\Union All.Outputs[Union All Output 1].Columns[FlightStatusID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 3].Columns[CodeExtended]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CodeExtended"
+                      lineageId="Package\DimFlightStatus\Derived Column.Outputs[Derived Column Output].Columns[CodeExtended]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\DimFlightStatus\Union All.Outputs[Union All Output 1].Columns[Copy of CODE]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DimFlightStatus\Union All.Inputs[Union All Input 1]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 1">
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -1016,14 +1132,19 @@ FROM            CANCELLATIONSTAGE</property>
           <paths>
             <path
               refId="Package\DimFlightStatus.Paths[Data Conversion Output]"
-              endId="Package\DimFlightStatus\Union All.Inputs[Union All Input 1]"
-              name="Data Conversion Output"
-              startId="Package\DimFlightStatus\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\DimFlightStatus.Paths[Data Conversion Output1]"
               endId="Package\DimFlightStatus\Union All.Inputs[Union All Input 2]"
               name="Data Conversion Output"
               startId="Package\DimFlightStatus\Data Conversion 1.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DimFlightStatus.Paths[Data Conversion Output1]"
+              endId="Package\DimFlightStatus\Derived Column.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\DimFlightStatus\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DimFlightStatus.Paths[Derived Column Output]"
+              endId="Package\DimFlightStatus\Union All.Inputs[Union All Input 3]"
+              name="Derived Column Output"
+              startId="Package\DimFlightStatus\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\DimFlightStatus.Paths[Flat File Source Output]"
               endId="Package\DimFlightStatus\Data Conversion 1.Inputs[Data Conversion Input]"
@@ -1069,9 +1190,13 @@ FROM            CANCELLATIONSTAGE</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="153,42"
-          Id="Package\DimFlightStatus\DimFlightStatus"
-          TopLeft="373,523" />
+          Size="121,42"
+          Id="Package\DimFlightStatus\Union All"
+          TopLeft="449,386" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DimFlightStatus\Derived Column"
+          TopLeft="240,323" />
         <NodeLayout
           Size="165,42"
           Id="Package\DimFlightStatus\Data Conversion 1"
@@ -1079,53 +1204,19 @@ FROM            CANCELLATIONSTAGE</property>
         <NodeLayout
           Size="156,42"
           Id="Package\DimFlightStatus\Data Conversion"
-          TopLeft="296,242" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\DimFlightStatus\Union All"
-          TopLeft="449,386" />
-        <NodeLayout
-          Size="185,42"
-          Id="Package\DimFlightStatus\CANCELLATIONSTAGE"
-          TopLeft="244,107" />
+          TopLeft="222,233" />
         <NodeLayout
           Size="163,42"
           Id="Package\DimFlightStatus\FlightStatusCodes"
           TopLeft="540,138" />
-        <EdgeLayout
-          Id="Package\DimFlightStatus.Paths[Data Conversion Output]"
-          TopLeft="374,284">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="135.5,102"
-              Start="0,0"
-              End="135.5,94.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,47"
-                    Point2="0,51"
-                    Point3="4,51" />
-                  <mssgle:LineSegment
-                    End="131.5,51" />
-                  <mssgle:CubicBezierSegment
-                    Point1="131.5,51"
-                    Point2="135.5,51"
-                    Point3="135.5,55" />
-                  <mssgle:LineSegment
-                    End="135.5,94.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="153,42"
+          Id="Package\DimFlightStatus\DimFlightStatus"
+          TopLeft="373,523" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\DimFlightStatus\CANCELLATIONSTAGE"
+          TopLeft="244,107" />
         <EdgeLayout
           Id="Package\DimFlightStatus.Paths[Union All Output 1]"
           TopLeft="509.5,428">
@@ -1166,26 +1257,26 @@ FROM            CANCELLATIONSTAGE</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="37.5,93"
+              EndConnector="-36.5,84"
               Start="0,0"
-              End="37.5,85.5">
+              End="-36.5,76.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.5" />
+                    End="0,38" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,42.5"
-                    Point2="0,46.5"
-                    Point3="4,46.5" />
+                    Point1="0,38"
+                    Point2="0,42"
+                    Point3="-4,42" />
                   <mssgle:LineSegment
-                    End="33.5,46.5" />
+                    End="-32.5,42" />
                   <mssgle:CubicBezierSegment
-                    Point1="33.5,46.5"
-                    Point2="37.5,46.5"
-                    Point3="37.5,50.5" />
+                    Point1="-32.5,42"
+                    Point2="-36.5,42"
+                    Point3="-36.5,46" />
                   <mssgle:LineSegment
-                    End="37.5,85.5" />
+                    End="-36.5,76.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1229,7 +1320,75 @@ FROM            CANCELLATIONSTAGE</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\DimFlightStatus.Paths[Derived Column Output]"
+          TopLeft="394,344">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55,63"
+              Start="0,0"
+              End="47.5,63">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="23.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="23.5,0"
+                    Point2="27.5,0"
+                    Point3="27.5,4" />
+                  <mssgle:LineSegment
+                    End="27.5,59" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.5,59"
+                    Point2="27.5,63"
+                    Point3="31.5,63" />
+                  <mssgle:LineSegment
+                    End="47.5,63" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\DimFlightStatus.Paths[Data Conversion Output1]"
+          TopLeft="300,275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17,48"
+              Start="0,0"
+              End="17,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20"
+                    Point2="0,24"
+                    Point3="4,24" />
+                  <mssgle:LineSegment
+                    End="13,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13,24"
+                    Point2="17,24"
+                    Point3="17,28" />
+                  <mssgle:LineSegment
+                    End="17,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimFlightStatus.Paths[Data Conversion Output]"
           TopLeft="581.5,300">
           <EdgeLayout.Curve>
             <mssgle:Curve

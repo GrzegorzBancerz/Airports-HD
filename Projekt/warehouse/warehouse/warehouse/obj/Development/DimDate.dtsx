@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimDate"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{A091F1B5-BA08-4E37-9444-C59B21F55FE3}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{3497351D-5B99-481D-9DBF-EAA988B4A168}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,7 @@
       DTS:ObjectName="DimDate.sql">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="C:\Users\Tomasz\Documents\GitHub\Airports-HD\Projekt\warehouse\scripts\DimDate.sql" />
+          DTS:ConnectionString="D:\GitHub\Airports-HD\Projekt\warehouse\scripts\DimDate.sql" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
