@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Stage"
   DTS:PackageType="5"
-  DTS:VersionBuild="79"
-  DTS:VersionGUID="{041DA32D-3B71-4AFF-942B-D4F74AB7FA95}">
+  DTS:VersionBuild="81"
+  DTS:VersionGUID="{E51273B9-6A58-434D-A002-719662AA8C01}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -268,7 +268,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="D:\Download\HD\527820964_T_ONTIME_REPORTINGJAN\527820964_T_ONTIME_REPORTING.csv">
+          DTS:ConnectionString="C:\Users\Tomasz\Downloads\527820964_T_ONTIME_REPORTINGJAN\527820964_T_ONTIME_REPORTING.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -277,7 +277,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;YEAR&quot;"
-              DTS:DTSID="{8D2F15E6-6EB1-4536-8D87-C6B0A95876BC}"
+              DTS:DTSID="{B9AA6156-EFE7-4A7F-B1D6-EC764340142F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -286,7 +286,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;QUARTER&quot;"
-              DTS:DTSID="{25218E55-AF56-4264-9985-2E01BC7CA672}"
+              DTS:DTSID="{26360BEE-A74C-450D-BA44-D2A2FA774BD0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -295,7 +295,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;MONTH&quot;"
-              DTS:DTSID="{1F4467A1-E907-499F-8324-E5CB096D585B}"
+              DTS:DTSID="{F2827991-EBE9-4175-B081-1ABB0B98EB3F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -304,7 +304,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DAY_OF_MONTH&quot;"
-              DTS:DTSID="{0398D6D0-D5E2-45A1-AA2E-A1B146B65D0D}"
+              DTS:DTSID="{A259C2C7-A8EF-4473-A0D3-DA10F7E8AD9E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -313,7 +313,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DAY_OF_WEEK&quot;"
-              DTS:DTSID="{20B6323A-76EA-4715-9FBD-2E856E571B42}"
+              DTS:DTSID="{24F2C3A4-F490-476F-B2D3-E04A35D0F31E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -322,7 +322,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;FL_DATE&quot;"
-              DTS:DTSID="{C28A0A7D-4161-4E26-8777-2B95FAE26A18}"
+              DTS:DTSID="{2202B38F-22CD-4D60-AD94-24198E1D1F2E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -331,7 +331,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;OP_UNIQUE_CARRIER&quot;"
-              DTS:DTSID="{E8BDD504-8DCD-4CFF-8FEE-7483C3461422}"
+              DTS:DTSID="{1AE39713-DC76-43AF-A3B7-98DA7FD9AF87}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -340,7 +340,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;OP_CARRIER_AIRLINE_ID&quot;"
-              DTS:DTSID="{BB568307-A2D4-4D33-A1A5-6B3C48663305}"
+              DTS:DTSID="{2E845C9B-3655-4AB5-A9CF-19D34D2D954F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -349,7 +349,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;OP_CARRIER&quot;"
-              DTS:DTSID="{6D48BA69-474F-495D-9073-5A2B999E6704}"
+              DTS:DTSID="{32BF8236-163F-4B1F-BC3F-A92DF96AAD93}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -358,7 +358,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;TAIL_NUM&quot;"
-              DTS:DTSID="{FD4CB83C-F6A7-4B83-9939-39C1F4267FD9}"
+              DTS:DTSID="{63DB3C4C-BC68-4C05-BA93-D047A632657E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -367,7 +367,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;OP_CARRIER_FL_NUM&quot;"
-              DTS:DTSID="{98E0360D-E3B3-489D-BABD-14C2F836701A}"
+              DTS:DTSID="{7803B7E7-1656-4631-A76C-61D97C083E88}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -376,7 +376,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ORIGIN_AIRPORT_ID&quot;"
-              DTS:DTSID="{67B6000D-2A52-41FD-9462-3D32490DE1C8}"
+              DTS:DTSID="{D417FACF-7E89-488C-B21F-E3259504C0BF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -385,7 +385,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ORIGIN_AIRPORT_SEQ_ID&quot;"
-              DTS:DTSID="{D08E69A8-0B82-4683-90B7-508E7FD72857}"
+              DTS:DTSID="{216E574D-A542-4F75-8342-7C0E84C307E6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -394,7 +394,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ORIGIN_CITY_MARKET_ID&quot;"
-              DTS:DTSID="{79F56C99-B4B0-4214-9164-6E108C878EDB}"
+              DTS:DTSID="{AC131B16-7E05-4837-89E8-1311026F6DC0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -403,7 +403,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ORIGIN&quot;"
-              DTS:DTSID="{D8D908AD-EE72-459E-B1A0-91B79515DEDD}"
+              DTS:DTSID="{B0CA7254-62B8-4212-99B9-53D46E64F32A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -412,7 +412,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ORIGIN_CITY_NAME&quot;"
-              DTS:DTSID="{18CD1CE5-A2F8-4A7C-96FA-E08D4F3415B8}"
+              DTS:DTSID="{CD0DDFC8-044B-47BB-9318-F85B48206D94}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -421,7 +421,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ORIGIN_STATE_ABR&quot;"
-              DTS:DTSID="{C0C62337-97D1-42E4-A876-AB722320048F}"
+              DTS:DTSID="{2A74B577-FDAC-416B-A0F2-64613920950D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -430,7 +430,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ORIGIN_STATE_FIPS&quot;"
-              DTS:DTSID="{101CAC18-C421-4F48-94C0-F983B6A60808}"
+              DTS:DTSID="{009A7CB2-4068-4B96-B36D-323D931FF147}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -439,7 +439,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ORIGIN_STATE_NM&quot;"
-              DTS:DTSID="{CBA7C28F-19D6-41FA-9B37-518267BB5937}"
+              DTS:DTSID="{22E162E6-4898-426C-B673-8EAA71F80400}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -448,7 +448,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ORIGIN_WAC&quot;"
-              DTS:DTSID="{F6C1E50E-C43E-43F2-8082-1156615E05DF}"
+              DTS:DTSID="{3A9CB1AB-BECA-4998-9ED6-9A946ED74216}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -457,7 +457,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEST_AIRPORT_ID&quot;"
-              DTS:DTSID="{6E3920F4-D911-4B8E-984C-A660F876F018}"
+              DTS:DTSID="{4C95722D-9C3A-43F1-8718-886553E035D5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -466,7 +466,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEST_AIRPORT_SEQ_ID&quot;"
-              DTS:DTSID="{D70202C3-9B55-4B84-B5B9-58686938B2DF}"
+              DTS:DTSID="{E63A82E0-D368-4FE8-815A-2B7858B7C230}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -475,7 +475,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEST_CITY_MARKET_ID&quot;"
-              DTS:DTSID="{0F9AC23C-4828-41A0-8223-996F83B69623}"
+              DTS:DTSID="{FE7EEEF0-F3E7-4274-B37A-631B19E942FF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -484,7 +484,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEST&quot;"
-              DTS:DTSID="{9D0CB4C0-BD87-4E61-8BFF-7BFC6E3EB1E6}"
+              DTS:DTSID="{A05A7B94-E93C-41DB-A26D-15F36B8AC7F0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -493,7 +493,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEST_CITY_NAME&quot;"
-              DTS:DTSID="{1B9C96E0-CAC8-47F1-B933-2B91535FE432}"
+              DTS:DTSID="{8EB636B0-FFB6-4460-BC4B-3E8C7A7A9634}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -502,7 +502,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEST_STATE_ABR&quot;"
-              DTS:DTSID="{54485011-70A3-490B-9AB0-8274BDABDF4F}"
+              DTS:DTSID="{8322A913-6583-4521-AD57-CC7C5C87A22E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -511,7 +511,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEST_STATE_FIPS&quot;"
-              DTS:DTSID="{B397A840-3A86-4E8A-A147-D401FAC23087}"
+              DTS:DTSID="{127B1ADB-868D-4AD7-A3E4-CB2742FA9691}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -520,7 +520,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEST_STATE_NM&quot;"
-              DTS:DTSID="{043976E6-CE09-431D-8B5C-30B33C1E6AFC}"
+              DTS:DTSID="{5B0A3E5B-10DD-4516-A901-CA0B56F5488C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -529,7 +529,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEST_WAC&quot;"
-              DTS:DTSID="{3655BED5-9D80-4316-AEE0-C8536632D60D}"
+              DTS:DTSID="{955C3961-2F10-43C2-A265-97E5A529139C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -538,7 +538,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;CRS_DEP_TIME&quot;"
-              DTS:DTSID="{63C88971-3445-4152-91B8-2FA003211F7D}"
+              DTS:DTSID="{75F50123-69DC-4694-B39A-555271CF0A0C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -547,7 +547,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEP_TIME&quot;"
-              DTS:DTSID="{7C34DC09-6EF7-4D1E-916B-8C21D90E51E6}"
+              DTS:DTSID="{AB53E82E-0CA7-4481-B614-CA7FB1F719CA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -556,7 +556,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEP_DELAY&quot;"
-              DTS:DTSID="{B38313F7-C03F-4890-BC84-EDC457BB6EE3}"
+              DTS:DTSID="{C059DF1D-185C-4944-8530-AA5CB68F6EF6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -565,7 +565,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEP_DELAY_NEW&quot;"
-              DTS:DTSID="{80881E26-A531-48AD-A4AF-27A25B33AF74}"
+              DTS:DTSID="{FAED4A6E-A630-449C-84E4-1D87BDE65ABA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -574,7 +574,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEP_DEL15&quot;"
-              DTS:DTSID="{2F80453C-33C3-452E-A23E-8C9C6E869294}"
+              DTS:DTSID="{08A403E6-41E7-4A7F-9E7C-A196172BCF23}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -583,7 +583,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEP_DELAY_GROUP&quot;"
-              DTS:DTSID="{37AE01C9-7F56-42CB-BAC8-E122CD0024CE}"
+              DTS:DTSID="{533327C3-7CFE-4CBA-A91E-813F0162590B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -592,7 +592,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DEP_TIME_BLK&quot;"
-              DTS:DTSID="{21C0D020-8989-401C-9733-3D76C3D01457}"
+              DTS:DTSID="{B66338AF-CB4A-43E3-905A-D3E36B2040D7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -601,7 +601,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;TAXI_OUT&quot;"
-              DTS:DTSID="{F9367F51-962A-41F4-8C62-254E97D8AC88}"
+              DTS:DTSID="{7C5563EA-96BC-4ED4-A8F5-AF1C827B20AB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -610,7 +610,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;WHEELS_OFF&quot;"
-              DTS:DTSID="{8E17037F-993D-4AF3-B79A-3F4D9E4B8E0F}"
+              DTS:DTSID="{9B60022D-205D-47EF-8640-7B6DF03CA581}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -619,7 +619,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;WHEELS_ON&quot;"
-              DTS:DTSID="{CFBE6B70-7680-4911-9FC1-28DA1C65F51C}"
+              DTS:DTSID="{2A477510-3B08-4329-9FC5-8B9B2F3B4117}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -628,7 +628,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;TAXI_IN&quot;"
-              DTS:DTSID="{5AE1958B-F62A-48E2-94B1-11AD5D0232E1}"
+              DTS:DTSID="{87D54691-08CC-46B3-A3A2-C1FFB0BCED8D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -637,7 +637,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;CRS_ARR_TIME&quot;"
-              DTS:DTSID="{B742E232-4C4E-43C9-A93F-2FB8F8C29E32}"
+              DTS:DTSID="{9720B52E-3072-45CB-9A90-C50E919A5B61}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -646,7 +646,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ARR_TIME&quot;"
-              DTS:DTSID="{83661573-2B72-470C-A476-35ABC67E74E4}"
+              DTS:DTSID="{80EAB037-DA14-4ED3-88F5-86C80578A28A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -655,7 +655,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ARR_DELAY&quot;"
-              DTS:DTSID="{370E69CE-2DF5-427C-8B71-66D932DB720C}"
+              DTS:DTSID="{218BEAEE-A3AB-4F9E-8369-C09C15852846}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -664,7 +664,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ARR_DELAY_NEW&quot;"
-              DTS:DTSID="{ADCCA3B0-6566-42C1-BC59-8D93DB2D9F10}"
+              DTS:DTSID="{A13122EA-DB73-4B35-BC11-AA0AC4B541E9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -673,7 +673,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ARR_DEL15&quot;"
-              DTS:DTSID="{369E3FC6-39E5-4A34-AE50-808FC007598E}"
+              DTS:DTSID="{0CF18CB0-BBF4-4A8F-9F14-75BF7A522F07}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -682,7 +682,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ARR_DELAY_GROUP&quot;"
-              DTS:DTSID="{FED77B11-01CC-490A-B7A4-14D2EE0E1C61}"
+              DTS:DTSID="{DF559154-6388-4E91-A879-981794F7DC4D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -691,7 +691,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ARR_TIME_BLK&quot;"
-              DTS:DTSID="{34806A2D-4A20-47A2-B9C3-115AF9EFA2C9}"
+              DTS:DTSID="{4DD17505-12FE-425D-A564-463736C3A6E5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -700,7 +700,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;CANCELLED&quot;"
-              DTS:DTSID="{4BB02388-B8AA-4676-B5B4-81E98AEB335B}"
+              DTS:DTSID="{CDDDA3D5-2B05-450B-ABC7-91367839B36A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -709,7 +709,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;CANCELLATION_CODE&quot;"
-              DTS:DTSID="{D74BD4B5-852B-4A55-B6A6-8AC7E1772087}"
+              DTS:DTSID="{2EB65C2F-038B-4654-B5FE-5FCBA5C5FAFC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -718,7 +718,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DIVERTED&quot;"
-              DTS:DTSID="{DEEEB1B6-5035-4B28-99F3-650368EE8095}"
+              DTS:DTSID="{0E15CAFD-95FB-4A82-B17F-F3CEDFC623B1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -727,7 +727,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;CRS_ELAPSED_TIME&quot;"
-              DTS:DTSID="{865D7A61-09F7-455F-BA4F-BC738737622D}"
+              DTS:DTSID="{507F3913-E752-4468-8DD5-873191244ED2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -736,7 +736,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;ACTUAL_ELAPSED_TIME&quot;"
-              DTS:DTSID="{C56CCA65-A13A-4920-97D8-7D8590617BA4}"
+              DTS:DTSID="{6B6C6D1B-6016-4349-A076-BCB3A81762B0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -745,7 +745,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;AIR_TIME&quot;"
-              DTS:DTSID="{7D7B1A1B-FD7B-4420-A5E3-D3FB9D373C3C}"
+              DTS:DTSID="{BD7216BD-8C96-442A-A160-7CDA0CA5A36D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -754,7 +754,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;FLIGHTS&quot;"
-              DTS:DTSID="{75A24AFC-6A32-479D-B3C1-1596B809C1CC}"
+              DTS:DTSID="{7BE7C1D5-2409-4977-81AA-74571BA54435}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -763,7 +763,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DISTANCE&quot;"
-              DTS:DTSID="{269D820F-9ABD-4F73-82BB-815528C5C154}"
+              DTS:DTSID="{C2487E65-A52E-4298-A7B5-7806AE173F1E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -772,7 +772,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;DISTANCE_GROUP&quot;"
-              DTS:DTSID="{DB7FE76A-8695-42CC-B2C4-79749D25A516}"
+              DTS:DTSID="{247ACADE-E0BB-4787-A98C-BF391DBF6262}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -781,7 +781,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;CARRIER_DELAY&quot;"
-              DTS:DTSID="{509ECFA6-B98D-4E4F-AF9F-42A128F9898D}"
+              DTS:DTSID="{99DC3B6B-3863-4E09-90C4-878711D885AC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -790,7 +790,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;WEATHER_DELAY&quot;"
-              DTS:DTSID="{A1CAD559-517F-4D77-B9AD-CA0B76001C7F}"
+              DTS:DTSID="{8243975F-579A-426A-9397-EE10E716F1CD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -799,7 +799,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;NAS_DELAY&quot;"
-              DTS:DTSID="{50769C72-10D8-4779-B24C-6CC8EA9D31CF}"
+              DTS:DTSID="{286C6DBF-0FC3-48D4-AB97-754BCA0E9531}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -808,7 +808,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;SECURITY_DELAY&quot;"
-              DTS:DTSID="{658BDC70-5A26-4D5F-844C-FFC953CCD081}"
+              DTS:DTSID="{2DE3F4F6-81DC-4283-944A-2082686D434A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -817,7 +817,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;LATE_AIRCRAFT_DELAY&quot;"
-              DTS:DTSID="{3CEE8CCA-CC3F-461F-A23C-36639792A5F4}"
+              DTS:DTSID="{C004FF46-57AE-45E3-AE3D-08680F652A68}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -825,7 +825,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Column 0"
-              DTS:DTSID="{AF32CD05-CC6E-4038-AA60-C9F9BBC72A33}"
+              DTS:DTSID="{4339BCB9-8147-4491-84F7-2396D7E943F8}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -5306,7 +5306,7 @@
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="FlightStatus"
-                      externalMetadataColumnId="Package\DFT FACT 2008 JANUARY\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FlightStatus]"
+                      externalMetadataColumnId="Package\DFT FACT 2008 JANUARY\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FLIGHTSTATUS]"
                       lineageId="Package\DFT FACT 2008 JANUARY\Derived Column.Outputs[Derived Column Output].Columns[FlightStatus]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -5666,11 +5666,11 @@
                       length="1024"
                       name="LATEAIRCRAFTDELAY" />
                     <externalMetadataColumn
-                      refId="Package\DFT FACT 2008 JANUARY\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FlightStatus]"
+                      refId="Package\DFT FACT 2008 JANUARY\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FLIGHTSTATUS]"
                       codePage="1250"
                       dataType="str"
                       length="1024"
-                      name="FlightStatus" />
+                      name="FLIGHTSTATUS" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -12066,7 +12066,7 @@
     design-time-name="Package\DFT Airlines">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="151,42"
           Id="Package\DFT Airlines\Flat File Source"
@@ -12094,7 +12094,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12117,7 +12119,7 @@
     design-time-name="Package\DFT Airports">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="151,42"
           Id="Package\DFT Airports\Flat File Source"
@@ -12145,7 +12147,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12245,7 +12249,7 @@
     design-time-name="Package\DFT L_AIRLINE_ID">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_AIRLINE_ID\OLE DB Destination"
@@ -12273,7 +12277,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12296,7 +12302,7 @@
     design-time-name="Package\DFT L_AIRPORT">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_AIRPORT\OLE DB Destination"
@@ -12324,7 +12330,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12347,7 +12355,7 @@
     design-time-name="Package\DFT L_AIRPORT_ID">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_AIRPORT_ID\OLE DB Destination"
@@ -12375,7 +12383,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12398,7 +12408,7 @@
     design-time-name="Package\DFT L_AIRPORT_SEQ_ID">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_AIRPORT_SEQ_ID\OLE DB Destination"
@@ -12426,7 +12436,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12449,7 +12461,7 @@
     design-time-name="Package\DFT L_CANCELLATION">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_CANCELLATION\OLE DB Destination"
@@ -12477,7 +12489,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12500,7 +12514,7 @@
     design-time-name="Package\DFT L_CARRIER_HISTORY">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_CARRIER_HISTORY\OLE DB Destination"
@@ -12528,7 +12542,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12551,7 +12567,7 @@
     design-time-name="Package\DFT L_CITY_MARKET_ID">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_CITY_MARKET_ID\OLE DB Destination"
@@ -12579,7 +12595,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12602,7 +12620,7 @@
     design-time-name="Package\DFT L_DEPARRBLK">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_DEPARRBLK\OLE DB Destination"
@@ -12630,7 +12648,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12653,7 +12673,7 @@
     design-time-name="Package\DFT L_DISTANCE_GROUP_250">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_DISTANCE_GROUP_250\OLE DB Destination"
@@ -12681,7 +12701,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12704,7 +12726,7 @@
     design-time-name="Package\DFT L_MONTHS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_MONTHS\OLE DB Destination"
@@ -12732,7 +12754,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12755,7 +12779,7 @@
     design-time-name="Package\DFT L_ONTIME_DELAY_GROUPS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_ONTIME_DELAY_GROUPS\OLE DB Destination"
@@ -12783,7 +12807,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12806,7 +12832,7 @@
     design-time-name="Package\DFT L_QUARTERS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_QUARTERS\OLE DB Destination"
@@ -12834,7 +12860,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12857,7 +12885,7 @@
     design-time-name="Package\DFT L_STATE_FIPS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_STATE_FIPS\OLE DB Destination"
@@ -12885,7 +12913,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12908,7 +12938,7 @@
     design-time-name="Package\DFT L_UNIQUE_CARRIERS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_UNIQUE_CARRIERS\OLE DB Destination"
@@ -12936,7 +12966,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12959,7 +12991,7 @@
     design-time-name="Package\DFT L_WEEKDAYS">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_WEEKDAYS\OLE DB Destination"
@@ -12987,7 +13019,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13010,7 +13044,7 @@
     design-time-name="Package\DFT L_WORLD_AREA_CODES">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_WORLD_AREA_CODES\OLE DB Destination"
@@ -13038,7 +13072,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13061,7 +13097,7 @@
     design-time-name="Package\DFT L_YESNO_RESP">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT L_YESNO_RESP\OLE DB Destination"
@@ -13089,7 +13125,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13112,7 +13150,7 @@
     design-time-name="Package\DFT Planes">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT Planes\OLE DB Destination"
@@ -13140,7 +13178,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13163,7 +13203,7 @@
     design-time-name="Package\DFT Routes">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT Routes\OLE DB Destination"
@@ -13191,7 +13231,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
