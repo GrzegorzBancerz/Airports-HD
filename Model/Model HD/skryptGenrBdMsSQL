@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2017                    */
-/* Created on:     06.06.2019 12:16:33                          */
+/* Created on:     07.06.2019 18:36:07                          */
 /*==============================================================*/
 
 
@@ -122,27 +122,27 @@ go
 /*==============================================================*/
 create table FactFlight (
    FlightID             int                  not null,
-   FlightDateID         int                  not null,
+   FlightDateID         int                  null,
    GMTFlightDateID      int                  null,
-   WheelsOnID           int                  not null,
+   WheelsOnID           int                  null,
    GMTWheelsOnID        int                  null,
-   WheelsOffID          int                  not null,
+   WheelsOffID          int                  null,
    GMTWheelsOffID       int                  null,
-   CRSArrivalTimeID     int                  not null,
+   CRSArrivalTimeID     int                  null,
    GMTCRSArrivalTimeID  int                  null,
-   CRSDepartureTimeID   int                  not null,
+   CRSDepartureTimeID   int                  null,
    GMTCRSDepartureTimeID int                  null,
-   ActualDepartureTimeID int                  not null,
+   ActualDepartureTimeID int                  null,
    GMTActualDepartureTimeID int                  null,
-   ActualArrivalTimeID  int                  not null,
+   ActualArrivalTimeID  int                  null,
    GMTActualArrivalTimeID int                  null,
-   OriginAirportID      int                  not null,
-   DestinationAirportID int                  not null,
-   FlightStatusID       int                  not null,
+   OriginAirportID      int                  null,
+   DestinationAirportID int                  null,
+   FlightStatusID       int                  null,
    AirlineID            int                  null,
    DepBlkID             int                  null,
    ArrBlkID             int                  null,
-   DistanceID           int                  not null,
+   DistanceID           int                  null,
    ArrivalDelayGroupsID int                  null,
    DepartureDelayGroupsID int                  null,
    DepartureDelay       int                  null,
