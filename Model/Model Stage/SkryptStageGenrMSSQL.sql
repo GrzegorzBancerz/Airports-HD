@@ -1,140 +1,77 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2012                    */
-/* Created on:     15.05.2019 17:33:22                          */
+/* Created on:     08.06.2019 17:27:05                          */
 /*==============================================================*/
 
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('AIRLINEID')
+           where  id = object_id('AIRLINEOPENFLIGHTS')
             and   type = 'U')
-   drop table AIRLINEID
+   drop table AIRLINEOPENFLIGHTS
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('AIRLINEOFSTAGE')
+           where  id = object_id('AIRPORT')
             and   type = 'U')
-   drop table AIRLINEOFSTAGE
+   drop table AIRPORT
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('AIRPORTIDSTAGE')
+           where  id = object_id('AIRPORTOPENFLIGHTS')
             and   type = 'U')
-   drop table AIRPORTIDSTAGE
+   drop table AIRPORTOPENFLIGHTS
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('AIRPORTOFSTAGE')
+           where  id = object_id('CANCELLATION')
             and   type = 'U')
-   drop table AIRPORTOFSTAGE
+   drop table CANCELLATION
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('AIRPORTSEQIDSTAGE')
+           where  id = object_id('CITYMARKETID')
             and   type = 'U')
-   drop table AIRPORTSEQIDSTAGE
+   drop table CITYMARKETID
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('AIRPORTSTAGE')
+           where  id = object_id('DEPARRBLK')
             and   type = 'U')
-   drop table AIRPORTSTAGE
+   drop table DEPARRBLK
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('CANCELLATIONSTAGE')
+           where  id = object_id('DISTANCEGROUP250')
             and   type = 'U')
-   drop table CANCELLATIONSTAGE
+   drop table DISTANCEGROUP250
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('CARRIERHISTORY')
+           where  id = object_id('FACTFLIGHT')
             and   type = 'U')
-   drop table CARRIERHISTORY
+   drop table FACTFLIGHT
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('CITYMARKETIDSTAGE')
+           where  id = object_id('ONTIMEDELAYGROUPS')
             and   type = 'U')
-   drop table CITYMARKETIDSTAGE
+   drop table ONTIMEDELAYGROUPS
 go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('DAYOFWEEKSTAGE')
+           where  id = object_id('STATEFIPS')
             and   type = 'U')
-   drop table DAYOFWEEKSTAGE
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('DEPARRBLKSTAGE')
-            and   type = 'U')
-   drop table DEPARRBLKSTAGE
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('DISTANCEGROUP250STAGE')
-            and   type = 'U')
-   drop table DISTANCEGROUP250STAGE
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('FACTFLIGHTSTAGE')
-            and   type = 'U')
-   drop table FACTFLIGHTSTAGE
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('MONTHSTAGE')
-            and   type = 'U')
-   drop table MONTHSTAGE
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('ONTIMEDELAYGROUPSSTAGE')
-            and   type = 'U')
-   drop table ONTIMEDELAYGROUPSSTAGE
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('PLANEOFSTAGE')
-            and   type = 'U')
-   drop table PLANEOFSTAGE
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('QUARTERSTAGE')
-            and   type = 'U')
-   drop table QUARTERSTAGE
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('ROUTEOFSTAGE')
-            and   type = 'U')
-   drop table ROUTEOFSTAGE
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('STATEFIPSSTAGE')
-            and   type = 'U')
-   drop table STATEFIPSSTAGE
+   drop table STATEFIPS
 go
 
 if exists (select 1
@@ -146,31 +83,15 @@ go
 
 if exists (select 1
             from  sysobjects
-           where  id = object_id('WORLDAREACODESSTAGE')
+           where  id = object_id('WORLDAREACODES')
             and   type = 'U')
-   drop table WORLDAREACODESSTAGE
-go
-
-if exists (select 1
-            from  sysobjects
-           where  id = object_id('YESNORESPSTAGE')
-            and   type = 'U')
-   drop table YESNORESPSTAGE
+   drop table WORLDAREACODES
 go
 
 /*==============================================================*/
-/* Table: AIRLINEID                                             */
+/* Table: AIRLINEOPENFLIGHTS                                    */
 /*==============================================================*/
-create table AIRLINEID (
-   CODE                 varchar(1024)        null,
-   DESCRIPTION          varchar(1024)        null
-)
-go
-
-/*==============================================================*/
-/* Table: AIRLINEOFSTAGE                                        */
-/*==============================================================*/
-create table AIRLINEOFSTAGE (
+create table AIRLINEOPENFLIGHTS (
    AIRLINEID            varchar(1024)        null,
    NAME                 varchar(1024)        null,
    ALIAS                varchar(1024)        null,
@@ -183,18 +104,18 @@ create table AIRLINEOFSTAGE (
 go
 
 /*==============================================================*/
-/* Table: AIRPORTIDSTAGE                                        */
+/* Table: AIRPORT                                               */
 /*==============================================================*/
-create table AIRPORTIDSTAGE (
+create table AIRPORT (
    CODE                 varchar(1024)        null,
    DESCRIPTION          varchar(1024)        null
 )
 go
 
 /*==============================================================*/
-/* Table: AIRPORTOFSTAGE                                        */
+/* Table: AIRPORTOPENFLIGHTS                                    */
 /*==============================================================*/
-create table AIRPORTOFSTAGE (
+create table AIRPORTOPENFLIGHTS (
    AIRPORTID            varchar(1024)        null,
    NAME                 varchar(1024)        null,
    CITY                 varchar(1024)        null,
@@ -212,81 +133,45 @@ create table AIRPORTOFSTAGE (
 go
 
 /*==============================================================*/
-/* Table: AIRPORTSEQIDSTAGE                                     */
+/* Table: CANCELLATION                                          */
 /*==============================================================*/
-create table AIRPORTSEQIDSTAGE (
+create table CANCELLATION (
    CODE                 varchar(1024)        null,
    DESCRIPTION          varchar(1024)        null
 )
 go
 
 /*==============================================================*/
-/* Table: AIRPORTSTAGE                                          */
+/* Table: CITYMARKETID                                          */
 /*==============================================================*/
-create table AIRPORTSTAGE (
+create table CITYMARKETID (
    CODE                 varchar(1024)        null,
    DESCRIPTION          varchar(1024)        null
 )
 go
 
 /*==============================================================*/
-/* Table: CANCELLATIONSTAGE                                     */
+/* Table: DEPARRBLK                                             */
 /*==============================================================*/
-create table CANCELLATIONSTAGE (
+create table DEPARRBLK (
    CODE                 varchar(1024)        null,
    DESCRIPTION          varchar(1024)        null
 )
 go
 
 /*==============================================================*/
-/* Table: CARRIERHISTORY                                        */
+/* Table: DISTANCEGROUP250                                      */
 /*==============================================================*/
-create table CARRIERHISTORY (
+create table DISTANCEGROUP250 (
    CODE                 varchar(1024)        null,
    DESCRIPTION          varchar(1024)        null
 )
 go
 
 /*==============================================================*/
-/* Table: CITYMARKETIDSTAGE                                     */
+/* Table: FACTFLIGHT                                            */
 /*==============================================================*/
-create table CITYMARKETIDSTAGE (
-   CODE                 varchar(1024)        null,
-   DESCRIPTION          varchar(1024)        null
-)
-go
-
-/*==============================================================*/
-/* Table: DAYOFWEEKSTAGE                                        */
-/*==============================================================*/
-create table DAYOFWEEKSTAGE (
-   CODE                 varchar(1024)        null,
-   DESCRIPTION          varchar(1024)        null
-)
-go
-
-/*==============================================================*/
-/* Table: DEPARRBLKSTAGE                                        */
-/*==============================================================*/
-create table DEPARRBLKSTAGE (
-   CODE                 varchar(1024)        null,
-   DESCRIPTION          varchar(1024)        null
-)
-go
-
-/*==============================================================*/
-/* Table: DISTANCEGROUP250STAGE                                 */
-/*==============================================================*/
-create table DISTANCEGROUP250STAGE (
-   CODE                 varchar(1024)        null,
-   DESCRIPTION          varchar(1024)        null
-)
-go
-
-/*==============================================================*/
-/* Table: FACTFLIGHTSTAGE                                       */
-/*==============================================================*/
-create table FACTFLIGHTSTAGE (
+create table FACTFLIGHT (
    YEAR                 varchar(1024)        null,
    QUARTER              varchar(1024)        null,
    MONTH                varchar(1024)        null,
@@ -345,67 +230,24 @@ create table FACTFLIGHTSTAGE (
    WEATHERDELAY         varchar(1024)        null,
    NASDELAY             varchar(1024)        null,
    SECURITYDELAY        varchar(1024)        null,
-   LATEAIRCRAFTDELAY    varchar(1024)        null
+   LATEAIRCRAFTDELAY    varchar(1024)        null,
+   FLIGHTSTATUS         varchar(1024)        null
 )
 go
 
 /*==============================================================*/
-/* Table: MONTHSTAGE                                            */
+/* Table: ONTIMEDELAYGROUPS                                     */
 /*==============================================================*/
-create table MONTHSTAGE (
+create table ONTIMEDELAYGROUPS (
    CODE                 varchar(1024)        null,
    DESCRIPTION          varchar(1024)        null
 )
 go
 
 /*==============================================================*/
-/* Table: ONTIMEDELAYGROUPSSTAGE                                */
+/* Table: STATEFIPS                                             */
 /*==============================================================*/
-create table ONTIMEDELAYGROUPSSTAGE (
-   CODE                 varchar(1024)        null,
-   DESCRIPTION          varchar(1024)        null
-)
-go
-
-/*==============================================================*/
-/* Table: PLANEOFSTAGE                                          */
-/*==============================================================*/
-create table PLANEOFSTAGE (
-   NAME                 varchar(1024)        null,
-   IATACODE             varchar(1024)        null,
-   ICAOCODE             varchar(1024)        null
-)
-go
-
-/*==============================================================*/
-/* Table: QUARTERSTAGE                                          */
-/*==============================================================*/
-create table QUARTERSTAGE (
-   CODE                 varchar(1024)        null,
-   DESCRIPTION          varchar(1024)        null
-)
-go
-
-/*==============================================================*/
-/* Table: ROUTEOFSTAGE                                          */
-/*==============================================================*/
-create table ROUTEOFSTAGE (
-   AIRLINE              varchar(1024)        null,
-   AIRLINEID            varchar(1024)        null,
-   SOURCEAIRPORT        varchar(1024)        null,
-   SOURCEAIRPORTID      varchar(1024)        null,
-   DESTINATIONAIRPORT   varchar(1024)        null,
-   DESTINATIONAIRPORTID varchar(1024)        null,
-   CODESHARE            varchar(1024)        null,
-   STOPS                varchar(1024)        null,
-   EQUIPMENT            varchar(1024)        null
-)
-go
-
-/*==============================================================*/
-/* Table: STATEFIPSSTAGE                                        */
-/*==============================================================*/
-create table STATEFIPSSTAGE (
+create table STATEFIPS (
    CODE                 varchar(1024)        null,
    DESCRIPTION          varchar(1024)        null
 )
@@ -421,18 +263,9 @@ create table UNIQUECARRIERS (
 go
 
 /*==============================================================*/
-/* Table: WORLDAREACODESSTAGE                                   */
+/* Table: WORLDAREACODES                                        */
 /*==============================================================*/
-create table WORLDAREACODESSTAGE (
-   CODE                 varchar(1024)        null,
-   DESCRIPTION          varchar(1024)        null
-)
-go
-
-/*==============================================================*/
-/* Table: YESNORESPSTAGE                                        */
-/*==============================================================*/
-create table YESNORESPSTAGE (
+create table WORLDAREACODES (
    CODE                 varchar(1024)        null,
    DESCRIPTION          varchar(1024)        null
 )
