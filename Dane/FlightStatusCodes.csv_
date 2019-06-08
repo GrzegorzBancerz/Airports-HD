@@ -1,6 +1,0 @@
-ID,Code,Description
-5,V,Diverted
-6,OA,OnTime Arrival
-7,OD,OnTime Departure
-8,AD,Arrival Delay
-9,DD,Departure Delay
