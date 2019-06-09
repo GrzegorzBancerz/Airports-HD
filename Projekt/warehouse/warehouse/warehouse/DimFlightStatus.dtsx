@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimFlightStatus"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{118423DF-E660-4CF7-B359-E595F10BCCB9}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{0C8C0A03-FF04-4AF6-9850-395C22010FE3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

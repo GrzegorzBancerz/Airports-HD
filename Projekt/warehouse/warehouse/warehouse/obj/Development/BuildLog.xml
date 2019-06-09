@@ -2,23 +2,23 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>warehouse</Name>
-    <LastWriteTime>2019-06-09T09:59:59.2666589Z</LastWriteTime>
+    <LastWriteTime>2019-06-09T14:09:58.7980228Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>DimAirport.dtsx</Name>
-      <LastWriteTime>2019-06-08T21:22:34.5360382Z</LastWriteTime>
+      <LastWriteTime>2019-06-09T11:29:47.7950188Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimAirline.dtsx</Name>
-      <LastWriteTime>2019-06-08T21:13:41.8374666Z</LastWriteTime>
+      <LastWriteTime>2019-06-09T11:29:47.7910198Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimDate.dtsx</Name>
-      <LastWriteTime>2019-06-08T21:23:08.7986604Z</LastWriteTime>
+      <LastWriteTime>2019-06-09T11:29:47.7970181Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -28,32 +28,32 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimDistance.dtsx</Name>
-      <LastWriteTime>2019-06-09T09:59:59.2217585Z</LastWriteTime>
+      <LastWriteTime>2019-06-09T11:29:47.8040156Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimDelayGroups.dtsx</Name>
-      <LastWriteTime>2019-06-08T21:24:22.349166Z</LastWriteTime>
+      <LastWriteTime>2019-06-09T11:29:47.7990173Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimDepArrBlk.dtsx</Name>
-      <LastWriteTime>2019-06-08T21:25:56.0539823Z</LastWriteTime>
+      <LastWriteTime>2019-06-09T11:29:47.8020162Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimFlightStatus.dtsx</Name>
-      <LastWriteTime>2019-06-09T09:45:49.0967092Z</LastWriteTime>
+      <LastWriteTime>2019-06-09T14:14:01.0079167Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>FactFlight.dtsx</Name>
-      <LastWriteTime>2019-06-09T10:04:48.8547226Z</LastWriteTime>
+      <LastWriteTime>2019-06-09T14:23:06.415412Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Stage.dtsx</Name>
-      <LastWriteTime>2019-06-08T21:03:27.9054425Z</LastWriteTime>
+      <LastWriteTime>2019-06-09T14:09:58.7440525Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
