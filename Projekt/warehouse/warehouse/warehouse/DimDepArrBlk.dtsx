@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimDepArrBlk"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{B4952AA6-2FE3-4EE1-8469-AF6B8727ED03}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{45BAC696-4C47-4AC6-8206-9C7A5FD9BECB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -132,7 +132,7 @@
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="255"
+                      length="10"
                       lineageId="Package\DimDepArrBlk\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]"
                       name="Copy of CODE"
                       truncationRowDisposition="FailComponent">
@@ -201,7 +201,7 @@
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT         ROW_NUMBER() OVER (ORDER BY [CODE]) + ? IDDEPARRBLK,DESCRIPTION,CODE
-FROM            DEPARRBLKSTAGE</property>
+FROM            DEPARRBLK</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -346,7 +346,7 @@ FROM            DEPARRBLKSTAGE</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DimDepArrBlk]</property>
+                  name="OpenRowset">[dbo].[DimDepartureArrivalTimeIntervals]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -403,12 +403,18 @@ FROM            DEPARRBLKSTAGE</property>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].Columns[Copy of IDDEPARRBLK]"
+                      cachedDataType="i8"
+                      cachedName="Copy of IDDEPARRBLK"
+                      externalMetadataColumnId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[DepArrTimeIntervalsID]"
+                      lineageId="Package\DimDepArrBlk\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IDDEPARRBLK]" />
+                    <inputColumn
                       refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].Columns[Copy of CODE]"
                       cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="255"
+                      cachedLength="10"
                       cachedName="Copy of CODE"
-                      externalMetadataColumnId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[Code]"
+                      externalMetadataColumnId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[DepArrTimeIntervalsCode]"
                       lineageId="Package\DimDepArrBlk\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]" />
                     <inputColumn
                       refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].Columns[Copy of DESCRIPTION]"
@@ -416,33 +422,27 @@ FROM            DEPARRBLKSTAGE</property>
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Copy of DESCRIPTION"
-                      externalMetadataColumnId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      externalMetadataColumnId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[DepArrTimeIntervalsDescription]"
                       lineageId="Package\DimDepArrBlk\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DESCRIPTION]" />
-                    <inputColumn
-                      refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].Columns[Copy of IDDEPARRBLK]"
-                      cachedDataType="i8"
-                      cachedName="Copy of IDDEPARRBLK"
-                      externalMetadataColumnId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[DepArrBlkID]"
-                      lineageId="Package\DimDepArrBlk\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IDDEPARRBLK]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[DepArrBlkID]"
+                      refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[DepArrTimeIntervalsID]"
                       dataType="i4"
-                      name="DepArrBlkID" />
+                      name="DepArrTimeIntervalsID" />
                     <externalMetadataColumn
-                      refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[Code]"
+                      refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[DepArrTimeIntervalsCode]"
+                      codePage="1250"
+                      dataType="str"
+                      length="10"
+                      name="DepArrTimeIntervalsCode" />
+                    <externalMetadataColumn
+                      refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[DepArrTimeIntervalsDescription]"
                       codePage="1250"
                       dataType="str"
                       length="255"
-                      name="Code" />
-                    <externalMetadataColumn
-                      refId="Package\DimDepArrBlk\DimDepArrBlk.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
-                      codePage="1250"
-                      dataType="str"
-                      length="255"
-                      name="Description" />
+                      name="DepArrTimeIntervalsDescription" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -517,13 +517,13 @@ FROM            DEPARRBLKSTAGE</property>
           Id="Package\DimDepArrBlk\DEPARRBLKSTAGE"
           TopLeft="353,103" />
         <NodeLayout
-          Size="144,42"
-          Id="Package\DimDepArrBlk\DimDepArrBlk"
-          TopLeft="331,399" />
-        <NodeLayout
           Size="156,42"
           Id="Package\DimDepArrBlk\Data Conversion"
           TopLeft="325,230" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\DimDepArrBlk\DimDepArrBlk"
+          TopLeft="331,399" />
         <EdgeLayout
           Id="Package\DimDepArrBlk.Paths[OLE DB Source Output]"
           TopLeft="436.5,145">

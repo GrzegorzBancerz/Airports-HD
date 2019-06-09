@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimFlightStatus"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{C505129D-217E-46C1-94B6-C5F923BDEC60}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{118423DF-E660-4CF7-B359-E595F10BCCB9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -117,7 +117,7 @@
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT         ROW_NUMBER() OVER (ORDER BY [CODE]) + ? FlightStatusID, CODE, DESCRIPTION
-FROM            CANCELLATIONSTAGE</property>
+FROM            CANCELLATION</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -713,7 +713,7 @@ FROM            CANCELLATIONSTAGE</property>
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Copy of CODE"
-                      externalMetadataColumnId="Package\DimFlightStatus\DimFlightStatus.Inputs[OLE DB Destination Input].ExternalColumns[StatusCode]"
+                      externalMetadataColumnId="Package\DimFlightStatus\DimFlightStatus.Inputs[OLE DB Destination Input].ExternalColumns[FlightStatusCode]"
                       lineageId="Package\DimFlightStatus\Union All.Outputs[Union All Output 1].Columns[Copy of CODE]" />
                     <inputColumn
                       refId="Package\DimFlightStatus\DimFlightStatus.Inputs[OLE DB Destination Input].Columns[Copy of DESCRIPTION]"
@@ -721,7 +721,7 @@ FROM            CANCELLATIONSTAGE</property>
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Copy of DESCRIPTION"
-                      externalMetadataColumnId="Package\DimFlightStatus\DimFlightStatus.Inputs[OLE DB Destination Input].ExternalColumns[StatusDescription]"
+                      externalMetadataColumnId="Package\DimFlightStatus\DimFlightStatus.Inputs[OLE DB Destination Input].ExternalColumns[FlightStatusDescription]"
                       lineageId="Package\DimFlightStatus\Union All.Outputs[Union All Output 1].Columns[Copy of DESCRIPTION]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -731,17 +731,17 @@ FROM            CANCELLATIONSTAGE</property>
                       dataType="i4"
                       name="FlightStatusID" />
                     <externalMetadataColumn
-                      refId="Package\DimFlightStatus\DimFlightStatus.Inputs[OLE DB Destination Input].ExternalColumns[StatusCode]"
+                      refId="Package\DimFlightStatus\DimFlightStatus.Inputs[OLE DB Destination Input].ExternalColumns[FlightStatusCode]"
                       codePage="1250"
                       dataType="str"
                       length="255"
-                      name="StatusCode" />
+                      name="FlightStatusCode" />
                     <externalMetadataColumn
-                      refId="Package\DimFlightStatus\DimFlightStatus.Inputs[OLE DB Destination Input].ExternalColumns[StatusDescription]"
+                      refId="Package\DimFlightStatus\DimFlightStatus.Inputs[OLE DB Destination Input].ExternalColumns[FlightStatusDescription]"
                       codePage="1250"
                       dataType="str"
                       length="255"
-                      name="StatusDescription" />
+                      name="FlightStatusDescription" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1190,9 +1190,9 @@ FROM            CANCELLATIONSTAGE</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="121,42"
-          Id="Package\DimFlightStatus\Union All"
-          TopLeft="449,386" />
+          Size="163,42"
+          Id="Package\DimFlightStatus\FlightStatusCodes"
+          TopLeft="540,138" />
         <NodeLayout
           Size="154,42"
           Id="Package\DimFlightStatus\Derived Column"
@@ -1206,10 +1206,6 @@ FROM            CANCELLATIONSTAGE</property>
           Id="Package\DimFlightStatus\Data Conversion"
           TopLeft="222,233" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\DimFlightStatus\FlightStatusCodes"
-          TopLeft="540,138" />
-        <NodeLayout
           Size="153,42"
           Id="Package\DimFlightStatus\DimFlightStatus"
           TopLeft="373,523" />
@@ -1217,74 +1213,10 @@ FROM            CANCELLATIONSTAGE</property>
           Size="185,42"
           Id="Package\DimFlightStatus\CANCELLATIONSTAGE"
           TopLeft="244,107" />
-        <EdgeLayout
-          Id="Package\DimFlightStatus.Paths[Union All Output 1]"
-          TopLeft="509.5,428">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-60,95"
-              Start="0,0"
-              End="-60,87.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.5"
-                    Point2="0,47.5"
-                    Point3="-4,47.5" />
-                  <mssgle:LineSegment
-                    End="-56,47.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-56,47.5"
-                    Point2="-60,47.5"
-                    Point3="-60,51.5" />
-                  <mssgle:LineSegment
-                    End="-60,87.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DimFlightStatus.Paths[OLE DB Source Output]"
-          TopLeft="336.5,149">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-36.5,84"
-              Start="0,0"
-              End="-36.5,76.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38"
-                    Point2="0,42"
-                    Point3="-4,42" />
-                  <mssgle:LineSegment
-                    End="-32.5,42" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-32.5,42"
-                    Point2="-36.5,42"
-                    Point3="-36.5,46" />
-                  <mssgle:LineSegment
-                    End="-36.5,76.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\DimFlightStatus\Union All"
+          TopLeft="449,386" />
         <EdgeLayout
           Id="Package\DimFlightStatus.Paths[Flat File Source Output]"
           TopLeft="621.5,180">
@@ -1413,6 +1345,74 @@ FROM            CANCELLATIONSTAGE</property>
                     Point3="-53.1666666666666,54.9265905383361" />
                   <mssgle:LineSegment
                     End="-53.1666666666666,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimFlightStatus.Paths[Union All Output 1]"
+          TopLeft="509.5,428">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-60,95"
+              Start="0,0"
+              End="-60,87.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.5"
+                    Point2="0,47.5"
+                    Point3="-4,47.5" />
+                  <mssgle:LineSegment
+                    End="-56,47.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-56,47.5"
+                    Point2="-60,47.5"
+                    Point3="-60,51.5" />
+                  <mssgle:LineSegment
+                    End="-60,87.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DimFlightStatus.Paths[OLE DB Source Output]"
+          TopLeft="336.5,149">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-36.5,84"
+              Start="0,0"
+              End="-36.5,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38"
+                    Point2="0,42"
+                    Point3="-4,42" />
+                  <mssgle:LineSegment
+                    End="-32.5,42" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-32.5,42"
+                    Point2="-36.5,42"
+                    Point3="-36.5,46" />
+                  <mssgle:LineSegment
+                    End="-36.5,76.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

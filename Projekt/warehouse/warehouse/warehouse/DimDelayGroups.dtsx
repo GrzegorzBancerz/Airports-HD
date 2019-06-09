@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimDelayGroups"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{73B17C79-49E0-4AB5-8E98-D0D23A71D4F7}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{E7EC4133-D2CC-4620-9386-7BC4D60EFA51}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -385,7 +385,7 @@
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Copy of CODE"
-                      externalMetadataColumnId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].ExternalColumns[DelayGroups]"
+                      externalMetadataColumnId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].ExternalColumns[DelayGroupsCode]"
                       lineageId="Package\DimDelayGroups\Union All.Outputs[Union All Output 1].Columns[Copy of CODE]" />
                     <inputColumn
                       refId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].Columns[Copy of DESCRIPTION]"
@@ -393,7 +393,7 @@
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Copy of DESCRIPTION"
-                      externalMetadataColumnId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].ExternalColumns[DelayDescription]"
+                      externalMetadataColumnId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].ExternalColumns[DelayGroupsDescription]"
                       lineageId="Package\DimDelayGroups\Union All.Outputs[Union All Output 1].Columns[Copy of DESCRIPTION]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -403,15 +403,15 @@
                       dataType="i4"
                       name="DelayGroupsID" />
                     <externalMetadataColumn
-                      refId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].ExternalColumns[DelayGroups]"
+                      refId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].ExternalColumns[DelayGroupsCode]"
                       dataType="i4"
-                      name="DelayGroups" />
+                      name="DelayGroupsCode" />
                     <externalMetadataColumn
-                      refId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].ExternalColumns[DelayDescription]"
+                      refId="Package\DimDelayGroups\DimDelayGroups.Inputs[OLE DB Destination Input].ExternalColumns[DelayGroupsDescription]"
                       codePage="1250"
                       dataType="str"
                       length="255"
-                      name="DelayDescription" />
+                      name="DelayGroupsDescription" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -615,7 +615,7 @@
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        ROW_NUMBER() OVER (ORDER BY CAST([CODE] as int)) + ? IDDelay, CODE, DESCRIPTION
-FROM            ONTIMEDELAYGROUPSSTAGE</property>
+FROM            ONTIMEDELAYGROUPS</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1013,13 +1013,59 @@ FROM            ONTIMEDELAYGROUPSSTAGE</property>
           Id="Package\DimDelayGroups\DimDelayGroups"
           TopLeft="405,397" />
         <NodeLayout
-          Size="156,42"
-          Id="Package\DimDelayGroups\Data Conversion"
-          TopLeft="268,193" />
+          Size="263,42"
+          Id="Package\DimDelayGroups\L_ONTIME_DELAY_GROUPS_Cancelled"
+          TopLeft="559,47" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\DimDelayGroups\Union All"
+          TopLeft="408,282" />
         <NodeLayout
           Size="221,42"
           Id="Package\DimDelayGroups\ONTIMEDELAYGROUPSSTAGE"
           TopLeft="231,51" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\DimDelayGroups\Data Conversion 1"
+          TopLeft="539,146" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DimDelayGroups\Data Conversion"
+          TopLeft="268,193" />
+        <EdgeLayout
+          Id="Package\DimDelayGroups.Paths[Union All Output 1]"
+          TopLeft="468.5,324">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15,73"
+              Start="0,0"
+              End="15,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.5"
+                    Point2="0,36.5"
+                    Point3="4,36.5" />
+                  <mssgle:LineSegment
+                    End="11,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11,36.5"
+                    Point2="15,36.5"
+                    Point3="15,40.5" />
+                  <mssgle:LineSegment
+                    End="15,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DimDelayGroups.Paths[OLE DB Source Output]"
           TopLeft="343.75,93">
@@ -1042,52 +1088,6 @@ FROM            ONTIMEDELAYGROUPSSTAGE</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="263,42"
-          Id="Package\DimDelayGroups\L_ONTIME_DELAY_GROUPS_Cancelled"
-          TopLeft="559,47" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\DimDelayGroups\Union All"
-          TopLeft="408,282" />
-        <EdgeLayout
-          Id="Package\DimDelayGroups.Paths[Data Conversion Output]"
-          TopLeft="346,235">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="103.666666666667,47"
-              Start="0,0"
-              End="103.666666666667,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.8319738988581" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.8319738988581"
-                    Point2="0,27.8319738988581"
-                    Point3="4,27.8319738988581" />
-                  <mssgle:LineSegment
-                    End="99.6666666666667,27.8319738988581" />
-                  <mssgle:CubicBezierSegment
-                    Point1="99.6666666666667,27.8319738988581"
-                    Point2="103.666666666667,27.8319738988581"
-                    Point3="103.666666666667,31.8319738988581" />
-                  <mssgle:LineSegment
-                    End="103.666666666667,39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="165,42"
-          Id="Package\DimDelayGroups\Data Conversion 1"
-          TopLeft="539,146" />
         <EdgeLayout
           Id="Package\DimDelayGroups.Paths[Flat File Source Output]"
           TopLeft="690.5,89">
@@ -1157,31 +1157,31 @@ FROM            ONTIMEDELAYGROUPSSTAGE</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DimDelayGroups.Paths[Union All Output 1]"
-          TopLeft="468.5,324">
+          Id="Package\DimDelayGroups.Paths[Data Conversion Output]"
+          TopLeft="346,235">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="15,73"
+              EndConnector="103.666666666667,47"
               Start="0,0"
-              End="15,65.5">
+              End="103.666666666667,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.5" />
+                    End="0,23.8319738988581" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,32.5"
-                    Point2="0,36.5"
-                    Point3="4,36.5" />
+                    Point1="0,23.8319738988581"
+                    Point2="0,27.8319738988581"
+                    Point3="4,27.8319738988581" />
                   <mssgle:LineSegment
-                    End="11,36.5" />
+                    End="99.6666666666667,27.8319738988581" />
                   <mssgle:CubicBezierSegment
-                    Point1="11,36.5"
-                    Point2="15,36.5"
-                    Point3="15,40.5" />
+                    Point1="99.6666666666667,27.8319738988581"
+                    Point2="103.666666666667,27.8319738988581"
+                    Point3="103.666666666667,31.8319738988581" />
                   <mssgle:LineSegment
-                    End="15,65.5" />
+                    End="103.666666666667,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

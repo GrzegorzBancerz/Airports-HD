@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="DimDistance"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{E5696363-D02B-4B31-9E94-5429B7DB0462}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{B23603AC-FF6D-4E0A-84EA-EFD23FE41A23}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -228,7 +228,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[DimDistance]</property>
+                  name="OpenRowset">[dbo].[DimDistanceRange]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -285,44 +285,44 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].Columns[Copy of IDDISTANCE]"
+                      cachedDataType="i8"
+                      cachedName="Copy of IDDISTANCE"
+                      externalMetadataColumnId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceRangeID]"
+                      lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IDDISTANCE]" />
+                    <inputColumn
                       refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].Columns[Copy of CODE]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Copy of CODE"
-                      externalMetadataColumnId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceGroup]"
+                      externalMetadataColumnId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceRangeCode]"
                       lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CODE]" />
-                    <inputColumn
-                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].Columns[Copy of IDDISTANCE]"
-                      cachedDataType="i8"
-                      cachedName="Copy of IDDISTANCE"
-                      externalMetadataColumnId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceID]"
-                      lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IDDISTANCE]" />
                     <inputColumn
                       refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].Columns[Copy of DESCRIPTION]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Copy of DESCRIPTION"
-                      externalMetadataColumnId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      externalMetadataColumnId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceRangeDescription]"
                       lineageId="Package\DimDistance\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DESCRIPTION]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceID]"
+                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceRangeID]"
                       dataType="i4"
-                      name="DistanceID" />
+                      name="DistanceRangeID" />
                     <externalMetadataColumn
-                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceGroup]"
+                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceRangeCode]"
                       dataType="i4"
-                      name="DistanceGroup" />
+                      name="DistanceRangeCode" />
                     <externalMetadataColumn
-                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      refId="Package\DimDistance\DimDistance.Inputs[OLE DB Destination Input].ExternalColumns[DistanceRangeDescription]"
                       codePage="1250"
                       dataType="str"
                       length="255"
-                      name="Description" />
+                      name="DistanceRangeDescription" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -439,7 +439,7 @@
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        ROW_NUMBER() OVER (ORDER BY CAST([CODE] as int)) + ? IDDISTANCE,CODE, DESCRIPTION
-FROM            DISTANCEGROUP250STAGE</property>
+FROM            DISTANCEGROUP250</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
