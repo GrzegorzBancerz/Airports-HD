@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="FactFlight"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{3904675E-28ED-4DAB-8A42-EA1AD90A55F1}">
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{694EADCE-1847-47B1-8DFE-4243E800191D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -7871,6 +7871,15 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{60C1CDAF-0958-45A1-8EC8-F767E1877AC7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="FlightMaxId">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{FC5A43DC-8EC5-4DF7-9EB8-B6BA4D9A4BD7}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
@@ -7881,6 +7890,27 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4F6259B0-F4A0-4673-ADC9-192725F6D65C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{70F14BAE-DCDE-4C28-A732-FD00719FB49A}"
+          SQLTask:SqlStatementSource="SELECT Max([FlightID]) as FlightMaxID&#xA;  FROM [warehouse].[dbo].[FactFlight]"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="FlightMaxId"
+            SQLTask:DtsVariableName="User::FlightMaxId" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\FactFlight"
       DTS:CreationName="Microsoft.Pipeline"
@@ -11710,7 +11740,7 @@ FROM            FACTFLIGHT</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"Parameter0:Input",{FC5A43DC-8EC5-4DF7-9EB8-B6BA4D9A4BD7};</property>
+                  name="ParameterMapping">"Parameter0:Input",{60C1CDAF-0958-45A1-8EC8-F767E1877AC7};</property>
               </properties>
               <connections>
                 <connection
@@ -14838,99 +14868,99 @@ FROM            FACTFLIGHT</property>
               startId="Package\FactFlight\Derived Column 1.Outputs[Derived Column Output]" />
             <path
               refId="Package\FactFlight.Paths[Lookup Match Output15]"
-              endId="Package\FactFlight\Derived Column 1.Inputs[Derived Column Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimAirport Destination.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output14]"
-              endId="Package\FactFlight\DimDepArrBlk Arrival.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimDepArrBlk Departure.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output13]"
-              endId="Package\FactFlight\DimDelayGroups Departure.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimDate.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output12]"
-              endId="Package\FactFlight\DimFlightStatus.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimDistance.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output11]"
-              endId="Package\FactFlight\DimAirport Origin.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimAirline.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output10]"
-              endId="Package\FactFlight\DimAirport Destination.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimAirport Origin.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output9]"
-              endId="Package\FactFlight\DimDelayGroups Arrival.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimDelayGroups Departure.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output8]"
-              endId="Package\FactFlight\DimDistance.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimDepArrBlk Arrival.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output6]"
-              endId="Package\FactFlight\DimTime WheelsOff.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimTime WheelsON.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output5]"
-              endId="Package\FactFlight\DimTime CRSDepTime.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimTime WheelsOff.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output4]"
-              endId="Package\FactFlight\DimTime ActualDepTime.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimTime CRSDepTime.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output3]"
-              endId="Package\FactFlight\DimTime ActualArrivalTime.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimTime ActualDepTime.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output2]"
-              endId="Package\FactFlight\DimTime CRSArrivalTime.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimTime ActualArrivalTime.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output1]"
-              endId="Package\FactFlight\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimTime CRSArrivalTime.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output]"
-              endId="Package\FactFlight\DimDepArrBlk Departure.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\FactFlight\DimDelayGroups Arrival.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup Match Output7]"
               endId="Package\FactFlight\Derived Column.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\FactFlight\DimFlightStatus.Outputs[Lookup Match Output]" />
             <path
+              refId="Package\FactFlight.Paths[Lookup Match Output14]"
+              endId="Package\FactFlight\DimDepArrBlk Departure.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimDelayGroups Arrival.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup Match Output13]"
+              endId="Package\FactFlight\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimTime CRSArrivalTime.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup Match Output12]"
+              endId="Package\FactFlight\DimTime CRSArrivalTime.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimTime ActualArrivalTime.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup Match Output11]"
+              endId="Package\FactFlight\DimTime ActualArrivalTime.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimTime ActualDepTime.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup Match Output10]"
+              endId="Package\FactFlight\DimTime ActualDepTime.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimTime CRSDepTime.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup Match Output9]"
+              endId="Package\FactFlight\DimTime CRSDepTime.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimTime WheelsOff.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup Match Output8]"
+              endId="Package\FactFlight\DimTime WheelsOff.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimTime WheelsON.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup Match Output6]"
+              endId="Package\FactFlight\DimDelayGroups Arrival.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimDelayGroups Departure.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup Match Output5]"
+              endId="Package\FactFlight\DimAirport Destination.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimAirport Origin.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup Match Output4]"
+              endId="Package\FactFlight\DimAirport Origin.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimAirline.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup Match Output3]"
+              endId="Package\FactFlight\DimFlightStatus.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimDistance.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup Match Output2]"
+              endId="Package\FactFlight\DimDelayGroups Departure.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimDate.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup Match Output1]"
+              endId="Package\FactFlight\DimDepArrBlk Arrival.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimDepArrBlk Departure.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup Match Output]"
+              endId="Package\FactFlight\Derived Column 1.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimAirport Destination.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup Match Output7]"
+              endId="Package\FactFlight\DimDistance.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\FactFlight\DimDepArrBlk Arrival.Outputs[Lookup Match Output]" />
+            <path
               refId="Package\FactFlight.Paths[Lookup No Match Output2]"
+              endId="Package\FactFlight\FactsNoMatchDimAirport Destination.Inputs[Flat File Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\FactFlight\DimAirport Destination.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\FactFlight.Paths[Lookup No Match Output]"
               endId="Package\FactFlight\FactsNoMatchDimAirport Origin.Inputs[Flat File Destination Input]"
               name="Lookup No Match Output"
               startId="Package\FactFlight\DimAirport Origin.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\FactFlight.Paths[Lookup No Match Output]"
+              refId="Package\FactFlight.Paths[Lookup No Match Output1]"
               endId="Package\FactFlight\FactsNoMatchDimAirline.Inputs[Flat File Destination Input]"
               name="Lookup No Match Output"
               startId="Package\FactFlight\DimAirline.Outputs[Lookup No Match Output]" />
-            <path
-              refId="Package\FactFlight.Paths[Lookup No Match Output1]"
-              endId="Package\FactFlight\FactsNoMatchDimAirport Destination.Inputs[Flat File Destination Input]"
-              name="Lookup No Match Output"
-              startId="Package\FactFlight\DimAirport Destination.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\FactFlight.Paths[OLE DB Source Output]"
               endId="Package\FactFlight\DimAirline.Inputs[Lookup Input]"
@@ -14941,6 +14971,16 @@ FROM            FACTFLIGHT</property>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{B630E9BF-4216-4640-B3DF-B184BD233299}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\FactFlight" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -14952,11 +14992,37 @@ FROM            FACTFLIGHT</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="125,42"
           Id="Package\FactFlight"
-          TopLeft="66,57" />
+          TopLeft="119,208" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="107,73" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="185,115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,93"
+              Start="0,0"
+              End="0,85.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,85.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -14966,230 +15032,170 @@ FROM            FACTFLIGHT</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="190,42"
-          Id="Package\FactFlight\DimDelayGroups Arrival"
-          TopLeft="625,345" />
+          Size="173,42"
+          Id="Package\FactFlight\DimTime WheelsOff"
+          TopLeft="958,331" />
         <NodeLayout
           Size="195,42"
           Id="Package\FactFlight\DimTime ActualDepTime"
           TopLeft="1008,607" />
         <NodeLayout
-          Size="127,42"
-          Id="Package\FactFlight\DimAirline"
-          TopLeft="420,137" />
-        <NodeLayout
-          Size="251,42"
-          Id="Package\FactFlight\FactsNoMatchDimAirport Destination"
-          TopLeft="34,282" />
-        <NodeLayout
-          Size="195,46"
-          Id="Package\FactFlight\DimDepArrBlk Departure"
-          TopLeft="623,229" />
-        <NodeLayout
-          Size="173,42"
-          Id="Package\FactFlight\DimTime WheelsOff"
-          TopLeft="958,331" />
-        <NodeLayout
-          Size="226,42"
-          Id="Package\FactFlight\FactsNoMatchDimAirport Origin"
-          TopLeft="60,202" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\FactFlight\DimDate"
-          TopLeft="602,614" />
-        <NodeLayout
-          Size="206,42"
-          Id="Package\FactFlight\DimTime ActualArrivalTime"
-          TopLeft="1229,472" />
-        <NodeLayout
-          Size="178,42"
-          Id="Package\FactFlight\DimDepArrBlk Arrival"
-          TopLeft="587,129" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\FactFlight\Derived Column"
-          TopLeft="1023,124" />
-        <NodeLayout
-          Size="185,42"
-          Id="Package\FactFlight\DimTime CRSDepTime"
-          TopLeft="975,480" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\FactFlight\DimAirport Origin"
-          TopLeft="419,206" />
-        <NodeLayout
-          Size="153,42"
-          Id="Package\FactFlight\DimFlightStatus"
-          TopLeft="1181,2" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\FactFlight\Fact Flight Stage"
-          TopLeft="251,46" />
+          Size="138,42"
+          Id="Package\FactFlight\DimDistance"
+          TopLeft="615,40" />
         <NodeLayout
           Size="208,42"
           Id="Package\FactFlight\DimDelayGroups Departure"
           TopLeft="630,467" />
         <NodeLayout
-          Size="196,42"
-          Id="Package\FactFlight\DimTime CRSArrivalTime"
-          TopLeft="1202.22222222222,290.555555555556" />
+          Size="161,42"
+          Id="Package\FactFlight\DimAirport Origin"
+          TopLeft="419,206" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\FactFlight\Derived Column 1"
-          TopLeft="167,383" />
-        <NodeLayout
-          Size="186,42"
-          Id="Package\FactFlight\DimAirport Destination"
-          TopLeft="419,285" />
-        <NodeLayout
-          Size="138,42"
-          Id="Package\FactFlight\DimDistance"
-          TopLeft="615,40" />
-        <NodeLayout
-          Size="173,42"
-          Id="Package\FactFlight\DimTime WheelsON"
-          TopLeft="969,208" />
+          Size="185,42"
+          Id="Package\FactFlight\DimTime CRSDepTime"
+          TopLeft="975,480" />
         <NodeLayout
           Size="171,42"
           Id="Package\FactFlight\OLE DB Destination"
           TopLeft="1271.11111111111,100.555555555556" />
         <NodeLayout
-          Size="167,42"
-          Id="Package\FactFlight\Change data types"
-          TopLeft="171,494" />
+          Size="173,42"
+          Id="Package\FactFlight\DimTime WheelsON"
+          TopLeft="969,208" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\FactFlight\DimTime CRSArrivalTime"
+          TopLeft="1202.22222222222,290.555555555556" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\FactFlight\DimFlightStatus"
+          TopLeft="1181,2" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\FactFlight\DimDepArrBlk Arrival"
+          TopLeft="587,129" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\FactFlight\DimDate"
+          TopLeft="602,614" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\FactFlight\DimAirline"
+          TopLeft="420,137" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\FactFlight\FactsNoMatchDimAirport Origin"
+          TopLeft="60,202" />
         <NodeLayout
           Size="192,42"
           Id="Package\FactFlight\FactsNoMatchDimAirline"
           TopLeft="96,139" />
-        <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup Match Output3]"
-          TopLeft="1136.66666666667,607">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="195.333333333333,-93"
-              Start="0,0"
-              End="195.333333333333,-85.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-33.6541200406917" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-33.6541200406917"
-                    Point2="0,-37.6541200406917"
-                    Point3="4,-37.6541200406917" />
-                  <mssgle:LineSegment
-                    End="191.333333333333,-37.6541200406917" />
-                  <mssgle:CubicBezierSegment
-                    Point1="191.333333333333,-37.6541200406917"
-                    Point2="195.333333333333,-37.6541200406917"
-                    Point3="195.333333333333,-41.6541200406917" />
-                  <mssgle:LineSegment
-                    End="195.333333333333,-85.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="49.4752799479166,-32.6541200406917,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup Match Output2]"
-          TopLeft="1332,472">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-31.7777777777801,-139.444444444444"
-              Start="0,0"
-              End="-31.7777777777801,-131.944444444444">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-65.722222222222" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-65.722222222222"
-                    Point2="0,-69.722222222222"
-                    Point3="-4,-69.722222222222" />
-                  <mssgle:LineSegment
-                    End="-27.7777777777801,-69.722222222222" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-27.7777777777801,-69.722222222222"
-                    Point2="-31.7777777777801,-69.722222222222"
-                    Point3="-31.7777777777801,-73.722222222222" />
-                  <mssgle:LineSegment
-                    End="-31.7777777777801,-131.944444444444" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-64.0802756076401,-64.722222222222,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\FactFlight\Derived Column"
+          TopLeft="1023,124" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\FactFlight\Derived Column 1"
+          TopLeft="167,383" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\FactFlight\DimTime ActualArrivalTime"
+          TopLeft="1229,472" />
+        <NodeLayout
+          Size="195,46"
+          Id="Package\FactFlight\DimDepArrBlk Departure"
+          TopLeft="623,229" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\FactFlight\DimDelayGroups Arrival"
+          TopLeft="625,345" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\FactFlight\DimAirport Destination"
+          TopLeft="419,285" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\FactFlight\Fact Flight Stage"
+          TopLeft="251,46" />
+        <NodeLayout
+          Size="251,42"
+          Id="Package\FactFlight\FactsNoMatchDimAirport Destination"
+          TopLeft="34,282" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\FactFlight\Change data types"
+          TopLeft="171,494" />
         <EdgeLayout
           Id="Package\FactFlight.Paths[Lookup Match Output1]"
-          TopLeft="1300.22222222222,290.555555555556">
+          TopLeft="720.5,229">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="56.3888888888901,-148"
+              EndConnector="-44.5,-58"
               Start="0,0"
-              End="56.3888888888901,-140.5">
+              End="-44.5,-50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-70" />
+                    End="0,-25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-70"
-                    Point2="0,-74"
-                    Point3="4,-74" />
+                    Point1="0,-25"
+                    Point2="0,-29"
+                    Point3="-4,-29" />
                   <mssgle:LineSegment
-                    End="52.3888888888901,-74" />
+                    End="-40.5,-29" />
                   <mssgle:CubicBezierSegment
-                    Point1="52.3888888888901,-74"
-                    Point2="56.3888888888901,-74"
-                    Point3="56.3888888888901,-78" />
+                    Point1="-40.5,-29"
+                    Point2="-44.5,-29"
+                    Point3="-44.5,-33" />
                   <mssgle:LineSegment
-                    End="56.3888888888901,-140.5" />
+                    End="-44.5,-50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-19.996942274305,-69,96.3827734375,11.609375"
+              BoundingBox="-70.44138671875,-24,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FactFlight.Paths[Lookup Match Output]"
-          TopLeft="720.25,345">
+          TopLeft="512,327">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-70"
+              EndConnector="-263.5,56"
               Start="0,0"
-              End="0,-62.5">
+              End="-263.5,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-62.5" />
+                    End="0,24" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24"
+                    Point2="0,28"
+                    Point3="-4,28" />
+                  <mssgle:LineSegment
+                    End="-259.5,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-259.5,28"
+                    Point2="-263.5,28"
+                    Point3="-263.5,32" />
+                  <mssgle:LineSegment
+                    End="-263.5,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,-37.0546875,96.3827734375,11.609375"
+              BoundingBox="-179.94138671875,33,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15319,30 +15325,6 @@ FROM            FACTFLIGHT</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\FactFlight.Paths[Lookup No Match Output2]"
-          TopLeft="419,225">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-133,0"
-              Start="0,0"
-              End="-125.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-125.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-118.55638671875,5,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup No Match Output1]"
           TopLeft="419,304.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15366,7 +15348,7 @@ FROM            FACTFLIGHT</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup No Match Output]"
+          Id="Package\FactFlight.Paths[Lookup No Match Output1]"
           TopLeft="420,159">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15390,295 +15372,31 @@ FROM            FACTFLIGHT</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\FactFlight.Paths[Lookup No Match Output]"
+          TopLeft="419,225">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-133,0"
+              Start="0,0"
+              End="-125.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-125.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-118.55638671875,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\FactFlight.Paths[Lookup Match Output15]"
-          TopLeft="512,327">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-263.5,56"
-              Start="0,0"
-              End="-263.5,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24"
-                    Point2="0,28"
-                    Point3="-4,28" />
-                  <mssgle:LineSegment
-                    End="-259.5,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-259.5,28"
-                    Point2="-263.5,28"
-                    Point3="-263.5,32" />
-                  <mssgle:LineSegment
-                    End="-263.5,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-179.94138671875,33,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup Match Output14]"
-          TopLeft="720.5,229">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-44.5,-58"
-              Start="0,0"
-              End="-44.5,-50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-25"
-                    Point2="0,-29"
-                    Point3="-4,-29" />
-                  <mssgle:LineSegment
-                    End="-40.5,-29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-40.5,-29"
-                    Point2="-44.5,-29"
-                    Point3="-44.5,-33" />
-                  <mssgle:LineSegment
-                    End="-44.5,-50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-70.44138671875,-24,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup Match Output13]"
-          TopLeft="680.666666666667,614">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="53.3333333333334,-105"
-              Start="0,0"
-              End="53.3333333333334,-97.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-38.8289473684211" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-38.8289473684211"
-                    Point2="0,-42.8289473684211"
-                    Point3="4,-42.8289473684211" />
-                  <mssgle:LineSegment
-                    End="49.3333333333334,-42.8289473684211" />
-                  <mssgle:CubicBezierSegment
-                    Point1="49.3333333333334,-42.8289473684211"
-                    Point2="53.3333333333334,-42.8289473684211"
-                    Point3="53.3333333333334,-46.8289473684211" />
-                  <mssgle:LineSegment
-                    End="53.3333333333334,-97.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-21.5247200520833,-37.8289473684211,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup Match Output12]"
-          TopLeft="753,61">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="428,-38"
-              Start="0,0"
-              End="420.5,-38">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="210,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="210,0"
-                    Point2="214,0"
-                    Point3="214,-4" />
-                  <mssgle:LineSegment
-                    End="214,-34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="214,-34"
-                    Point2="214,-38"
-                    Point3="218,-38" />
-                  <mssgle:LineSegment
-                    End="420.5,-38" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="165.80861328125,1,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup Match Output11]"
-          TopLeft="483.5,179">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="16,27"
-              Start="0,0"
-              End="16,19.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.5"
-                    Point2="0,13.5"
-                    Point3="4,13.5" />
-                  <mssgle:LineSegment
-                    End="12,13.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12,13.5"
-                    Point2="16,13.5"
-                    Point3="16,17.5" />
-                  <mssgle:LineSegment
-                    End="16,19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-40.19138671875,18.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup Match Output10]"
-          TopLeft="499.5,248">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12.5,37"
-              Start="0,0"
-              End="12.5,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="4,18.5" />
-                  <mssgle:LineSegment
-                    End="8.5,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.5,18.5"
-                    Point2="12.5,18.5"
-                    Point3="12.5,22.5" />
-                  <mssgle:LineSegment
-                    End="12.5,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-41.94138671875,23.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup Match Output9]"
-          TopLeft="734,467">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-14,-80"
-              Start="0,0"
-              End="-14,-72.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-36" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-36"
-                    Point2="0,-40"
-                    Point3="-4,-40" />
-                  <mssgle:LineSegment
-                    End="-10,-40" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-10,-40"
-                    Point2="-14,-40"
-                    Point3="-14,-44" />
-                  <mssgle:LineSegment
-                    End="-14,-72.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.19138671875,-35,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup Match Output8]"
-          TopLeft="676,129">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="8,-47"
-              Start="0,0"
-              End="8,-39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-19.5"
-                    Point2="0,-23.5"
-                    Point3="4,-23.5" />
-                  <mssgle:LineSegment
-                    End="4,-23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4,-23.5"
-                    Point2="8,-23.5"
-                    Point3="8,-27.5" />
-                  <mssgle:LineSegment
-                    End="8,-39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-44.19138671875,-18.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup Match Output7]"
           TopLeft="1257.5,44">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15714,43 +15432,163 @@ FROM            FACTFLIGHT</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup Match Output6]"
-          TopLeft="1055.5,250">
+          Id="Package\FactFlight.Paths[Lookup Match Output14]"
+          TopLeft="720.25,345">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-11,81"
+              EndConnector="0,-70"
               Start="0,0"
-              End="-11,73.5">
+              End="0,-62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36.5"
-                    Point2="0,40.5"
-                    Point3="-4,40.5" />
-                  <mssgle:LineSegment
-                    End="-7,40.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7,40.5"
-                    Point2="-11,40.5"
-                    Point3="-11,44.5" />
-                  <mssgle:LineSegment
-                    End="-11,73.5" />
+                    End="0,-62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-53.69138671875,45.5,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,-37.0546875,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup Match Output5]"
+          Id="Package\FactFlight.Paths[Lookup Match Output13]"
+          TopLeft="1300.22222222222,290.555555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56.3888888888901,-148"
+              Start="0,0"
+              End="56.3888888888901,-140.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-70" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-70"
+                    Point2="0,-74"
+                    Point3="4,-74" />
+                  <mssgle:LineSegment
+                    End="52.3888888888901,-74" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52.3888888888901,-74"
+                    Point2="56.3888888888901,-74"
+                    Point3="56.3888888888901,-78" />
+                  <mssgle:LineSegment
+                    End="56.3888888888901,-140.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-19.996942274305,-69,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFlight.Paths[Lookup Match Output12]"
+          TopLeft="1332,472">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-31.7777777777801,-139.444444444444"
+              Start="0,0"
+              End="-31.7777777777801,-131.944444444444">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-65.722222222222" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-65.722222222222"
+                    Point2="0,-69.722222222222"
+                    Point3="-4,-69.722222222222" />
+                  <mssgle:LineSegment
+                    End="-27.7777777777801,-69.722222222222" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-27.7777777777801,-69.722222222222"
+                    Point2="-31.7777777777801,-69.722222222222"
+                    Point3="-31.7777777777801,-73.722222222222" />
+                  <mssgle:LineSegment
+                    End="-31.7777777777801,-131.944444444444" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-64.08027560764,-64.722222222222,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFlight.Paths[Lookup Match Output11]"
+          TopLeft="1136.66666666667,607">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="195.333333333333,-93"
+              Start="0,0"
+              End="195.333333333333,-85.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-33.6541200406917" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-33.6541200406917"
+                    Point2="0,-37.6541200406917"
+                    Point3="4,-37.6541200406917" />
+                  <mssgle:LineSegment
+                    End="191.333333333333,-37.6541200406917" />
+                  <mssgle:CubicBezierSegment
+                    Point1="191.333333333333,-37.6541200406917"
+                    Point2="195.333333333333,-37.6541200406917"
+                    Point3="195.333333333333,-41.6541200406917" />
+                  <mssgle:LineSegment
+                    End="195.333333333333,-85.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="49.4752799479165,-32.6541200406917,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFlight.Paths[Lookup Match Output10]"
+          TopLeft="1070.91666666667,522">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,85"
+              Start="0,0"
+              End="0,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,32.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFlight.Paths[Lookup Match Output9]"
           TopLeft="1044.5,373">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -15786,26 +15624,254 @@ FROM            FACTFLIGHT</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\FactFlight.Paths[Lookup Match Output4]"
-          TopLeft="1070.91666666667,522">
+          Id="Package\FactFlight.Paths[Lookup Match Output8]"
+          TopLeft="1055.5,250">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,85"
+              EndConnector="-11,81"
               Start="0,0"
-              End="0,77.5">
+              End="-11,73.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,77.5" />
+                    End="0,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.5"
+                    Point2="0,40.5"
+                    Point3="-4,40.5" />
+                  <mssgle:LineSegment
+                    End="-7,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7,40.5"
+                    Point2="-11,40.5"
+                    Point3="-11,44.5" />
+                  <mssgle:LineSegment
+                    End="-11,73.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,32.9453125,96.3827734375,11.609375"
+              BoundingBox="-53.69138671875,45.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFlight.Paths[Lookup Match Output7]"
+          TopLeft="676,129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8,-47"
+              Start="0,0"
+              End="8,-39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-19.5"
+                    Point2="0,-23.5"
+                    Point3="4,-23.5" />
+                  <mssgle:LineSegment
+                    End="4,-23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,-23.5"
+                    Point2="8,-23.5"
+                    Point3="8,-27.5" />
+                  <mssgle:LineSegment
+                    End="8,-39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-44.19138671875,-18.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFlight.Paths[Lookup Match Output6]"
+          TopLeft="734,467">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14,-80"
+              Start="0,0"
+              End="-14,-72.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-36"
+                    Point2="0,-40"
+                    Point3="-4,-40" />
+                  <mssgle:LineSegment
+                    End="-10,-40" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10,-40"
+                    Point2="-14,-40"
+                    Point3="-14,-44" />
+                  <mssgle:LineSegment
+                    End="-14,-72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.19138671875,-35,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFlight.Paths[Lookup Match Output5]"
+          TopLeft="499.5,248">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.5,37"
+              Start="0,0"
+              End="12.5,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
+                  <mssgle:LineSegment
+                    End="8.5,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.5,18.5"
+                    Point2="12.5,18.5"
+                    Point3="12.5,22.5" />
+                  <mssgle:LineSegment
+                    End="12.5,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-41.94138671875,23.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFlight.Paths[Lookup Match Output4]"
+          TopLeft="483.5,179">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16,27"
+              Start="0,0"
+              End="16,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.5"
+                    Point2="0,13.5"
+                    Point3="4,13.5" />
+                  <mssgle:LineSegment
+                    End="12,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12,13.5"
+                    Point2="16,13.5"
+                    Point3="16,17.5" />
+                  <mssgle:LineSegment
+                    End="16,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-40.19138671875,18.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFlight.Paths[Lookup Match Output3]"
+          TopLeft="753,61">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="428,-38"
+              Start="0,0"
+              End="420.5,-38">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="210,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="210,0"
+                    Point2="214,0"
+                    Point3="214,-4" />
+                  <mssgle:LineSegment
+                    End="214,-34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="214,-34"
+                    Point2="214,-38"
+                    Point3="218,-38" />
+                  <mssgle:LineSegment
+                    End="420.5,-38" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="165.80861328125,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\FactFlight.Paths[Lookup Match Output2]"
+          TopLeft="680.666666666667,614">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.3333333333334,-105"
+              Start="0,0"
+              End="53.3333333333334,-97.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-38.8289473684211" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-38.8289473684211"
+                    Point2="0,-42.8289473684211"
+                    Point3="4,-42.8289473684211" />
+                  <mssgle:LineSegment
+                    End="49.3333333333334,-42.8289473684211" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.3333333333334,-42.8289473684211"
+                    Point2="53.3333333333334,-42.8289473684211"
+                    Point3="53.3333333333334,-46.8289473684211" />
+                  <mssgle:LineSegment
+                    End="53.3333333333334,-97.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-21.5247200520833,-37.8289473684211,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15813,17 +15879,17 @@ FROM            FACTFLIGHT</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\FactFlight\DimDelayGroups Arrival">
+    design-time-name="Package\FactFlight\DimTime WheelsOff">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimDelayGroups]</Value>
+          type="q3:string">[dbo].[DimTime]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -15859,7 +15925,7 @@ FROM            FACTFLIGHT</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactFlight\DimAirline">
+    design-time-name="Package\FactFlight\DimDistance">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -15869,7 +15935,7 @@ FROM            FACTFLIGHT</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimAirline]</Value>
+          type="q3:string">[dbo].[DimDistanceRange]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -15882,30 +15948,7 @@ FROM            FACTFLIGHT</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactFlight\DimDepArrBlk Departure">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDepartureArrivalTimeIntervals]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactFlight\DimTime WheelsOff">
+    design-time-name="Package\FactFlight\DimDelayGroups Departure">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -15915,99 +15958,7 @@ FROM            FACTFLIGHT</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimTime]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactFlight\DimDate">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDate]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactFlight\DimTime ActualArrivalTime">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimTime]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactFlight\DimDepArrBlk Arrival">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDepartureArrivalTimeIntervals]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactFlight\DimTime CRSDepTime">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimTime]</Value>
+          type="q3:string">[dbo].[DimDelayGroups]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -16043,17 +15994,17 @@ FROM            FACTFLIGHT</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactFlight\DimFlightStatus">
+    design-time-name="Package\FactFlight\DimTime CRSDepTime">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimFlightStatus]</Value>
+          type="q3:string">[dbo].[DimTime]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -16066,7 +16017,7 @@ FROM            FACTFLIGHT</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactFlight\Fact Flight Stage">
+    design-time-name="Package\FactFlight\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -16079,17 +16030,17 @@ FROM            FACTFLIGHT</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactFlight\DimDelayGroups Departure">
+    design-time-name="Package\FactFlight\DimTime WheelsON">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimDelayGroups]</Value>
+          type="q3:string">[dbo].[DimTime]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -16107,12 +16058,173 @@ FROM            FACTFLIGHT</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[DimTime]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactFlight\DimFlightStatus">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimFlightStatus]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactFlight\DimDepArrBlk Arrival">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDepartureArrivalTimeIntervals]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactFlight\DimDate">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactFlight\DimAirline">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimAirline]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactFlight\DimTime ActualArrivalTime">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimTime]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactFlight\DimDepArrBlk Departure">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDepartureArrivalTimeIntervals]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FactFlight\DimDelayGroups Arrival">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDelayGroups]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -16148,53 +16260,7 @@ FROM            FACTFLIGHT</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\FactFlight\DimDistance">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDistanceRange]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactFlight\DimTime WheelsON">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimTime]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FactFlight\OLE DB Destination">
+    design-time-name="Package\FactFlight\Fact Flight Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

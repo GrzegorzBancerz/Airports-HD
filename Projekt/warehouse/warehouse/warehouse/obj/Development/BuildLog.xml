@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>warehouse</Name>
-    <LastWriteTime>2019-06-08T21:03:27.9612996Z</LastWriteTime>
+    <LastWriteTime>2019-06-09T09:59:59.2666589Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -28,7 +28,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimDistance.dtsx</Name>
-      <LastWriteTime>2019-06-08T21:26:46.2148599Z</LastWriteTime>
+      <LastWriteTime>2019-06-09T09:59:59.2217585Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -43,12 +43,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimFlightStatus.dtsx</Name>
-      <LastWriteTime>2019-06-08T21:27:35.0246272Z</LastWriteTime>
+      <LastWriteTime>2019-06-09T09:45:49.0967092Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>FactFlight.dtsx</Name>
-      <LastWriteTime>2019-06-08T21:54:52.0060779Z</LastWriteTime>
+      <LastWriteTime>2019-06-09T10:04:48.8547226Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
