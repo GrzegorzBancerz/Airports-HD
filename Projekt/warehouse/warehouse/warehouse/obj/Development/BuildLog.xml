@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>warehouse</Name>
-    <LastWriteTime>2019-06-09T14:09:58.7980228Z</LastWriteTime>
+    <LastWriteTime>2019-06-09T19:46:56.12557Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -43,17 +43,22 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DimFlightStatus.dtsx</Name>
-      <LastWriteTime>2019-06-09T14:14:01.0079167Z</LastWriteTime>
+      <LastWriteTime>2019-06-09T19:35:17.4302324Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>FactFlight.dtsx</Name>
-      <LastWriteTime>2019-06-09T14:23:06.415412Z</LastWriteTime>
+      <LastWriteTime>2019-06-09T19:35:17.4412155Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>Stage.dtsx</Name>
-      <LastWriteTime>2019-06-09T14:09:58.7440525Z</LastWriteTime>
+      <Name>StageFacts.dtsx</Name>
+      <LastWriteTime>2019-06-09T19:46:56.0681746Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>StageFixed.dtsx</Name>
+      <LastWriteTime>2019-06-09T19:46:55.9450682Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
