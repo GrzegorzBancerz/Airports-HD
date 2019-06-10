@@ -6,10 +6,50 @@
     <Name>cubes.database</Name>
     <FullPath>cubes.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>FlightDW.cube</Name>
+      <FullPath>FlightDW.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>FlightDW.partitions</Name>
+          <FullPath>FlightDW.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>Dim Date.dim</Name>
-      <FullPath>Dim Date.dim</FullPath>
+      <Name>Airline.dim</Name>
+      <FullPath>Airline.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Airport.dim</Name>
+      <FullPath>Airport.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Date.dim</Name>
+      <FullPath>Date.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>DelayGroups.dim</Name>
+      <FullPath>DelayGroups.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Departure and Arrival Time Intervals.dim</Name>
+      <FullPath>Departure and Arrival Time Intervals.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Distance Range of Flight.dim</Name>
+      <FullPath>Distance Range of Flight.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Flight Status.dim</Name>
+      <FullPath>Flight Status.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Time.dim</Name>
+      <FullPath>Time.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>

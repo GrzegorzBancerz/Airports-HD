@@ -3,7 +3,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <TargetServer>localhost</TargetServer>
+        <TargetServer>localhost\DESKTOP-1ORC2MS</TargetServer>
         <TargetDatabase>cubes</TargetDatabase>
         <StartObject>
           <ObjectId></ObjectId>
