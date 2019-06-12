@@ -26,7 +26,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.DataSourceView</Type>
-        <TimeStamp>HRWYGm8EkNu/8LBzTD+FobRsxRA=12.06.2019 19:01:1009.06.2019 21:58:39</TimeStamp>
+        <TimeStamp>fgGfbWqGpCkXct3Va8h5/O6Nzmo=12.06.2019 21:28:3609.06.2019 21:58:39</TimeStamp>
         <ID>
           <String>Warehouse</String>
         </ID>
@@ -89,7 +89,7 @@
       </ObjectSnapshot>
       <ObjectSnapshot>
         <Type>Microsoft.AnalysisServices.Cube</Type>
-        <TimeStamp>Pps+MllSYNypsQTp23JDkIlXmoI=12.06.2019 19:01:1210.06.2019 19:10:107IljFid+TVYdnwzOWdseBIHlbHU=12.06.2019 11:58:1810.06.2019 19:10:10</TimeStamp>
+        <TimeStamp>9CDXMWAb8ZViU9SDcwGuicuIquk=12.06.2019 21:33:4410.06.2019 19:10:107IljFid+TVYdnwzOWdseBIHlbHU=12.06.2019 11:58:1810.06.2019 19:10:10</TimeStamp>
         <ID>
           <String>FlightDW</String>
         </ID>
@@ -106,5 +106,5 @@
   </Snapshot>
   <AssemblyLocations />
   <ProcessingComplete>true</ProcessingComplete>
-  <LastDeployed>2019-06-12T17:01:18.973333Z</LastDeployed>
+  <LastDeployed>2019-06-12T22:10:47.54Z</LastDeployed>
 </DeploymentSnapshot>
