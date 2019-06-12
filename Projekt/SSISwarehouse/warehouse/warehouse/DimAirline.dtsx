@@ -1,0 +1,1613 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/25/2019 12:08:02 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="TOMASZ-PC"
+  DTS:CreatorName="TOMASZ-PC\Tomasz"
+  DTS:DTSID="{BC018563-5438-40CA-A524-1E16435C71E7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="DimAirline"
+  DTS:PackageType="5"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{80B336EC-7A12-4E8C-A48C-1B99F04B951F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8F1729F4-25BC-4E58-8A98-08F407AAA0C3}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="D:\GitHub\Airports-HD\Projekt\Błędne krotki\AirlineOFErrors.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NAME"
+              DTS:DTSID="{E7CBC4C2-DE80-4C94-834C-F8A2534C6910}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COUNTRY"
+              DTS:DTSID="{B62DADD4-D316-4E65-91B8-594536F6F62B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IATA"
+              DTS:DTSID="{AEC5FC6E-A7E2-4BB9-84E1-E715384376D0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ICAO"
+              DTS:DTSID="{AB5BB494-3384-432A-B665-5EC48CA125A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AIRLINEID"
+              DTS:DTSID="{A6148289-AFDD-43BA-8223-0C2F56799FB9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ALIAS"
+              DTS:DTSID="{1ACB1AC0-D3A1-40E5-956D-EC5F586C0357}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1024"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACTIVE"
+              DTS:DTSID="{5AB912F0-A44E-4BF0-9A88-2F8781F0451E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{10645B9E-9079-4BCA-9EA5-8FB6F378920C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{B7CA1370-4532-4657-A261-A71C8F17B385}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{225A1AE7-C9DA-4AB9-A124-9D83BD0041A5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A28A18BF-DA71-4DC9-8ACA-BD287EC88286}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable1">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Data to DimAirline"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3e6c62b1-9d40-4a43-96b5-ef76fd72c78e}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Data to DimAirline"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Data to DimAirline\AirlineOF"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="AirlineOF"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AIRLINEOPENFLIGHTS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        ROW_NUMBER() OVER (ORDER BY [NAME]) + ? IDAIRLINE, NAME, ALIAS, IATA, ICAO, COUNTRY, ACTIVE
+FROM         AIRLINEOPENFLIGHTS
+WHERE        NAME NOT LIKE 'Unknown' AND NAME LIKE '[A-Za-z0-9]%'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{A28A18BF-DA71-4DC9-8ACA-BD287EC88286};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Data to DimAirline\AirlineOF.Connections[OleDbConnection]"
+                  connectionManagerID="{B8CF4176-6905-4D12-809A-BA3142B067BF}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).stage]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[NAME]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].ExternalColumns[NAME]"
+                      length="1024"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[NAME]"
+                      name="NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ALIAS]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].ExternalColumns[ALIAS]"
+                      length="1024"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ALIAS]"
+                      name="ALIAS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[IATA]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].ExternalColumns[IATA]"
+                      length="1024"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[IATA]"
+                      name="IATA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].ExternalColumns[ICAO]"
+                      length="1024"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ICAO]"
+                      name="ICAO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[COUNTRY]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].ExternalColumns[COUNTRY]"
+                      length="1024"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[COUNTRY]"
+                      name="COUNTRY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ACTIVE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].ExternalColumns[ACTIVE]"
+                      length="1024"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ACTIVE]"
+                      name="ACTIVE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[IDAIRLINE]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].ExternalColumns[IDAIRLINE]"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[IDAIRLINE]"
+                      name="IDAIRLINE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].ExternalColumns[NAME]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].ExternalColumns[ALIAS]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="ALIAS" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].ExternalColumns[IATA]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="IATA" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].ExternalColumns[ICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="ICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].ExternalColumns[COUNTRY]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].ExternalColumns[ACTIVE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="ACTIVE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].ExternalColumns[IDAIRLINE]"
+                      dataType="i8"
+                      name="IDAIRLINE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[IDAIRLINE]"
+                      dataType="i8"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[IDAIRLINE]"
+                      name="IDAIRLINE" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[NAME]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[NAME]"
+                      name="NAME" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[ALIAS]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[ALIAS]"
+                      name="ALIAS" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[IATA]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[IATA]"
+                      name="IATA" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[ICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[ICAO]"
+                      name="ICAO" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[COUNTRY]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[COUNTRY]"
+                      name="COUNTRY" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[ACTIVE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[ACTIVE]"
+                      name="ACTIVE" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Data to DimAirline\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Data to DimAirline\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Inputs[Data Conversion Input].Columns[NAME]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="NAME"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[NAME]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Inputs[Data Conversion Input].Columns[COUNTRY]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="COUNTRY"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[COUNTRY]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Inputs[Data Conversion Input].Columns[IATA]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="IATA"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[IATA]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Inputs[Data Conversion Input].Columns[ICAO]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="ICAO"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ICAO]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Inputs[Data Conversion Input].Columns[ALIAS]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="ALIAS"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ALIAS]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Inputs[Data Conversion Input].Columns[ACTIVE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="ACTIVE"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ACTIVE]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Inputs[Data Conversion Input].Columns[IDAIRLINE]"
+                      cachedDataType="i8"
+                      cachedName="IDAIRLINE"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[IDAIRLINE]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Load Data to DimAirline\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IDAIRLINE]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IDAIRLINE]"
+                      name="Copy of IDAIRLINE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[IDAIRLINE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NAME]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="255"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NAME]"
+                      name="Copy of NAME"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[NAME]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of COUNTRY]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="255"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of COUNTRY]"
+                      name="Copy of COUNTRY"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[COUNTRY]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IATA]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="255"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IATA]"
+                      name="Copy of IATA"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[IATA]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="255"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ICAO]"
+                      name="Copy of ICAO"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ICAO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ALIAS]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="255"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ALIAS]"
+                      name="Copy of ALIAS"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ALIAS]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ACTIVE]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      length="255"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ACTIVE]"
+                      name="Copy of ACTIVE"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ACTIVE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Load Data to DimAirline\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Data to DimAirline\DimAirline"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimAirline"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimAirline]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Data to DimAirline\DimAirline.Connections[OleDbConnection]"
+                  connectionManagerID="{70F14BAE-DCDE-4C28-A732-FD00719FB49A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).warehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].Columns[Copy of IDAIRLINE]"
+                      cachedDataType="i8"
+                      cachedName="Copy of IDAIRLINE"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].ExternalColumns[AirlineID]"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IDAIRLINE]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].Columns[Copy of NAME]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of NAME"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].ExternalColumns[AirlineName]"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of NAME]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].Columns[Copy of ALIAS]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of ALIAS"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].ExternalColumns[AirlineAlias]"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ALIAS]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].Columns[Copy of IATA]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of IATA"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].ExternalColumns[AirlineIATA]"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of IATA]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].Columns[Copy of ICAO]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of ICAO"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].ExternalColumns[AirlineICAO]"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ICAO]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].Columns[Copy of COUNTRY]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of COUNTRY"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].ExternalColumns[AirlineCountry]"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of COUNTRY]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].Columns[Copy of ACTIVE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of ACTIVE"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].ExternalColumns[AirlineActive]"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ACTIVE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].ExternalColumns[AirlineID]"
+                      dataType="i4"
+                      name="AirlineID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].ExternalColumns[AirlineName]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="AirlineName" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].ExternalColumns[AirlineAlias]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="AirlineAlias" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].ExternalColumns[AirlineIATA]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="AirlineIATA" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].ExternalColumns[AirlineICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="AirlineICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].ExternalColumns[AirlineCountry]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="AirlineCountry" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input].ExternalColumns[AirlineActive]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="AirlineActive" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Data to DimAirline\DimAirline.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Data to DimAirline\DimAirline.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Data to DimAirline\DimAirline.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Data to DimAirline\DimAirline.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Data to DimAirline\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1045"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Data to DimAirline\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].Columns[NAME]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="NAME"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[NAME]"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[NAME]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].Columns[COUNTRY]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="COUNTRY"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COUNTRY]"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[COUNTRY]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].Columns[IATA]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="IATA"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[IATA]"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[IATA]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].Columns[ICAO]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="ICAO"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ICAO]"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ICAO]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].Columns[ALIAS]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="ALIAS"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ALIAS]"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ALIAS]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].Columns[ACTIVE]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1024"
+                      cachedName="ACTIVE"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ACTIVE]"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[ACTIVE]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]" />
+                    <inputColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].Columns[IDAIRLINE]"
+                      cachedDataType="i8"
+                      cachedName="IDAIRLINE"
+                      externalMetadataColumnId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AIRLINEID]"
+                      lineageId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output].Columns[IDAIRLINE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[NAME]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COUNTRY]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="COUNTRY" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[IATA]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="IATA" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="ICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AIRLINEID]"
+                      dataType="i8"
+                      name="AIRLINEID" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ALIAS]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="ALIAS" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ACTIVE]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1024"
+                      name="ACTIVE" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Data to DimAirline.Paths[Data Conversion Error Output]"
+              endId="Package\Load Data to DimAirline\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Data Conversion Error Output"
+              startId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\Load Data to DimAirline.Paths[Data Conversion Output]"
+              endId="Package\Load Data to DimAirline\DimAirline.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Load Data to DimAirline\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Load Data to DimAirline.Paths[OLE DB Source Output]"
+              endId="Package\Load Data to DimAirline\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Data to DimAirline\AirlineOF.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{93EBC4F5-D561-43FE-A719-E5459EA58327}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DimAirline"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimAirline]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Connections[OleDbConnection]"
+                  connectionManagerID="{70F14BAE-DCDE-4C28-A732-FD00719FB49A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).warehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].Columns[AirlineName]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].ExternalColumns[AirlineName]"
+                      length="255"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].Columns[AirlineName]"
+                      name="AirlineName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].Columns[AirlineAlias]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].ExternalColumns[AirlineAlias]"
+                      length="255"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].Columns[AirlineAlias]"
+                      name="AirlineAlias"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].Columns[AirlineIATA]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].ExternalColumns[AirlineIATA]"
+                      length="255"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].Columns[AirlineIATA]"
+                      name="AirlineIATA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].Columns[AirlineICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].ExternalColumns[AirlineICAO]"
+                      length="255"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].Columns[AirlineICAO]"
+                      name="AirlineICAO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].Columns[AirlineCountry]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].ExternalColumns[AirlineCountry]"
+                      length="255"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].Columns[AirlineCountry]"
+                      name="AirlineCountry"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].Columns[AirlineActive]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].ExternalColumns[AirlineActive]"
+                      length="255"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].Columns[AirlineActive]"
+                      name="AirlineActive"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].ExternalColumns[AirlineID]"
+                      dataType="i4"
+                      name="AirlineID" />
+                    <externalMetadataColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].ExternalColumns[AirlineName]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="AirlineName" />
+                    <externalMetadataColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].ExternalColumns[AirlineAlias]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="AirlineAlias" />
+                    <externalMetadataColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].ExternalColumns[AirlineIATA]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="AirlineIATA" />
+                    <externalMetadataColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].ExternalColumns[AirlineICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="AirlineICAO" />
+                    <externalMetadataColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].ExternalColumns[AirlineCountry]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="AirlineCountry" />
+                    <externalMetadataColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output].ExternalColumns[AirlineActive]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="AirlineActive" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[AirlineName]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[AirlineName]"
+                      name="AirlineName" />
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[AirlineAlias]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[AirlineAlias]"
+                      name="AirlineAlias" />
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[AirlineIATA]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[AirlineIATA]"
+                      name="AirlineIATA" />
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[AirlineICAO]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[AirlineICAO]"
+                      name="AirlineICAO" />
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[AirlineCountry]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[AirlineCountry]"
+                      name="AirlineCountry" />
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[AirlineActive]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[AirlineActive]"
+                      name="AirlineActive" />
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\Set NULL"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Set NULL"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [DimAirline]
+   SET 
+       [AirlineAlias] = NULL
+ WHERE
+     [AirlineAlias] not like '[A-Za-z0-9]%'
+
+UPDATE [DimAirline]
+   SET 
+       [AirlineIATA] = NULL
+ WHERE
+       [AirlineIATA] not like '[A-Za-z0-9]%'
+
+UPDATE [DimAirline]
+   SET 
+       [AirlineICAO] = NULL
+ WHERE
+       [AirlineICAO] not like '[A-Za-z0-9]%'
+
+UPDATE [DimAirline]
+   SET 
+       [AirlineCountry] = NULL
+ WHERE
+       [AirlineCountry] not like '[A-Za-z0-9]%'</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\Set NULL.Connections[OleDbConnection]"
+                  connectionManagerID="{70F14BAE-DCDE-4C28-A732-FD00719FB49A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).warehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\Set NULL.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <externalMetadataColumns
+                    isUsed="True" />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\Set NULL.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\Set NULL.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\Set NULL.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\Set NULL.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\Set NULL.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\Set NULL.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\Set NULL.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\Set NULL.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL).Paths[OLE DB Source Output]"
+              endId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\Set NULL.Inputs[OLE DB Command Input]"
+              name="OLE DB Source Output"
+              startId="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{4D66D907-4977-457A-8254-E996095A284F}"
+      DTS:From="Package\Load Data to DimAirline"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Load Data to DimAirline"
+          TopLeft="163,99" />
+        <NodeLayout
+          Size="324,42"
+          Id="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)"
+          TopLeft="94,236" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="257.25,141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,95"
+              Start="0,0"
+              End="0,87.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,87.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Data to DimAirline">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Load Data to DimAirline\Flat File Destination"
+          TopLeft="501,206" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Load Data to DimAirline\DimAirline"
+          TopLeft="111,325" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Load Data to DimAirline\Data Conversion"
+          TopLeft="104,204" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Load Data to DimAirline\AirlineOF"
+          TopLeft="121,70" />
+        <EdgeLayout
+          Id="Package\Load Data to DimAirline.Paths[OLE DB Source Output]"
+          TopLeft="181.75,112">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,92"
+              Start="0,0"
+              End="0,84.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,84.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Data to DimAirline.Paths[Data Conversion Output]"
+          TopLeft="178.25,246">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Data to DimAirline.Paths[Data Conversion Error Output]"
+          TopLeft="260,226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="241,0"
+              Start="0,0"
+              End="233.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="233.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="50.66361328125,5,132.1727734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Data to DimAirline\DimAirline">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Data to DimAirline\AirlineOF">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\Set NULL"
+          TopLeft="159,319" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline"
+          TopLeft="159,82" />
+        <EdgeLayout
+          Id="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL).Paths[OLE DB Source Output]"
+          TopLeft="221.25,124">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,195"
+              Start="0,0"
+              End="0,187.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,187.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Update IATA, ICAO, ALIAS, COUNTRY (set to NULL)\DimAirline">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
