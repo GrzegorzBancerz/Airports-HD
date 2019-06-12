@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      Microsoft SQL Server 2017                    */
-/* Created on:     12.06.2019 21:58:01                          */
+/* Created on:     07.06.2019 18:36:07                          */
 /*==============================================================*/
 
 
@@ -9,12 +9,12 @@
 /*==============================================================*/
 create table DimAirline (
    AirlineID            int                  not null,
-   AirlineName          varchar(255)         null,
-   AirlineAlias         varchar(255)         null,
-   AirlineIATA          varchar(255)         null,
-   AirlineICAO          varchar(255)         null,
-   AirlineCountry       varchar(255)         null,
-   AirlineActive        varchar(255)         null,
+   Name                 varchar(255)         null,
+   Alias                varchar(255)         null,
+   IATA                 varchar(255)         null,
+   ICAO                 varchar(255)         null,
+   Country              varchar(255)         null,
+   Active               varchar(255)         null,
    constraint PK_DIMAIRLINE primary key (AirlineID)
 )
 go
@@ -24,17 +24,18 @@ go
 /*==============================================================*/
 create table DimAirport (
    AirportID            int                  not null,
-   AirportName          varchar(255)         null,
-   AirportCity          varchar(255)         null,
-   AirportCountry       varchar(255)         null,
-   AirportIATA          varchar(255)         null,
-   AirportICAO          varchar(255)         null,
-   AirportLatitude      numeric(23,20)       null,
-   AirportLongtitude    numeric(23,20)       null,
-   AirportAltitude      int                  null,
-   AirportTimezone      numeric(4,2)         null,
-   AirportType          varchar(255)         null,
-   AirportStateName     varchar(255)         null,
+   Name                 varchar(255)         null,
+   City                 varchar(255)         null,
+   Country              varchar(255)         null,
+   IATA                 varchar(255)         null,
+   ICAO                 varchar(255)         null,
+   Latitude             numeric(23,20)       null,
+   Longtitude           numeric(23,20)       null,
+   Altitude             int                  null,
+   Timezone             numeric(4,2)         null,
+   DST                  varchar(255)         null,
+   Type                 varchar(255)         null,
+   StateName            varchar(255)         null,
    constraint PK_DIMAIRPORT primary key (AirportID)
 )
 go
@@ -66,31 +67,31 @@ go
 /*==============================================================*/
 create table DimDelayGroups (
    DelayGroupsID        int                  not null,
-   DelayGroupsCode      int                  null,
-   DelayGroupsDescription varchar(255)         null,
+   DelayGroups          int                  null,
+   DelayDescription     varchar(255)         null,
    constraint PK_DIMDELAYGROUPS primary key (DelayGroupsID)
 )
 go
 
 /*==============================================================*/
-/* Table: DimDepartureArrivalTimeIntervals                      */
+/* Table: DimDepArrBlk                                          */
 /*==============================================================*/
-create table DimDepartureArrivalTimeIntervals (
-   DepArrTimeIntervalsID int                  not null,
-   DepArrTimeIntervalsCode varchar(10)          null,
-   DepArrTimeIntervalsDescription varchar(255)         null,
-   constraint PK_DIMDEPARTUREARRIVALTIMEINTE primary key (DepArrTimeIntervalsID)
+create table DimDepArrBlk (
+   DepArrBlkID          int                  not null,
+   Code                 varchar(255)         null,
+   Description          varchar(255)         null,
+   constraint PK_DIMDEPARRBLK primary key (DepArrBlkID)
 )
 go
 
 /*==============================================================*/
-/* Table: DimDistanceRange                                      */
+/* Table: DimDistance                                           */
 /*==============================================================*/
-create table DimDistanceRange (
-   DistanceRangeID      int                  not null,
-   DistanceRangeCode    int                  null,
-   DistanceRangeDescription varchar(255)         null,
-   constraint PK_DIMDISTANCERANGE primary key (DistanceRangeID)
+create table DimDistance (
+   DistanceID           int                  not null,
+   DistanceGroup        int                  null,
+   Description          varchar(255)         null,
+   constraint PK_DIMDISTANCE primary key (DistanceID)
 )
 go
 
@@ -99,8 +100,8 @@ go
 /*==============================================================*/
 create table DimFlightStatus (
    FlightStatusID       int                  not null,
-   FlightStatusCode     varchar(255)         null,
-   FlightStatusDescription varchar(255)         null,
+   StatusCode           varchar(255)         null,
+   StatusDescription    varchar(255)         null,
    constraint PK_DIMFLIGHTSTATUS primary key (FlightStatusID)
 )
 go
@@ -121,20 +122,27 @@ go
 /*==============================================================*/
 create table FactFlight (
    FlightID             int                  not null,
-   FlightDateID         int                  not null,
-   WheelsOnID           int                  not null,
-   WheelsOffID          int                  not null,
-   ScheduledArrivalTimeID int                  not null,
-   ScheduledDepartureTimeID int                  not null,
-   ActualDepartureTimeID int                  not null,
-   ActualArrivalTimeID  int                  not null,
+   FlightDateID         int                  null,
+   GMTFlightDateID      int                  null,
+   WheelsOnID           int                  null,
+   GMTWheelsOnID        int                  null,
+   WheelsOffID          int                  null,
+   GMTWheelsOffID       int                  null,
+   CRSArrivalTimeID     int                  null,
+   GMTCRSArrivalTimeID  int                  null,
+   CRSDepartureTimeID   int                  null,
+   GMTCRSDepartureTimeID int                  null,
+   ActualDepartureTimeID int                  null,
+   GMTActualDepartureTimeID int                  null,
+   ActualArrivalTimeID  int                  null,
+   GMTActualArrivalTimeID int                  null,
    OriginAirportID      int                  null,
    DestinationAirportID int                  null,
-   FlightStatusID       int                  not null,
+   FlightStatusID       int                  null,
    AirlineID            int                  null,
-   DepartureTimeIntervalID int                  null,
-   ArrivalTimeIntervalID int                  null,
-   DistanceRangeID      int                  null,
+   DepBlkID             int                  null,
+   ArrBlkID             int                  null,
+   DistanceID           int                  null,
    ArrivalDelayGroupsID int                  null,
    DepartureDelayGroupsID int                  null,
    DepartureDelay       int                  null,
@@ -143,17 +151,18 @@ create table FactFlight (
    TaxiIn               int                  null,
    Cancelled            bit                  null,
    Diverted             bit                  null,
-   ScheduledElapsedTime int                  null,
+   CRSElapsedTime       int                  null,
    ActualElapsedTime    int                  null,
    AirTime              int                  null,
+   Flights              int                  null,
    Distance             int                  null,
    CarrierDelay         int                  null,
    WeatherDelay         int                  null,
    NasDelay             int                  null,
    SecurityDelay        int                  null,
    LateAircraftDelay    int                  null,
-   DepartuteDelay15OrMore bit                  null,
-   ArrivalDelay15OrMore bit                  null,
+   DepDelay15           bit                  null,
+   ArrDelay15           bit                  null,
    constraint PK_FACTFLIGHT primary key (FlightID)
 )
 go
@@ -185,7 +194,7 @@ go
 
 
 
-create nonclustered index CRSArrivalTime_FK on FactFlight (ScheduledArrivalTimeID ASC)
+create nonclustered index CRSArrivalTime_FK on FactFlight (CRSArrivalTimeID ASC)
 go
 
 /*==============================================================*/
@@ -205,7 +214,7 @@ go
 
 
 
-create nonclustered index WheelsOff_FK on FactFlight (ScheduledDepartureTimeID ASC)
+create nonclustered index WheelsOff_FK on FactFlight (CRSDepartureTimeID ASC)
 go
 
 /*==============================================================*/
@@ -245,7 +254,7 @@ go
 
 
 
-create nonclustered index DistanceGroup_FK on FactFlight (DistanceRangeID ASC)
+create nonclustered index DistanceGroup_FK on FactFlight (DistanceID ASC)
 go
 
 /*==============================================================*/
@@ -305,7 +314,7 @@ go
 
 
 
-create nonclustered index DepBlk_FK on FactFlight (ArrivalTimeIntervalID ASC)
+create nonclustered index DepBlk_FK on FactFlight (ArrBlkID ASC)
 go
 
 /*==============================================================*/
@@ -315,7 +324,77 @@ go
 
 
 
-create nonclustered index ArrBlk_FK on FactFlight (DepartureTimeIntervalID ASC)
+create nonclustered index ArrBlk_FK on FactFlight (DepBlkID ASC)
+go
+
+/*==============================================================*/
+/* Index: GMTFlightDate_FK                                      */
+/*==============================================================*/
+
+
+
+
+create nonclustered index GMTFlightDate_FK on FactFlight (GMTFlightDateID ASC)
+go
+
+/*==============================================================*/
+/* Index: GMTWheelsOn_FK                                        */
+/*==============================================================*/
+
+
+
+
+create nonclustered index GMTWheelsOn_FK on FactFlight (GMTActualArrivalTimeID ASC)
+go
+
+/*==============================================================*/
+/* Index: GMTWheelsOff_FK                                       */
+/*==============================================================*/
+
+
+
+
+create nonclustered index GMTWheelsOff_FK on FactFlight (GMTCRSDepartureTimeID ASC)
+go
+
+/*==============================================================*/
+/* Index: GMTCRSDepartureTime_FK                                */
+/*==============================================================*/
+
+
+
+
+create nonclustered index GMTCRSDepartureTime_FK on FactFlight (GMTCRSArrivalTimeID ASC)
+go
+
+/*==============================================================*/
+/* Index: GMTActualDepartureTime_FK                             */
+/*==============================================================*/
+
+
+
+
+create nonclustered index GMTActualDepartureTime_FK on FactFlight (GMTActualDepartureTimeID ASC)
+go
+
+/*==============================================================*/
+/* Index: GMTCRSArrivalTime_FK                                  */
+/*==============================================================*/
+
+
+
+
+create nonclustered index GMTCRSArrivalTime_FK on FactFlight (GMTWheelsOnID ASC)
+go
+
+/*==============================================================*/
+/* Index: GMTActualArrivalTime_FK                               */
+/*==============================================================*/
+
+
+
+
+create nonclustered index GMTActualArrivalTime_FK on FactFlight (GMTWheelsOffID ASC)
 go
 
 alter table FactFlight
@@ -334,8 +413,8 @@ alter table FactFlight
 go
 
 alter table FactFlight
-   add constraint FK_FACTFLIG_ARRBLK_DIMDEPAR foreign key (DepartureTimeIntervalID)
-      references DimDepartureArrivalTimeIntervals (DepArrTimeIntervalsID)
+   add constraint FK_FACTFLIG_ARRBLK_DIMDEPAR foreign key (DepBlkID)
+      references DimDepArrBlk (DepArrBlkID)
 go
 
 alter table FactFlight
@@ -344,8 +423,18 @@ alter table FactFlight
 go
 
 alter table FactFlight
-   add constraint FK_FACTFLIG_DEPBLK_DIMDEPAR foreign key (ArrivalTimeIntervalID)
-      references DimDepartureArrivalTimeIntervals (DepArrTimeIntervalsID)
+   add constraint FK_FACTFLIG_CRSARRIVA_DIMTIME foreign key (CRSArrivalTimeID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_CRSDEPART_DIMTIME foreign key (WheelsOnID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_DEPBLK_DIMDEPAR foreign key (ArrBlkID)
+      references DimDepArrBlk (DepArrBlkID)
 go
 
 alter table FactFlight
@@ -359,8 +448,8 @@ alter table FactFlight
 go
 
 alter table FactFlight
-   add constraint FK_FACTFLIG_DISTANCEG_DIMDISTA foreign key (DistanceRangeID)
-      references DimDistanceRange (DistanceRangeID)
+   add constraint FK_FACTFLIG_DISTANCEG_DIMDISTA foreign key (DistanceID)
+      references DimDistance (DistanceID)
 go
 
 alter table FactFlight
@@ -369,18 +458,43 @@ alter table FactFlight
 go
 
 alter table FactFlight
+   add constraint FK_FACTFLIG_GMTACTARR_DIMTIME foreign key (GMTWheelsOffID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_GMTACTDEP_DIMTIME foreign key (GMTActualDepartureTimeID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_GMTCRSARR_DIMTIME foreign key (GMTWheelsOnID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_GMTCRSDEP_DIMTIME foreign key (GMTCRSArrivalTimeID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_GMTFLIGHT_DIMDATE foreign key (GMTFlightDateID)
+      references DimDate (DateID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_GMTWHEELSOFF_DIMTIME foreign key (GMTCRSDepartureTimeID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
+   add constraint FK_FACTFLIG_GMTWHEELSON_DIMTIME foreign key (GMTActualArrivalTimeID)
+      references DimTime (TimeID)
+go
+
+alter table FactFlight
    add constraint FK_FACTFLIG_ORIGINAIR_DIMAIRPO foreign key (DestinationAirportID)
       references DimAirport (AirportID)
-go
-
-alter table FactFlight
-   add constraint FK_FACTFLIG_SCHEDULED_DIMTIME_ARR foreign key (ScheduledArrivalTimeID)
-      references DimTime (TimeID)
-go
-
-alter table FactFlight
-   add constraint FK_FACTFLIG_SCHEDULED_DIMTIME_DEP foreign key (WheelsOnID)
-      references DimTime (TimeID)
 go
 
 alter table FactFlight
@@ -389,7 +503,7 @@ alter table FactFlight
 go
 
 alter table FactFlight
-   add constraint FK_FACTFLIG_WHEELSOFF_DIMTIME foreign key (ScheduledDepartureTimeID)
+   add constraint FK_FACTFLIG_WHEELSOFF_DIMTIME foreign key (CRSDepartureTimeID)
       references DimTime (TimeID)
 go
 
