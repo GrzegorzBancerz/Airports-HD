@@ -1,4 +1,6 @@
 # Airports-HD
-Zadanie projektowe – Hurtownie Danych 
+Zadanie projektowe na przedmiot Hurtownie Danych 
 
-Projekt hurtowni danych dla lotów na obszarze Ameryki oraz projekt wielowymiarowej kostki danych i raportowania z bazy Analitycs Services
+Projekt zawiera proces ładowania danych do obszaru Stage oraz proces ETL zasilania hurtowni danych. Dodatkowo utworzona została wielowymiarowa kostka danych i kilka przykładowych raportów wykorzystujących te dane. 
+
+Projekt był tworzony za pomocą narzędzi: SQL Sever 2017, SSIS, SSAS, Power BI. 
